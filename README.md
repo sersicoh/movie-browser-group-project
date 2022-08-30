@@ -1,7 +1,4 @@
-# This is my PersonalHomePage
-
-[Demo](https://sersicoh.github.io/personal-home-page/)
-
+# This is...
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
