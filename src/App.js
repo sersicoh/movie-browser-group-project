@@ -1,8 +1,11 @@
+import Test from "./common/test";
+
 function App() {
   return (
-    <p>
-      Ta strona jest w trakcie tworzenia, zajrzyj za jakiś czas 😉!
-    </p>
+    <>
+      <Test />
+      <p>Ta strona jest w trakcie tworzenia, zajrzyj za jakiś czas 😉!</p>
+    </>
   );
 }
 
