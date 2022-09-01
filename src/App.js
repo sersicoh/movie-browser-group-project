@@ -1,8 +1,13 @@
+import { HashRouter } from "react-router-dom";
+import NavigationBar from "./common/Navigation";
+
 function App() {
   return (
-    <p>
-      Ta strona jest w trakcie tworzenia, zajrzyj za jakiś czas 😉!
-    </p>
+    <HashRouter>
+      <nav>
+        <NavigationBar />
+      </nav>
+    </HashRouter>
   );
 }
 

@@ -7,6 +7,7 @@ export const GlobalStyle = createGlobalStyle`
 
     *, ::after, ::before {
     box-sizing: initial;
+    padding: 0;
     }
 
     body{

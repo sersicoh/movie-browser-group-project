@@ -6,11 +6,12 @@ export const theme = {
 
     },
     breakpoint: {
+        maxContentSize: 1368,
         mobileMax: 767,
     },
-    fontSize:{
+    fontSize: {
         regular: 400,
         medium: 500,
         bold: 600,
-    }
+    },
 };
