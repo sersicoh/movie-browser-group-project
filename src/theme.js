@@ -6,6 +6,7 @@ export const theme = {
         whisper: "#F5F5FA",
         silver: "#C4C4C4",
         darkerGrey: "#7E839A",
+        mystic: "#E4E6F0",
         
     },
     breakpoint: {
