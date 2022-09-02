@@ -3,7 +3,10 @@ export const theme = {
         black: "#000",
         white: "#ffffff",
         grey: "#808080",
-
+        whisper: "#F5F5FA",
+        silver: "#C4C4C4",
+        darkerGrey: "#7E839A",
+        
     },
     breakpoint: {
         maxContentSize: 1368,
