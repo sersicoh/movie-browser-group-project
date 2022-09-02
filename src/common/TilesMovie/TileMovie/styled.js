@@ -94,7 +94,7 @@ export const MovieYear = styled.div`
 
     font-weight: ${({ theme }) => theme.fontSize.regular};
     color: ${({ theme }) => theme.colors.darkerGrey};
-    font-size: 22px;
+    font-size: 16px;
     display: flex;
     align-items: center;
     padding: 8px 0px;
