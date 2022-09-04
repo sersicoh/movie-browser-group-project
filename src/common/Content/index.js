@@ -1,5 +1,4 @@
-import { SectionArea } from "../SectionArea/styled";
-import { ContentTitle } from "./styled";
+import { ContentTitle, SectionArea } from "./styled";
 
 const Content = ({ title, body, extraContent }) => (
 

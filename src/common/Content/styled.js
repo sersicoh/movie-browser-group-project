@@ -11,3 +11,10 @@ export const ContentTitle = styled.h1`
         font-size: 22px; 
     }
 `;
+
+export const SectionArea = styled.div`
+    
+    max-width: 1368px;
+    margin: 0 auto;
+    padding: 12px;
+`;
