@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const TilesMovieSection = styled.section`
+export const TilesSection = styled.section`
     display: flex;
     flex-direction: row;
     align-items: center;
