@@ -4,6 +4,7 @@ import styled from "styled-components";
 export const NavigationBackground = styled.div`
 background-color: black;
 padding: 23px;
+margin-bottom: 16px;
 `;
 
 export const NavigationList = styled.ul`    
