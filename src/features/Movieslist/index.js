@@ -1,6 +1,6 @@
 import Content from "../../common/Content";
 import TileMovie from "../../common/TilesMovie/TileMovie";
-import { TilesMovieSection } from "../../common/TilesMovie/TilesMovieSection/styled";
+import { TilesSection } from "../../common/TilesSection/styled";
 
 
 const MovieList = () => {
@@ -10,18 +10,18 @@ const MovieList = () => {
             title="Popular Movies"
             body={
                 <>
-                    <TilesMovieSection>
+                    <TilesSection>
                         <TileMovie />
                         <TileMovie />
                         <TileMovie />
                         <TileMovie />
-                    </TilesMovieSection>
-                    <TilesMovieSection>
+                    </TilesSection>
+                    <TilesSection>
                         <TileMovie />
                         <TileMovie />
                         <TileMovie />
                         <TileMovie />
-                    </TilesMovieSection>
+                    </TilesSection>
                 </>
 
             }
