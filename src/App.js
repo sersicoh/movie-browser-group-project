@@ -1,21 +1,9 @@
-<<<<<<< HEAD
-import MovieList from "../src/features/getMovieData/MovieList/index";
-import PeopleList from "../src/features/getMovieData/PeopleList/index";
-import Test from "./features/getMovieData/Test/test"
-
-function App() {
-  return (
-    <>
-    <Test/>
-    <MovieList/>
-     <PeopleList/>
-      <p>Ta strona jest w trakcie tworzenia, zajrzyj za jakiś czas 😉!</p>
-    </>
-=======
 import { HashRouter, Route, Switch } from "react-router-dom";
 import NavigationBar from "./common/Navigation";
 import MovieList from "./features/Movieslist";
 import PersonList from "./features/PersonList";
+// import MovieList from "../src/features/getMovieData/MovieList/index";
+// import PeopleList from "../src/features/getMovieData/PeopleList/index";
 
 function App() {
   return (
@@ -32,7 +20,6 @@ function App() {
         </Switch>
       </nav>
     </HashRouter>
->>>>>>> main
   );
 }
 
