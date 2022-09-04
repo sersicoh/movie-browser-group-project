@@ -7,11 +7,9 @@ export const GlobalStyle = createGlobalStyle`
 
     *, ::after, ::before {
     box-sizing: initial;
-    padding: 0;
     }
 
     body{
     font-family: 'Poppins', sans-serif;
-    background-color: ${({ theme }) => theme.colors.whisper};
     }
 `;
