@@ -1,5 +1,5 @@
 import Content from "../../common/Content";
-import TileMovie from "../../common/TilesMovie/TileMovie";
+import TileMovie from "../../common/TileMovie";
 import { TilesSection } from "../../common/TilesSection/styled";
 
 

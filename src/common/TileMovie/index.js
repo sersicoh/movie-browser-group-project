@@ -1,5 +1,5 @@
-import MovieIcon from "../../../iconComponents/MovieIcon";
-import StarIcon from "../../../iconComponents/StarIcon";
+import MovieIcon from '../../iconComponents/MovieIcon'
+import StarIcon from '../../iconComponents/StarIcon'
 import { Destription, StyledMovieIcon, MovieTitle, MovieYear, NoPoster, Poster, StyledTileMovie, MovieSection, Tag, Tags, StyledStarIcon, RatingSection, Rate, Votes } from "./styled";
 
 const TileMovie = () => {
