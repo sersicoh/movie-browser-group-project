@@ -1,9 +1,13 @@
 import Content from "../../common/Content";
 import TileMovie from "../../common/TileMovie";
+import { useSelector } from "react-redux";
+import { selectMovies } from "../getMovieData/MovieList/movieSlice";
 import { TilesSection } from "../../common/TilesSection/styled";
 
 
 const MovieList = () => {
+
+    const { movieList } = useSelector(selectMovies);
 
     return (
         <Content
@@ -11,19 +15,11 @@ const MovieList = () => {
             body={
                 <>
                     <TilesSection>
-                        <TileMovie />
-                        <TileMovie />
-                        <TileMovie />
-                        <TileMovie />
-                    </TilesSection>
-                    <TilesSection>
-                        <TileMovie />
-                        <TileMovie />
-                        <TileMovie />
-                        <TileMovie />
+                        {movieList.map((movie) => (
+                            <TileMovie key={movie.id} movie={movie} />
+                        ))}
                     </TilesSection>
                 </>
-
             }
         />
     )

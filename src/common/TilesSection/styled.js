@@ -1,14 +1,25 @@
 import styled from "styled-components";
 
 export const TilesSection = styled.section`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     padding: 0px;
     gap: 24px;
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
-        flex-direction: column;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+`;
+
+export const TilesPersonSection = styled.section`
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    padding: 0px;
+    gap: 24px;
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
+        grid-template-columns: 1fr 1fr 1fr;
         gap: 16px;
     }
 `;

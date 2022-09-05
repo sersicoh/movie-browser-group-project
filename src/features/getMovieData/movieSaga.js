@@ -8,7 +8,7 @@ import {
   import { fetchPopularMovies, setMovieList,} from "./MovieList/movieSlice";
   import { fetchPopularPeople, setPeopleList,} from "./PeopleList/peopleSlice";
   
- export  function* fetchPopularMoviesWorker() {
+ export function* fetchPopularMoviesWorker() {
     try {
       yield delay(1000);
         const popularMovies = yield call(getPopularMovies);
@@ -19,7 +19,7 @@ import {
     }
   }
 
-  function* fetchPopularPeopleWorker() {
+  export function* fetchPopularPeopleWorker() {
     try {
       yield delay(1000);
         const popularPeople = yield call(getPopularPeople);
