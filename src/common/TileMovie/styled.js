@@ -7,6 +7,9 @@ export const Wrapper = styled.section`
     box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
     border-radius: 5px;
 
+    @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px){
+        padding: 14px;
+    }
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
         padding: 12px;
     }
@@ -22,7 +25,17 @@ export const StyledTileMovie = styled.section`
         "whiteSpace"
         "rating"
         ;
-
+    @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px){
+        grid-template-columns: 1fr 1fr;
+        column-gap: 16px;
+        grid-template-areas:
+            "poster title"
+            "poster year"
+            "poster tags"
+            "poster rating"
+            "poster whiteSpace"
+            ;
+    }
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
         grid-template-columns: 1fr 1fr;
         column-gap: 16px;
@@ -40,9 +53,7 @@ export const Poster = styled.img`
     width: 100%; 
     border-radius: 5px;
     aspect-ratio: 2/3;
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
 
-    }
 `;
 export const NoPoster = styled.div`
     grid-area: poster;
@@ -66,6 +77,10 @@ export const StyledMovieIcon = styled.div`
     width: 80px;
     height: 80px;
 
+    @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px){
+        width: 60px;
+        height: 60px;
+    }
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
         width: 48px;
         height: 48px;
@@ -102,7 +117,6 @@ export const Tags = styled.section`
     gap: 10px;
     display: flex;
     flex-wrap: wrap;
-    list-style: none;
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
         gap: 8px;

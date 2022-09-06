@@ -11,7 +11,8 @@ export const theme = {
     },
     breakpoint: {
         maxContentSize: 1368,
-        mobileMax: 767,
+        tabletMax: 968,
+        mobileMax: 550,
     },
     fontSize: {
         regular: 400,
