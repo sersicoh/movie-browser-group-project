@@ -32,6 +32,6 @@ export const Button = styled.button`
   &:active {
     color: rgb(97, 97, 97);
     transform: scale(0.8);
-    background-color:none;
+    background-color: none;
   }
 `;
