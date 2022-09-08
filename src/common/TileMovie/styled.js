@@ -39,6 +39,7 @@ export const StyledTileMovie = styled.section`
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
         grid-template-columns: 1fr 1fr;
         column-gap: 16px;
+        min-width: 250px;
         grid-template-areas:
             "poster title"
             "poster year"
@@ -93,7 +94,7 @@ export const MovieTitle = styled.div`
     line-height: 130%;
     font-size: 22px;
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
+    @media (max-width: ${({ theme }) => theme.breakpoint.between}px){
         font-size: 16px;
         margin: 0 0 4px;
     }
@@ -105,7 +106,7 @@ export const MovieYear = styled.div`
     color: ${({ theme }) => theme.colors.darkerGrey};
     font-size: 16px;
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
+    @media (max-width: ${({ theme }) => theme.breakpoint.between}px){
         font-size: 13px;
     }
 `;
@@ -122,6 +123,9 @@ export const Tags = styled.section`
         gap: 8px;
         align-items: flex-start;
     }
+    @media (max-width: ${({ theme }) => theme.breakpoint.between}px){
+        gap: 8px;
+    }
 `;
 export const Tag = styled.div`
     font-size: 14px;
@@ -130,7 +134,7 @@ export const Tag = styled.div`
     border-radius: 5px;
     background: ${({ theme }) => theme.colors.mystic};
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
+    @media (max-width: ${({ theme }) => theme.breakpoint.between}px){
         font-size: 10px;
         padding: 4px 8px;
     }
@@ -146,7 +150,6 @@ export const RatingSection = styled.section`
     
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
-
         align-content: flex-start;
         gap: 8px;
         flex:0;
@@ -156,7 +159,7 @@ export const StyledStarIcon = styled.div`
     width: 24px;
     height: 23px;
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
+    @media (max-width: ${({ theme }) => theme.breakpoint.between}px){
         width: 16px;
         height: 15px;
     }
@@ -165,7 +168,7 @@ export const Rate = styled.div`
     font-size: 16px;
     font-weight: ${({ theme }) => theme.fontSize.bold};
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
+    @media (max-width: ${({ theme }) => theme.breakpoint.between}px){
         font-size: 13px;
     }
     
@@ -175,7 +178,7 @@ export const Votes = styled.div`
     font-weight: ${({ theme }) => theme.fontSize.regular};
     color: ${({ theme }) => theme.colors.darkerGrey};
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
+    @media (max-width: ${({ theme }) => theme.breakpoint.between}px){
         font-size: 13px;
     }
 `;
