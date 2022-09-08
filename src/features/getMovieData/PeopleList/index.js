@@ -11,7 +11,9 @@ const PeopleList = () => {
         <Person key={person.id}>
           <Content>
             &nbsp;&nbsp;
-            <Img src={`https://image.tmdb.org/t/p/w500/${person.profile_path}`} />
+            <Img
+              src={`https://image.tmdb.org/t/p/w500/${person.profile_path}`}
+            />
           </Content>
           <Content>ID: {person.id}</Content>
           <Content>Imię: {person.name}</Content>
@@ -23,9 +25,6 @@ const PeopleList = () => {
 };
 
 export default PeopleList;
-
-
-
 
 // <PeopleList>
 //                         {peopleList.map((person) =>

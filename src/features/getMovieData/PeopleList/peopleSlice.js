@@ -11,9 +11,9 @@ const peopleSlice = createSlice({
     fetchPopularPeople: (state) => {
       state.ifPeopleLoading = true;
     },
-      setPeopleList: (state, { payload: people }) => {
+    setPeopleList: (state, { payload: people }) => {
       state.peopleList = people.results;
-      state.ifPeopleLoading= false;
+      state.ifPeopleLoading = false;
     },
     setLoading: (state) => {
       state.ifPeopleLoading = false;
@@ -21,13 +21,9 @@ const peopleSlice = createSlice({
   },
 });
 
-export const {
-   fetchPopularPeople,
-   setPeopleList,
-  ifPeopleLoading
-} = peopleSlice.actions;
+export const { fetchPopularPeople, setPeopleList, ifPeopleLoading } =
+  peopleSlice.actions;
 
 export const selectPeople = (state) => state.peopleList;
 
 export default peopleSlice.reducer;
-
