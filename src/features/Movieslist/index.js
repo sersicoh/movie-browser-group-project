@@ -16,7 +16,7 @@ const MovieList = () => {
                 <>
                     <TilesSection>
                         {movieList.map((movie) => (
-                            <TileMovie key={movie.id} movie={movie} />
+                            <TileMovie key={movie.id} movie={movie} genreIds={movie.genre_ids} />
                         ))}
                     </TilesSection>
                 </>
