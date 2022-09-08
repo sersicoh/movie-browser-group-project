@@ -2,44 +2,34 @@ import MovieIcon from '../../iconComponents/MovieIcon'
 import StarIcon from '../../iconComponents/StarIcon'
 import { Destription, StyledMovieIcon, MovieTitle, MovieYear, NoPoster, Poster, StyledTileMovie, MovieSection, Tag, Tags, StyledStarIcon, RatingSection, Rate, Votes } from "./styled";
 
-const TileMovie = () => {
+const TileMovie = ({ movie }) => {
 
-    const picture = false;
-
-    const data = {
-        picture: false,
-        title: "Mulan",
-        year: 2020,
-        tags: ["Action", "Adventure", "Drama", "Comedy"],
-        rate: 7.8,
-        votes: 30
-    }
+    const picture = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
 
     return (
         <StyledTileMovie>
             <MovieSection>
-                {picture ?
-                    <Poster
-                    /> :
+                {picture
+                    ?
+                    <Poster src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} />
+                    :
                     <NoPoster>
                         <StyledMovieIcon>
                             <MovieIcon width={"100%"} height={"100%"} />
                         </StyledMovieIcon>
                     </NoPoster>}
                 <Destription>
-                    <MovieTitle>{data.title}</MovieTitle>
-                    <MovieYear>{data.year}</MovieYear>
+                    <MovieTitle>{movie.title}</MovieTitle>
+                    <MovieYear>{movie.release_date}</MovieYear>
                     <Tags>
-                        <Tag>{data.tags[0]}</Tag>
-                        <Tag>{data.tags[1]}</Tag>
-                        <Tag>{data.tags[2]}</Tag>
+                        <Tag>{movie.genre_ids[0]}</Tag>
                     </Tags>
                     <RatingSection>
                         <StyledStarIcon>
                             <StarIcon width={"100%"} height={"100%"} />
                         </StyledStarIcon>
-                        <Rate>{data.rate}</Rate>
-                        <Votes>{data.votes} votes</Votes>
+                        <Rate>{movie.vote_average}</Rate>
+                        <Votes>{movie.vote_count} votes</Votes>
                     </RatingSection>
                 </Destription>
             </MovieSection>
