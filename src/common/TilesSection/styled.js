@@ -13,6 +13,8 @@ export const TilesSection = styled.section`
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
         grid-template-columns: 1fr;
         gap: 12px;
+        width: 100%;
+        min-width: 300px;
     }
 `;
 
@@ -29,5 +31,6 @@ export const TilesPersonSection = styled.section`
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
         grid-template-columns: 1fr 1fr;
         gap: 16px;
+        min-width: 300px;
     }
 `;

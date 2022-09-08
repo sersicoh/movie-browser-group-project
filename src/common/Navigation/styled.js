@@ -2,22 +2,31 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const NavigationBackground = styled.div`
-background-color: black;
-padding: 23px;
-margin-bottom: 16px;
+    background-color: black;
+    padding: 20px 0px;
+    margin-bottom: 16px;
+    width: 100%;
+    min-width: 320px;
 `;
 
 export const NavigationList = styled.ul`    
-    margin: 0 auto;
     display: grid;
+    margin: 0 auto;
+    padding: 0px 12px;
     grid-template-columns: auto auto auto 1fr;
     grid-gap: 32px;
     list-style-type: none;
     max-width: ${({ theme }) => theme.breakpoint.maxContentSize}px;
 
+    @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px){
+        grid-template-columns: 1fr auto auto;
+        row-gap: 20px;
+        grid-gap: 16px;
+    }
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
         grid-template-columns: 1fr auto auto;
         row-gap: 20px;
+        grid-gap: 16px;
     }
 `;
 
@@ -39,9 +48,17 @@ export const NavigationLink = styled(NavLink)`
     height: 48px;
     border: 1px solid ${({ theme }) => theme.colors.black};
 
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
+        font-size: 10px;
+        padding: 4px 16px;
+        height: 32px;
+    }
     &.active{
         border: 1px solid ${({ theme }) => theme.colors.white};
         border-radius: 24px;
+        @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
+            border-radius: 24px;
+    }
     };
 `;
 
@@ -49,9 +66,15 @@ export const NavigationLogo = styled.div`
     font-weight: ${({ theme }) => theme.fontSize.medium};
     font-size: 24px;
     display: flex;
-    justify-content: center;
+    flex-wrap: nowrap;
     align-items: center;
     color: ${({ theme }) => theme.colors.white};
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
+        font-size: 16px;
+        padding-left: 12px;
+    }
+
 `;
 
 export const NavigationSearcher = styled.div`
@@ -62,9 +85,15 @@ export const NavigationSearcher = styled.div`
     align-items: center;
     color: ${({ theme }) => theme.colors.white};
 
+    @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px){
+        margin: 0 auto;
+        font-size: 20px;
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
-        display: flex;
-        justify-content: center;
+        margin: 0 auto;
+        font-size: 16px;
         grid-column-start: 1;
         grid-column-end: 4;
     }
