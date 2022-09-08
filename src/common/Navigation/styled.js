@@ -6,6 +6,7 @@ background-color: black;
 padding: 23px;
 margin-bottom: 16px;
 width: 100%;
+min-width: 320px;
 `;
 
 export const NavigationList = styled.ul`    
