@@ -19,7 +19,7 @@ import {
 import { useSelector } from "react-redux";
 import { selectGenres } from "../../features/getMovieData/MovieList/movieSlice";
 
-const TileMovie = ({ movie, genreIds }) => {
+const TileMovie = ({ movie, genreIds, releaseDate }) => {
   const picture = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
   const { genreList } = useSelector(selectGenres);
 
@@ -39,7 +39,7 @@ const TileMovie = ({ movie, genreIds }) => {
         )}
         <Destription>
           <MovieTitle>{movie.title}</MovieTitle>
-          <MovieYear>{movie.release_date}</MovieYear>
+          <MovieYear>{releaseDate}</MovieYear>
           <Tags>
             {genreList.map(
               (genre) =>
