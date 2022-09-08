@@ -1,47 +1,24 @@
 import Content from "../../common/Content";
 import TilePerson from "../../common/TilePerson";
-import { TilesSection } from "../../common/TilesSection/styled";
+import { useSelector } from "react-redux";
+import {selectPeople} from "../getMovieData/PeopleList/peopleSlice"
+import { TilesPersonSection } from "../../common/TilesSection/styled";
 
 
 const PersonList = () => {
+
+    const { peopleList } = useSelector(selectPeople);
 
     return (
         <Content
             title="Popular People"
             body={
                 <>
-                    <TilesSection>
-                        <TilePerson />
-                        <TilePerson />
-                        <TilePerson />
-                        <TilePerson />
-                        <TilePerson />
-                        <TilePerson />
-                    </TilesSection>
-                    <TilesSection>
-                        <TilePerson />
-                        <TilePerson />
-                        <TilePerson />
-                        <TilePerson />
-                        <TilePerson />
-                        <TilePerson />
-                    </TilesSection>
-                    <TilesSection>
-                        <TilePerson />
-                        <TilePerson />
-                        <TilePerson />
-                        <TilePerson />
-                        <TilePerson />
-                        <TilePerson />
-                    </TilesSection>
-                    <TilesSection>
-                        <TilePerson />
-                        <TilePerson />
-                        <TilePerson />
-                        <TilePerson />
-                        <TilePerson />
-                        <TilePerson />
-                    </TilesSection>
+                    <TilesPersonSection>
+                        {peopleList.map((person) => (
+                            <TilePerson key={person.id} person={person} />
+                        ))}
+                    </TilesPersonSection>
                 </>
             }
         />

@@ -1,34 +1,29 @@
 import PersonIcon from "../../iconComponents/PersonIcon";
 import { Destription, PersonName, NoPoster, Poster, StyledTilePerson, PersonSection, StyledPersonIcon } from "./styled";
 
-const TilePerson = () => {
+const TilePerson = ({ person }) => {
 
-    const picture = false;
-
-    const data = {
-        picture: false,
-        name: "Liu Yifei",
-        birth: "25.08.1987",
-    }
+    const picture = `https://image.tmdb.org/t/p/w500/${person.profile_path}`;
 
     return (
         <StyledTilePerson>
             <PersonSection>
-                {picture ?
-                    <Poster
-                    /> :
+                {picture
+                    ?
+                    <Poster src={`https://image.tmdb.org/t/p/w500/${person.profile_path}`} />
+                    :
                     <NoPoster>
                         <StyledPersonIcon>
                             <PersonIcon width={"100%"} height={"100%"} />
                         </StyledPersonIcon>
-                    </NoPoster>}
+                    </NoPoster>
+                    }
                 <Destription>
-                    <PersonName>{data.name}</PersonName>
-                 </Destription>
+                    <PersonName>{person.name}</PersonName>
+                </Destription>
             </PersonSection>
         </StyledTilePerson>
     );
-
 };
 
 export default TilePerson;
