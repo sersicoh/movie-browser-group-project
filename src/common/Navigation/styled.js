@@ -27,6 +27,7 @@ export const NavigationList = styled.ul`
         grid-template-columns: 1fr auto auto;
         row-gap: 20px;
         grid-gap: 16px;
+       
     }
 `;
 
@@ -49,9 +50,9 @@ export const NavigationLink = styled(NavLink)`
     border: 1px solid ${({ theme }) => theme.colors.black};
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
-        font-size: 10px;
-        padding: 4px 16px;
-        height: 32px;
+        font-size: 12px;
+        padding: 4px 12px;
+        height: 34px;
     }
     &.active{
         border: 1px solid ${({ theme }) => theme.colors.white};
@@ -69,12 +70,20 @@ export const NavigationLogo = styled.div`
     flex-wrap: nowrap;
     align-items: center;
     color: ${({ theme }) => theme.colors.white};
-
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
-        font-size: 16px;
-        padding-left: 12px;
+        margin-top: 8px;
+        margin-left: -1px;
+        width: 125px;
+        height: 17px;
+        font-size: 13px;
     }
 
+`;
+export const Icon = styled.div`
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
+        font-size: 13px;
+        margin-right: 10px;
+    }
 `;
 
 export const NavigationSearcher = styled.div`
