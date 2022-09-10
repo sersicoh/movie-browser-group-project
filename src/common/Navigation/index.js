@@ -1,6 +1,6 @@
 import MovieIcon from "../../iconComponents/MovieIcon";
 import { NavigationBackground, NavigationLink, NavigationList, NavigationLogo, NavigationSearcher } from "./styled";
-
+import { Searcher } from "../Searcher"
 // w komponencie NavigationSearcher trzeba będzie umieścić komponent wyszukiwarka
 
 function NavigationBar() {
@@ -17,7 +17,7 @@ function NavigationBar() {
                     People
                 </NavigationLink>
                 <NavigationSearcher>
-                    Tu będzie wyszukiwarka
+                    <Searcher />
                 </NavigationSearcher>
             </NavigationList>
         </NavigationBackground>
