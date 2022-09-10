@@ -23,7 +23,7 @@ export function* fetchGenresWorker() {
   }
 }
 
-function* fetchPopularPeopleWorker() {
+export function* fetchPopularPeopleWorker() {
   try {
     yield delay(1000);
     const popularPeople = yield call(getPopularPeople);
