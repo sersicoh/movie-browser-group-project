@@ -1,5 +1,5 @@
 import MovieIcon from "../../iconComponents/MovieIcon";
-import { NavigationBackground, NavigationLink, NavigationList, NavigationLogo, NavigationSearcher, Icon } from "./styled";
+import { NavigationBackground, NavigationLink, NavigationList, NavigationLogo, NavigationSearcher} from "./styled";
 import { StyledMovieIcon} from "../TileMovie/styled";
 // w komponencie NavigationSearcher trzeba będzie umieścić komponent wyszukiwarka
 
