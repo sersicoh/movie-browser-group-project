@@ -74,15 +74,17 @@ export const StyledMovieIcon = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80px;
-    height: 80px;
+    width: 45px;
+    margin-right: 9px;
+    margin-bottom: 2px;
 
     @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px){
-        width: 60px;
-        height: 60px;
+        width: 40px;
+        margin-bottom: 2px;
+        margin-right: 9px;
     }
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
-        width: 48px;
+        width: 20px;
         height: 48px;
     }
 `;
