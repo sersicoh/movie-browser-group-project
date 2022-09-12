@@ -15,11 +15,13 @@ import {
     Rate,
     Votes
 } from "./styled";
+import { useSelector } from "react-redux";
+import { selectGenres } from "../../features/getMovieData/MovieList/movieSlice";
 
-const TileMovie = ({ movie }) => {
+const TileMovie = ({ movie, genreIds, releaseDate  }) => {
 
     const picture = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
-    
+    const { genreList } = useSelector(selectGenres);
     return (
         <Wrapper>
             <StyledTileMovie>
@@ -33,10 +35,15 @@ const TileMovie = ({ movie }) => {
                         </StyledMovieIcon>
                     </NoPoster>}
                 <MovieTitle>{movie.title}</MovieTitle>
-                <MovieYear>{movie.release_date}</MovieYear>
+                <MovieYear>{releaseDate}</MovieYear>
                 <Tags>
-                    <Tag>{movie.genre_ids[0]}</Tag>
-                </Tags>
+            {genreList.map(
+              (genre) =>
+                genreIds.includes(genre.id) && (
+                  <Tag key={genre.id}> {genre.name}</Tag>
+                )
+            )}
+          </Tags>
                 <RatingSection>
                     <StyledStarIcon>
                         <StarIcon width={"100%"} height={"100%"} />
