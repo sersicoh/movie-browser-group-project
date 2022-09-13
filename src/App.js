@@ -2,6 +2,7 @@ import { HashRouter, Route, Switch } from "react-router-dom";
 import NavigationBar from "./common/Navigation";
 import MovieList from "./features/Movieslist";
 import PersonList from "./features/PersonList";
+import MovieDetails from "./features/movieDetails";
 // import MovieList from "../src/features/getMovieData/MovieList/index";
 // import PeopleList from "../src/features/getMovieData/PeopleList/index";
 
@@ -12,10 +13,13 @@ function App() {
         <NavigationBar />
         <Switch>
           <Route path="/movies">
-            <MovieList />
+          <MovieList />
           </Route>
           <Route path="/people">
             <PersonList />
+          </Route>
+          <Route path="/movieDetails/:id">
+            <MovieDetails />
           </Route>
         </Switch>
       </nav>
