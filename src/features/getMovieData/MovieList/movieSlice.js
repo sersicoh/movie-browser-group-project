@@ -40,8 +40,10 @@ export const {
 
 export const selectMovies = (state) => state.movieList;
 export const selectGenres = (state) => state.genreList;
+
 export const getMovieById = (state, movieId) =>
   selectMovies(state).movieList.find(({ id }) => id === movieId);
+
 export const selectMoviesByQuery = (state, query) => {
   const movieList = selectMovies(state);
   if (!query || query.trim() === "") {

@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const NavigationBackground = styled.div`
   background-color: black;
   height: 142px;
-  margin-bottom: 16px;
+
   width: 100%;
   min-width: 320px;
   @media (min-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
