@@ -2,7 +2,6 @@ import styled from "styled-components";
 import PosterBig from "../../../iconComponents/PosterBig.png";
 
 export const BackgroundColor = styled.section`
-  margin-bottom: 64px;
   width: 100%;
   height: 770px;
   background-color: black;
@@ -26,8 +25,7 @@ export const Wrapper = styled.div`
   width: 1368px;
   height: 770px;
 
-  background: 
-    linear-gradient(
+  background: linear-gradient(
       270deg,
       #000000 0.01%,
       rgba(0, 0, 0, 0.873268) 2.5%,
@@ -59,9 +57,6 @@ export const Wrapper = styled.div`
       #000000 92.87%
     );
 `;
-export const Poster = styled.img``;
-export const NoPoster = styled.div``;
-export const StyledMovieIcon = styled.div``;
 export const MovieTitle = styled.div`
   margin: 16px 0 8px;
   font-weight: ${({ theme }) => theme.fontSize.bold};
@@ -73,9 +68,6 @@ export const MovieTitle = styled.div`
     margin: 0 0 4px;
   }
 `;
-export const MovieYear = styled.div``;
-export const Tags = styled.section``;
-export const Tag = styled.div``;
 export const RatingSection = styled.section`
   display: flex;
   flex-direction: row;
