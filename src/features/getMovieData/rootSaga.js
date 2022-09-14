@@ -10,6 +10,6 @@ export default function* rootSaga() {
     movieDetailsSaga(),
     fetchPopularMoviesWorker(),
     fetchPopularPeopleWorker(),
-    // fetchMovieDetailsWorker(),
+    //fetchMovieDetailsWorker(),
   ]);
 }

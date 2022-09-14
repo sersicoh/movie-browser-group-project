@@ -3,6 +3,7 @@ import NavigationBar from "./common/Navigation";
 import MovieList from "./features/Movieslist";
 import PersonList from "./features/PersonList";
 import MovieDetails from "./features/movieDetails";
+import TileDetails from "./common/TileDetails/TileDetails";
 // import MovieList from "../src/features/getMovieData/MovieList/index";
 // import PeopleList from "../src/features/getMovieData/PeopleList/index";
 
@@ -19,7 +20,7 @@ function App() {
             <PersonList />
           </Route>
           <Route path="/movieDetails/:id">
-            <MovieDetails />
+            <TileDetails />
           </Route>
           <Route path="/">
             <Redirect to="/movies" />
