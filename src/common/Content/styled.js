@@ -14,5 +14,7 @@ export const ContentTitle = styled.h1`
 
 export const SectionArea = styled.div`
     max-width: 1368px;
+    padding-top: 14px;
     margin: 0 auto;
+   
 `;

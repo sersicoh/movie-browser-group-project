@@ -13,7 +13,8 @@ import {
     StyledStarIcon,
     RatingSection,
     Rate,
-    Votes
+    Votes,
+    StyledNavLink
 } from "./styled";
 import { useSelector } from "react-redux";
 import { selectGenres } from "../../features/getMovieData/MovieList/movieSlice";
@@ -24,6 +25,7 @@ const TileMovie = ({ movie, genreIds, releaseDate  }) => {
     const { genreList } = useSelector(selectGenres);
     return (
         <Wrapper>
+            <StyledNavLink to={`/movieDetails/${movie.id}`}>
             <StyledTileMovie>
                 {picture
                     ?
@@ -52,6 +54,7 @@ const TileMovie = ({ movie, genreIds, releaseDate  }) => {
                     <Votes>{movie.vote_count} votes</Votes>
                 </RatingSection>
             </StyledTileMovie>
+            </StyledNavLink>
         </Wrapper>
     );
 
