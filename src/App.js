@@ -1,4 +1,4 @@
-import { HashRouter, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
 import NavigationBar from "./common/Navigation";
 import MovieList from "./features/Movieslist";
 import PersonList from "./features/PersonList";
@@ -21,6 +21,9 @@ function App() {
           <Route path="/movieDetails/:id">
             <MovieDetails />
           </Route>
+          <Route path="/">
+        <Redirect to="/movies" />
+      </Route>
         </Switch>
       </nav>
     </HashRouter>
