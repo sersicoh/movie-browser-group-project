@@ -13,7 +13,7 @@ function App() {
         <NavigationBar />
         <Switch>
           <Route path="/movies">
-          <MovieList />
+            <MovieList />
           </Route>
           <Route path="/people">
             <PersonList />
@@ -22,8 +22,8 @@ function App() {
             <MovieDetails />
           </Route>
           <Route path="/">
-        <Redirect to="/movies" />
-      </Route>
+            <Redirect to="/movies" />
+          </Route>
         </Switch>
       </nav>
     </HashRouter>
