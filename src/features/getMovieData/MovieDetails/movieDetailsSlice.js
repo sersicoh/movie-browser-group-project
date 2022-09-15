@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const moviesDetailsSlice = createSlice({
   name: "movieDetails",
   initialState: {
-    movieDetails:[],
+    movieDetails: [],
     ifMovieDetailsLoading: false,
   },
   reducers: {
@@ -12,9 +12,7 @@ const moviesDetailsSlice = createSlice({
       console.log("click");
     },
     setMovieDetails: (state, { payload: movieDetails }) => {
-     // state.movieDetails.push(movieDetails);
-     state.movieDetails = movieDetails;
-      console.log(state.movieDetails);
+      state.movieDetails = movieDetails;
       state.ifMovieDetailsLoading = false;
     },
   },
