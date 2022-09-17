@@ -1,12 +1,10 @@
 import { call, delay, put, takeEvery, takeLatest } from "redux-saga/effects";
 import { getMoviesDetails } from "./getData";
-import { fetchMovieDetails, setLoading, setMovieDetails } from "./MovieDetails/movieDetailsSlice";
+import { setLoading, setMovieDetails } from "./MovieDetails/movieDetailsSlice";
 
 export function* fetchMovieDetailsWorker({payload: movieId}) {
   try {
     yield delay(100);
-    console.log("asd");
-    // const movieId = "610150";
     const movieDetails = yield call(getMoviesDetails, movieId);
     yield put(setMovieDetails(movieDetails));
   } catch (error) {
@@ -16,5 +14,5 @@ export function* fetchMovieDetailsWorker({payload: movieId}) {
 
 
 export function* movieDetailsSaga() {
-  yield takeEvery(setLoading.type, fetchMovieDetailsWorker);
+  yield takeLatest(setLoading.type, fetchMovieDetailsWorker);
 }
