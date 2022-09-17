@@ -4,29 +4,51 @@ import Cast from "./Cast";
 import Crew from "./Crew";
 import PosterBig from "./PosterBig";
 import { useDispatch, useSelector } from "react-redux";
-import { selectMoviesDetails } from "../getMovieData/MovieDetails/movieDetailsSlice";
-import { fetchMovieDetailsWorker } from "../getMovieData/movieDetailsSaga";
+import { selectMoviesDetails, setLoading } from "../getMovieData/MovieDetails/movieDetailsSlice";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 
 const MovieDetails = () => {
 
-  const { movieDetails } = useSelector(selectMoviesDetails);
+  const { id } = useParams();
+  const dispatch = useDispatch();
 
-  console.log("tu to powinno być: " + movieDetails);
+  const selectedMovie = useSelector(selectMoviesDetails);
 
-  return (
-    <>
-      <PosterBig />
-      <Content
-        body={
-          <>
-            <TileDetails />
-            <Cast />
-            <Crew />
-          </>
-        }
-      />
-    </>
-  );
+  useEffect(() => {
+    dispatch(setLoading(id));
+  }, [id, dispatch]);
+
+  let returned = "";
+
+  switch (selectedMovie.ifMovieDetailsLoading) {
+    case "loading":
+      returned = (
+        <h1>Ładowanie</h1>
+      );
+      break;
+    case "success":
+      returned = (
+        <>
+          <PosterBig selectedMovie={selectedMovie.movieDetails} />
+          <Content
+            body={
+              <>
+                <TileDetails selectedMovie={selectedMovie.movieDetails} />
+                <Cast />
+                <Crew />
+              </>
+            }
+          />
+        </>
+      );
+      break;
+    default:
+      returned = <h1>Coś nie pykło</h1>;
+  }
+
+  return returned;
+
 };
 
 export default MovieDetails;
