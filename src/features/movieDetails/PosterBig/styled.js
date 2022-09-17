@@ -1,30 +1,43 @@
 import styled from "styled-components";
-import PosterBig from "../../../iconComponents/PosterBig.png";
+
 
 export const BackgroundColor = styled.section`
   width: 100%;
-  height: 770px;
+  height: 148px;
   background-color: black;
+  @media (min-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    height: 320px;
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
+    height: 770px;
+  }
 `;
-export const BackgroundImage = styled.div`
-  background-image: url(${PosterBig});
-  width: 1368px;
-  height: 770px;
-  margin: 0 auto;
+export const BackgroundImage = styled.img`
+
+   /* height: 770px;  */
+
+   /* margin: 0 auto;  */
+  /* @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
+      max-height: 320px;
+  } */
+  @media (min-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    height: 320px;
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
+    height: 770px;
+  }
 `;
 export const InfoSection = styled.div`
   margin-bottom: 56px;
 `;
 export const Wrapper = styled.div`
-  width: 1368px;
-  height: 770px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  width: 1368px;
-  height: 770px;
-
+  max-width: 1368px;
+  /* min-height: 770px; */
+  height: 148px;
   background: linear-gradient(
       270deg,
       #000000 0.01%,
@@ -56,6 +69,15 @@ export const Wrapper = styled.div`
       rgba(0, 0, 0, 0.740286) 85.86%,
       #000000 92.87%
     );
+    /* @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
+      min-height: 320px;
+  } */
+  @media (min-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    height: 320px;
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
+    height: 770px;
+  }
 `;
 export const MovieTitle = styled.div`
   margin: 16px 0 8px;

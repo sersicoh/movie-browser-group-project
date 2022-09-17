@@ -22,7 +22,9 @@ import { selectGenres } from "../../features/getMovieData/MovieList/movieSlice";
 const TileMovie = ({ movie, genreIds, releaseDate  }) => {
 
     const picture = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
+
     const { genreList } = useSelector(selectGenres);
+
     return (
         <Wrapper>
             <StyledNavLink to={`/movieDetails/${movie.id}`}>

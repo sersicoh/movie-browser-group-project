@@ -18,14 +18,14 @@ const moviesSlice = createSlice({
     setMovieList: (state, { payload: movies }) => {
       state.movieList = movies.results;
       state.ifMoviesLoading = false;
-      console.log(state.movieList);
+      // console.log(state.movieList);
     },
     setLoading: (state) => {
       state.ifMoviesLoading = false;
     },
     setGenreList: (state, { payload: genres }) => {
       state.genreList = genres.genres;
-      console.log(state.genreList);
+      // console.log(state.genreList);
     },
   },
 });
