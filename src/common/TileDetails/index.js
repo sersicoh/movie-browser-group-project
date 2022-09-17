@@ -7,12 +7,8 @@ import {
     StyledTileMovie,
     Wrapper,
 } from "./styled";
-import { useSelector } from "react-redux";
-import { selectMoviesDetails } from "../../features/getMovieData/MovieDetails/movieDetailsSlice";
 
-const TileDetails = () => {
-
-    const { movieDetails } = useSelector(selectMoviesDetails);
+const TileDetailss = () => {
 
     const picture = `https://image.tmdb.org/t/p/w500/${movieDetails.backdrop_path}`;
 
@@ -35,6 +31,6 @@ const TileDetails = () => {
 
 };
 
-export default TileDetails;
+export default TileDetailss;
 
 // {movie.original_title}
