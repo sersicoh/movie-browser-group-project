@@ -47,6 +47,13 @@ export const InfoSection = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
      margin-bottom: 56px;
   }
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: repeat(2, 1fr);
+grid-column-gap: 5px;
+grid-row-gap: 0px;
+  }
 `;
 export const Wrapper = styled.div`
   margin: 0 auto;
@@ -103,20 +110,30 @@ export const Wrapper = styled.div`
   } */
 `;
 export const MovieTitle = styled.div`
-  margin: 16px 0 8px;
+  /* margin: 16px 0 8px; */
   font-weight: ${({ theme }) => theme.fontSize.bold};
   line-height: 130%;
   font-size: 64px;
   color: ${({ theme }) => theme.colors.white};
   @media (max-width: ${({ theme }) => theme.breakpoint.between}px) {
-    font-size: 16px;
+    font-size: 42px;
     margin: 0 0 4px;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    font-size: 24px;
+    grid-area: 1 / 1 / 2 / 3; 
+    margin-left: -125px;
   }
 `;
 export const RatingSection = styled.section`
   display: flex;
   flex-direction: row;
   margin-top: 25px;
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    grid-area: 2 / 1 / 3 / 2; 
+   margin-top: 8px;
+  }
+
 `;
 export const StyledStarIcon = styled.div`
   width: 50px;
@@ -145,6 +162,11 @@ export const RateScale = styled.div`
   margin-left: 7px;
   @media (max-width: ${({ theme }) => theme.breakpoint.between}px) {
     font-size: 13px;
+    margin-top: 4px;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    font-size: 10px;
+    margin-top: 4px;
   }
 `;
 export const Votes = styled.div`
@@ -157,6 +179,13 @@ export const Votes = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoint.between}px) {
     font-size: 13px;
   }
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    grid-area: 2 / 2 / 3 / 3;
+    margin-top: 12px;
+    font-size: 10px;
+    margin-left: -10px;
+  }
+ 
 `;
 
 // import styled from "styled-components";

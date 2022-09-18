@@ -152,9 +152,9 @@ export const Rate = styled.div`
   }
 `;
 export const Votes = styled.div`
-  font-size: 16px;
+  font-size: 14px;
   font-weight: ${({ theme }) => theme.fontSize.regular};
-
+  margin-bottom: 2px;
   @media (max-width: ${({ theme }) => theme.breakpoint.between}px) {
     font-size: 12px;
     margin-bottom: 1px;
@@ -180,7 +180,7 @@ export const Description = styled.div`
     font-size: 14px;
     line-height: 160%;
   }
-  @media (max-width: 1220px) {
+  @media (max-width: 1300px) {
     margin-top: -10px;
   }
 `;
@@ -238,8 +238,8 @@ export const InfoSection = styled.div`
 `;
 export const RateScale = styled.div`
   margin-left: -5px;
-  margin-bottom: 3px;
-  font-size: 12px;
+  margin-bottom: 2px;
+  font-size: 14px;
   font-weight: ${({ theme }) => theme.fontSize.medium};
 
   @media (max-width: ${({ theme }) => theme.breakpoint.between}px) {
