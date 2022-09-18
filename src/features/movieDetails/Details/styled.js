@@ -164,11 +164,10 @@ export const Description = styled.div`
   grid-area: description;
   font-size: 20px;
   line-height: 32px;
-  font-weight: ${({ theme }) => theme.fontSize.medium};
+  font-weight: ${({ theme }) => theme.fontSize.regular};
   color: ${({ theme }) => theme.colors.black};
   margin-top: -30px;
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
-    font-weight: ${({ theme }) => theme.fontSize.regular};
     font-size: 18px;
     line-height: 160%;
   }

@@ -7,7 +7,7 @@ const TilePerson = ({ person }) => {
 
     return (
         <Wrapper>
-            <StyledNavLink to={`/movieDetails`}>
+            <StyledNavLink to="/personDetails">
             <StyledTilePerson>
                     {picture
                         ?

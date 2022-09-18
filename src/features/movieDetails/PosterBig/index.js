@@ -16,7 +16,7 @@ import {
 
 const PosterBig = ({ selectedMovie }) => {
 
-  const picture = `https://image.tmdb.org/t/p/w500/${selectedMovie.backdrop_path}`;
+  const picture = `https://image.tmdb.org/t/p/w1280/${selectedMovie.backdrop_path}`;
 
   return (
       <BackgroundColor>
