@@ -54,7 +54,6 @@ const TileDetails = ({ selectedMovie }) => {
             <Tag>Horror</Tag>
             <Tag>Comedy</Tag>
           </Tags>
-          <div />
           <RatingSection>
             <StyledStarIcon>
               <StarIcon width={"100%"} height={"100%"} />
@@ -63,11 +62,12 @@ const TileDetails = ({ selectedMovie }) => {
             <RateScale> / 10</RateScale>
             <Votes>{selectedMovie.vote_count} votes</Votes>
           </RatingSection>
-          <Description>{selectedMovie.overview}</Description>
         </InfoSection>
+        <Description>{selectedMovie.overview}</Description>
       </StyledTileMovie>
     </Wrapper>
   );
 };
 
 export default TileDetails;
+
