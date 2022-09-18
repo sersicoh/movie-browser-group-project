@@ -7,6 +7,7 @@ export const BackgroundColor = styled.section`
   width: 100%;
   background-color: black;
   overflow: auto;
+  min-width: 319px;
   /* @media (min-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     height: 320px;
   }
@@ -32,10 +33,20 @@ export const BackgroundImage = styled.img`
   }
 `;
 export const InfoSection = styled.div`
-  margin-bottom: 56px;
+  /* margin-bottom: 56px; */
   position: absolute;
-  bottom: 8px;
-  left: 16px;
+  bottom: 1px;
+  /* left: 16px; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  @media (min-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    margin-bottom: 26px;
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
+     margin-bottom: 56px;
+  }
 `;
 export const Wrapper = styled.div`
   margin: 0 auto;
