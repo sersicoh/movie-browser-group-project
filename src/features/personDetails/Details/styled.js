@@ -46,7 +46,7 @@ export const Poster = styled.img`
 `;
 export const NoPoster = styled.div`
   grid-area: poster;
-  position: relative ;
+  position: relative;
   background: ${({ theme }) => theme.colors.silver};
   border-radius: 5px;
   width: 124px;
@@ -58,45 +58,29 @@ export const NoPoster = styled.div`
     margin: 16px;
   }
   @media (min-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
-  width: 292px;
-  height: 434px;
+    width: 292px;
+    height: 434px;
   }
 `;
 export const StyledPersonIcon = styled.div`
-transform: translate(78%, -55%) ;
-width: 48px;
-height: 48px;
-margin: 0;
-   position: absolute;              
-   top: 50%;                        
-   /* transform: translate(30%, -55%) ; */
+  transform: translate(78%, -55%);
+  width: 48px;
+  height: 48px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
 
- @media (min-width: ${({ theme }) => theme.breakpoint.mobileMax}px){     
-  width: 100px;    
+  @media (min-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    width: 100px;
     height: 100px;
-    transform: translate(50%, -55%) ;
-    /* transform: translate(50%, -55%) ; */
- }
- @media (min-width: ${({ theme }) => theme.breakpoint.tabletMax}px){
-  width: 180px;
- height: 180px;                   
-   transform: translate(32%, -60%) ;
- }
+    transform: translate(50%, -55%);
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
+    width: 180px;
+    height: 180px;
+    transform: translate(32%, -60%);
+  }
 `;
-// display: flex;
-// justify-content: center;
-// align-items: center;
-// width: 80px;
-// height: 80px;
-
-// @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px){
-//     width: 60px;
-//     height: 60px;
-// }
-// @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
-//     width: 48px;
-//     height: 48px;
-// }
 export const PersonName = styled.div`
   font-weight: ${({ theme }) => theme.fontSize.bold};
   line-height: 130%;
@@ -192,17 +176,14 @@ export const Description = styled.div`
     font-weight: ${({ theme }) => theme.fontSize.regular};
     font-size: 18px;
     line-height: 160%;
-   
   }
   @media (max-width: ${({ theme }) => theme.breakpoint.between}px) {
     font-size: 16px;
     line-height: 160%;
-   
   }
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     font-size: 14px;
     line-height: 160%;
-  
   }
   @media (max-width: 1300px) {
     margin-top: -10px;
@@ -225,7 +206,7 @@ export const BirthPlaceSection = styled.div`
 `;
 export const BirthdayDateSection = styled.div`
   display: flex;
- 
+
   font-size: 18px;
   font-weight: ${({ theme }) => theme.fontSize.regular};
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
