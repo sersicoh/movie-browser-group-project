@@ -5,7 +5,7 @@ export const Wrapper = styled.section`
   box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
   border-radius: 5px;
   margin-bottom: 32px;
-  min-width: 276px;
+  min-width: 296px;
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     padding: 14px;
   }
@@ -47,16 +47,15 @@ export const Poster = styled.img`
 export const NoPoster = styled.div`
   grid-area: poster;
   position: relative ;
-  margin: 16px;
   background: ${({ theme }) => theme.colors.silver};
   border-radius: 5px;
-  width: 114px;
-  height: 169px;
+  width: 124px;
+  height: 182px;
 
   @media (min-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     width: 200px;
     height: 300px;
-
+    margin: 16px;
   }
   @media (min-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
   width: 292px;
@@ -64,25 +63,24 @@ export const NoPoster = styled.div`
   }
 `;
 export const StyledPersonIcon = styled.div`
-
-
- width: 180px;
- height: 180px;
- margin: 0;
+transform: translate(78%, -55%) ;
+width: 48px;
+height: 48px;
+margin: 0;
    position: absolute;              
    top: 50%;                        
-   transform: translate(30%, -55%) ;
- @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px){
-     width: 100px;    
+   /* transform: translate(30%, -55%) ; */
+
+ @media (min-width: ${({ theme }) => theme.breakpoint.mobileMax}px){     
+  width: 100px;    
     height: 100px;
-    margin: 0;
-   position: absolute;              
-   top: 50%;                        
-   transform: translate(50%, -55%) ;
+    transform: translate(50%, -55%) ;
+    /* transform: translate(50%, -55%) ; */
  }
- @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){     
-  width: 48px;
-    height: 48px;
+ @media (min-width: ${({ theme }) => theme.breakpoint.tabletMax}px){
+  width: 180px;
+ height: 180px;                   
+   transform: translate(32%, -60%) ;
  }
 `;
 // display: flex;
@@ -189,19 +187,22 @@ export const Description = styled.div`
   line-height: 32px;
   font-weight: ${({ theme }) => theme.fontSize.regular};
   color: ${({ theme }) => theme.colors.black};
-  margin-top: -30px;
+  margin-top: -140px;
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     font-weight: ${({ theme }) => theme.fontSize.regular};
     font-size: 18px;
     line-height: 160%;
+   
   }
   @media (max-width: ${({ theme }) => theme.breakpoint.between}px) {
     font-size: 16px;
     line-height: 160%;
+   
   }
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     font-size: 14px;
     line-height: 160%;
+  
   }
   @media (max-width: 1300px) {
     margin-top: -10px;
@@ -210,6 +211,7 @@ export const Description = styled.div`
 export const BirthPlaceSection = styled.div`
   display: flex;
   font-size: 18px;
+  margin-top: -12px;
   font-weight: ${({ theme }) => theme.fontSize.regular};
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     font-size: 16px;
@@ -223,7 +225,7 @@ export const BirthPlaceSection = styled.div`
 `;
 export const BirthdayDateSection = styled.div`
   display: flex;
-  margin-top: -18px;
+ 
   font-size: 18px;
   font-weight: ${({ theme }) => theme.fontSize.regular};
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {

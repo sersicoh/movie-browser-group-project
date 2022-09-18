@@ -89,7 +89,7 @@ import {
 } from "./styled";
 
 const TileDetails = () => {
-  const picture = ``;
+  const picture = `https://image.tmdb.org/t/p/w500//8dCFK8FDFQbYFZvzAE9IIeaDMKo.jpg`;
 
   return (
     <Wrapper>
@@ -108,10 +108,10 @@ const TileDetails = () => {
                 <InfoSection>
                     <PersonName>Liu Yifei</PersonName>
                     <BirthdayDateSection>
-                        <GreyText>Release Date:</GreyText> 24.10.2020
+                        <GreyText>Date of birth:</GreyText> 24.10.2020
                     </BirthdayDateSection>
                     <BirthPlaceSection>
-                        <GreyText>Production:</GreyText> China, USA
+                        <GreyText>Place of birth:</GreyText> China, USA
                     </BirthPlaceSection>
                 </InfoSection>
                     <Description>
