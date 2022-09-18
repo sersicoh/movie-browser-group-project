@@ -1,13 +1,15 @@
 import { all } from "redux-saga/effects";
-import { movieSaga, fetchPopularMoviesWorker } from "./movieSaga";
-import { peopleSaga, fetchPopularPeopleWorker } from "./movieSaga";
-
+import { fetchMovieDetailsWorker, movieDetailsSaga } from "./movieDetailsSaga";
+import { movieSaga, fetchPopularMoviesWorker, fetchPopularPeopleWorker } from "./movieSaga";
+import { peopleSaga } from "./movieSaga";
 
 export default function* rootSaga() {
-    yield all([
-        movieSaga(),
-        peopleSaga(),
-        fetchPopularMoviesWorker(),
-        fetchPopularPeopleWorker()
-    ]);
+  yield all([
+    movieSaga(),
+    peopleSaga(),
+    movieDetailsSaga(),
+    fetchPopularMoviesWorker(),
+    fetchPopularPeopleWorker(),
+    //fetchMovieDetailsWorker(),
+  ]);
 }
