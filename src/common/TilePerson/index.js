@@ -1,5 +1,5 @@
 import PersonIcon from "../../iconComponents/PersonIcon";
-import { Destription, PersonName, NoPoster, Poster, StyledTilePerson, StyledPersonIcon, Wrapper } from "./styled";
+import { Destription, PersonName, NoPoster, Poster, StyledTilePerson, StyledPersonIcon, Wrapper, StyledNavLink } from "./styled";
 
 const TilePerson = ({ person }) => {
 
@@ -7,6 +7,7 @@ const TilePerson = ({ person }) => {
 
     return (
         <Wrapper>
+            <StyledNavLink to={`/movieDetails`}>
             <StyledTilePerson>
                     {picture
                         ?
@@ -22,6 +23,7 @@ const TilePerson = ({ person }) => {
                         <PersonName>{person.name}</PersonName>
                     </Destription>
             </StyledTilePerson>
+            </StyledNavLink>
         </Wrapper>
     );
 };

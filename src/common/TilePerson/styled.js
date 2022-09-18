@@ -1,4 +1,16 @@
 import styled from "styled-components"
+import { NavLink } from "react-router-dom";
+
+export const StyledNavLink = styled(NavLink)`
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.black};
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    color: ${({ theme }) => theme.colors.black};
+  }
+`;
 
 export const Wrapper = styled.section`
     display: flex;

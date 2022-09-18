@@ -14,6 +14,7 @@ const TileDetailss = () => {
 
     return (
         <Wrapper>
+            
             <StyledTileMovie>
                 <MovieTitle key={movieDetails.id}>{movieDetails.title}</MovieTitle>
                 {picture
@@ -26,6 +27,7 @@ const TileDetailss = () => {
                         </StyledMovieIcon>
                     </NoPoster>}
             </StyledTileMovie>
+           
         </Wrapper>
     );
 
