@@ -1,6 +1,6 @@
 import { ErrorContainer, DangerIcon, Title, Text, Button } from "./styled";
 
-export const ErrorPage = () => {
+function ErrorPage () {
     return (
         <ErrorContainer>
             <DangerIcon />
@@ -10,3 +10,5 @@ export const ErrorPage = () => {
         </ErrorContainer>
     )
 };
+
+export default ErrorPage;

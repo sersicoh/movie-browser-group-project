@@ -7,6 +7,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectMoviesDetails, setLoading } from "../getMovieData/MovieDetails/movieDetailsSlice";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
+import Loading from "../../common/Loading";
+import ErrorPage from "../../common/Error";
 
 const MovieDetails = () => {
 
@@ -24,7 +26,7 @@ const MovieDetails = () => {
   switch (selectedMovie.ifMovieDetailsLoading) {
     case "loading":
       returned = (
-        <h1>Ładowanie</h1>
+        <Loading />
       );
       break;
     case "success":
@@ -44,7 +46,7 @@ const MovieDetails = () => {
       );
       break;
     default:
-      returned = <h1>Coś nie pykło</h1>;
+      returned = <ErrorPage />;
   }
 
   return returned;
