@@ -5,7 +5,7 @@ export const Wrapper = styled.section`
   box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
   border-radius: 5px;
   margin-bottom: 32px;
-  min-width: 293px;
+  min-width: 296px;
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     padding: 14px;
   }
@@ -13,7 +13,7 @@ export const Wrapper = styled.section`
     padding: 12px;
   }
 `;
-export const StyledTileMovie = styled.section`
+export const StyledTilePerson = styled.section`
   display: grid;
   grid-template-columns: 1fr 3fr;
   column-gap: 40px;
@@ -46,37 +46,42 @@ export const Poster = styled.img`
 `;
 export const NoPoster = styled.div`
   grid-area: poster;
-  margin: 16px;
+  position: relative;
   background: ${({ theme }) => theme.colors.silver};
-  width: 292px;
-  height: 434px;
   border-radius: 5px;
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    width: 114px;
-    height: 169px;
-    left: calc(50% - 114px / 2 - 71px);
-    top: 0px;
-  }
-`;
-export const StyledMovieIcon = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 45px;
-  margin-right: 9px;
-  margin-bottom: 2px;
+  width: 124px;
+  height: 182px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
-    width: 40px;
-    margin-bottom: 2px;
-    margin-right: 9px;
+  @media (min-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    width: 200px;
+    height: 300px;
+    margin: 16px;
   }
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    width: 20px;
-    height: 48px;
+  @media (min-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
+    width: 292px;
+    height: 434px;
   }
 `;
-export const MovieTitle = styled.div`
+export const StyledPersonIcon = styled.div`
+  transform: translate(78%, -55%);
+  width: 48px;
+  height: 48px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+
+  @media (min-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    width: 100px;
+    height: 100px;
+    transform: translate(50%, -55%);
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
+    width: 180px;
+    height: 180px;
+    transform: translate(32%, -60%);
+  }
+`;
+export const PersonName = styled.div`
   font-weight: ${({ theme }) => theme.fontSize.bold};
   line-height: 130%;
   font-size: 36px;
@@ -85,7 +90,7 @@ export const MovieTitle = styled.div`
     font-size: 16px;
   }
 `;
-export const MovieYear = styled.div`
+export const BirthYear = styled.div`
   line-height: 150%;
   font-weight: ${({ theme }) => theme.fontSize.regular};
   font-size: 22px;
@@ -166,8 +171,9 @@ export const Description = styled.div`
   line-height: 32px;
   font-weight: ${({ theme }) => theme.fontSize.regular};
   color: ${({ theme }) => theme.colors.black};
-  margin-top: -30px;
+  margin-top: -140px;
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
+    font-weight: ${({ theme }) => theme.fontSize.regular};
     font-size: 18px;
     line-height: 160%;
   }
@@ -183,9 +189,10 @@ export const Description = styled.div`
     margin-top: -10px;
   }
 `;
-export const ProductionSection = styled.div`
+export const BirthPlaceSection = styled.div`
   display: flex;
   font-size: 18px;
+  margin-top: -12px;
   font-weight: ${({ theme }) => theme.fontSize.regular};
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     font-size: 16px;
@@ -197,9 +204,9 @@ export const ProductionSection = styled.div`
     margin-top: 2px;
   }
 `;
-export const ReleaseDateSection = styled.div`
+export const BirthdayDateSection = styled.div`
   display: flex;
-  margin-top: -18px;
+
   font-size: 18px;
   font-weight: ${({ theme }) => theme.fontSize.regular};
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {

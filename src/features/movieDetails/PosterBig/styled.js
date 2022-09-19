@@ -48,7 +48,7 @@ export const InfoSection = styled.div`
      margin-bottom: 56px;
   }
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    display: grid;
+display: grid;
 grid-template-columns: repeat(2, 1fr);
 grid-template-rows: repeat(2, 1fr);
 grid-column-gap: 5px;
@@ -110,7 +110,6 @@ export const Wrapper = styled.div`
   } */
 `;
 export const MovieTitle = styled.div`
-  /* margin: 16px 0 8px; */
   font-weight: ${({ theme }) => theme.fontSize.bold};
   line-height: 130%;
   font-size: 64px;
@@ -122,7 +121,7 @@ export const MovieTitle = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     font-size: 24px;
     grid-area: 1 / 1 / 2 / 3; 
-    margin-left: -125px;
+    display:flex;
   }
 `;
 export const RatingSection = styled.section`
