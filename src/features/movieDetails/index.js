@@ -1,5 +1,5 @@
 import Content from "../../common/Content";
-import TileDetails from "./Details";
+import Details from "./Details";
 import Cast from "./Cast";
 import Crew from "./Crew";
 import PosterBig from "./PosterBig";
@@ -36,7 +36,7 @@ const MovieDetails = () => {
           <Content
             body={
               <>
-                <TileDetails selectedMovie={selectedMovie.movieDetails} />
+                <Details selectedMovie={selectedMovie.movieDetails} />
                 <Cast />
                 <Crew />
               </>

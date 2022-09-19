@@ -1,7 +1,7 @@
 import MovieIcon from "../../iconComponents/MovieIcon";
 import { Searcher } from "../Searcher"
-import { NavigationBackground, NavigationLink, NavigationList, NavigationLogo, NavigationSearcher} from "./styled";
-import { StyledMovieIcon} from "../TileMovie/styled";
+import { NavigationBackground, NavigationLink, NavigationList, NavigationLogo, NavigationSearcher } from "./styled";
+import { StyledMovieIcon } from "../TileMovie/styled";
 // w komponencie NavigationSearcher trzeba będzie umieścić komponent wyszukiwarka
 
 function NavigationBar() {
@@ -9,13 +9,13 @@ function NavigationBar() {
         <NavigationBackground>
             <NavigationList>
                 <NavigationLogo>
-                <StyledMovieIcon>
-                    <MovieIcon strokeWidth={3} opacity={1} />
-                </StyledMovieIcon>
+                    <StyledMovieIcon>
+                        <MovieIcon strokeWidth={3} opacity={1} />
+                    </StyledMovieIcon>
                     Movie Browser
                 </NavigationLogo>
                 <NavigationLink to="/movies">
-                Movies
+                    Movies
                 </NavigationLink>
                 <NavigationLink to="/people">
                     People

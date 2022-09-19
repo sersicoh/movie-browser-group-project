@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const TilesSection = styled.section`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    padding: 0px;
+    margin: auto 16px;
     gap: 24px;
 
     @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px){
@@ -21,6 +21,7 @@ export const TilesSection = styled.section`
 export const TilesPersonSection = styled.section`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin: auto 16px;
     padding: 0px;
     gap: 24px;
 

@@ -19,8 +19,8 @@ const PosterBig = ({ selectedMovie }) => {
   const picture = `https://image.tmdb.org/t/p/w1280/${selectedMovie.backdrop_path}`;
 
   return (
-      <BackgroundColor>
-      <Wrapper>  
+    <BackgroundColor>
+      <Wrapper>
         <BackgroundImage src={picture} />
         <InfoSection>
           <MovieTitle>{selectedMovie.title}</MovieTitle>
@@ -28,13 +28,13 @@ const PosterBig = ({ selectedMovie }) => {
             <StyledStarIcon>
               <StarIcon width={"100%"} height={"100%"} />
             </StyledStarIcon>
-            <Rate>{selectedMovie.vote_average}</Rate>
+            <Rate>{selectedMovie.vote_average.toFixed(1)}</Rate>
             <RateScale> / 10</RateScale>
           </RatingSection>
           <Votes>{selectedMovie.vote_count} votes</Votes>
         </InfoSection>
       </Wrapper>
-      </BackgroundColor>
+    </BackgroundColor>
   );
 };
 
