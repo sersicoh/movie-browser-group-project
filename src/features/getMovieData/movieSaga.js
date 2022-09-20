@@ -1,9 +1,9 @@
 import { call, delay, put, takeLatest, takeLeading } from "redux-saga/effects";
-import { getPopularMovies, getPopularPeople, getGenres, getMoviesDetails } from "./getData";
+import { getPopularMovies, getPopularPeople, getGenres, getMoviesDetails, getPeopleForMovie } from "./getData";
 import { fetchPopularMovies, setMovieList } from "./MovieSlice/movieSlice";
 import { fetchGenres, setGenreList } from "./MovieSlice/movieSlice";
 import { fetchPopularPeople, setPeopleList } from "./PeopleSlice/peopleSlice";
-import { setLoading, setMovieDetails } from "./MovieSlice/movieSlice";
+import { setLoading, setMovieDetails, setCastCrew } from "./MovieSlice/movieSlice";
 
 export function* fetchPopularMoviesWorker() {
   try {
@@ -35,13 +35,25 @@ export function* fetchPopularPeopleWorker() {
 }
 export function* fetchMovieDetailsWorker({payload: movieId}) {
   try {
-    yield delay(100);
+    yield delay(1000);
     const movieDetails = yield call(getMoviesDetails, movieId);
     yield put(setMovieDetails(movieDetails));
   } catch (error) {
     yield call(alert("coś poszło nie tak! Spróbuj później :)"));
   }
 }
+
+export function* fetchCastCrewWorker() {
+  try {
+    yield delay(1000);
+    const castCrew = yield call(getPeopleForMovie);
+    yield put(setCastCrew(castCrew));
+  } catch (error) {
+    yield call(alert("coś poszło nie tak! Spróbuj później :)"));
+  }
+}
+
+
 export function* movieSaga() {
   yield takeLatest(fetchPopularMovies.type, fetchPopularMoviesWorker);
   yield takeLatest(fetchGenres.type, fetchGenresWorker);
@@ -52,6 +64,7 @@ export function* peopleSaga() {
 }
 export function* movieDetailsSaga() {
   yield takeLatest(setLoading.type, fetchMovieDetailsWorker);
+  yield takeLatest(setLoading.type, fetchCastCrewWorker);
 }
 
 

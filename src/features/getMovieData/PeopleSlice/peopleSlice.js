@@ -13,6 +13,7 @@ const peopleSlice = createSlice({
     },
     setPeopleList: (state, { payload: people }) => {
       state.peopleList = people.results;
+      console.log(state.peopleList);
       state.ifPeopleLoading = false;
     },
     setLoading: (state) => {

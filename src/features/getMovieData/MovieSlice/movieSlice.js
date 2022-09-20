@@ -6,6 +6,8 @@ const moviesSlice = createSlice({
     movieList: [],
     genreList: [],
     movieDetails: [],
+    cast: [],
+    crew: [],
     ifMovieDetailsLoading: "",
   },
 
@@ -23,7 +25,7 @@ const moviesSlice = createSlice({
     },
     setGenreList: (state, { payload: genres }) => {
       state.genreList = genres.genres;
-      // console.log(state.genreList);
+      console.log(state.genreList);
     },
     setLoading: (state) => {
       state.ifMovieDetailsLoading = "loading";
@@ -32,6 +34,13 @@ const moviesSlice = createSlice({
       state.movieDetails = movieDetails;
       // poniższy console.log to wyrzucenia gdy nie bedzie potrzebny
       console.log(movieDetails);
+      state.ifMovieDetailsLoading = "success";
+    },
+    setCastCrew: (state, { payload: castCrew }) => {
+      state.cast = castCrew.cast;
+      state.crew = castCrew.crew;
+      // poniższy console.log to wyrzucenia gdy nie bedzie potrzebny
+      console.log(state.cast);
       state.ifMovieDetailsLoading = "success";
     },
   },
@@ -44,12 +53,14 @@ export const {
   setLoading,
   setGenreList,
  fetchMovieDetails, 
- setMovieDetails
+ setMovieDetails,
+ setCastCrew
 } = moviesSlice.actions;
 
 export const selectMovies = (state) => state.movieList;
-export const selectGenres = (state) => state.genreList;
 export const selectMoviesDetails = (state) => state.movieList;
+export const selectCast = (state) => state.cast;
+export const selectGenres = (state) => state.genreList;
 export const selectLoadingState = (state) => state.ifMovieDetailsLoading;
 export const getMovieById = (state, movieId) =>
   selectMoviesDetails(state).movieDetails.find(({ id }) => id === movieId);

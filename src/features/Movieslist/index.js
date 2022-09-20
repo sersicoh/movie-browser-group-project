@@ -1,7 +1,7 @@
 import Content from "../../common/Content";
 import TileMovie from "../../common/TileMovie";
 import { useSelector } from "react-redux";
-import { selectMovies } from "../getMovieData/MovieList/movieSlice";
+import { selectMovies } from "../getMovieData/MovieSlice/movieSlice";
 import { TilesSection } from "../../common/TilesSection/styled";
 import moment from "moment";
 

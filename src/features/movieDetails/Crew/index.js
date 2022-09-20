@@ -1,19 +1,17 @@
 import Content from "../../../common/Content";
 import { useSelector } from "react-redux";
-import { selectPeople } from "../../getMovieData/PeopleSlice/peopleSlice";
+import { selectPerson } from "../../getMovieData/MovieSlice/movieSlice";
 import { TilesPersonSection } from "../../../common/TilesSection/styled";
 import TilePerson from "../../../common/TilePerson";
 
-const Crew = () => {
-
-    const { peopleList } = useSelector(selectPeople);
+const Crew = ({selectedCrew}) => {
 
     return (
 
-        <Content title="Crew (?)"
+        <Content title= {"Crew" + " (" + selectedCrew.length + ")"}
             body={
                 <TilesPersonSection>
-                    {peopleList.map((person) => (
+                    {selectedCrew.map((person) => (
                         <TilePerson key={person.id} person={person} />
                     ))}
                 </TilesPersonSection>
@@ -23,7 +21,6 @@ const Crew = () => {
 };
 
 export default Crew;
-
 
 
 
