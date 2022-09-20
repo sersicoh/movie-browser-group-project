@@ -43,10 +43,10 @@ export function* fetchMovieDetailsWorker({payload: movieId}) {
   }
 }
 
-export function* fetchCastCrewWorker() {
+export function* fetchCastCrewWorker({payload: movieId}) {
   try {
     yield delay(1000);
-    const castCrew = yield call(getPeopleForMovie);
+    const castCrew = yield call(getPeopleForMovie, movieId);
     yield put(setCastCrew(castCrew));
   } catch (error) {
     yield call(alert("coś poszło nie tak! Spróbuj później :)"));

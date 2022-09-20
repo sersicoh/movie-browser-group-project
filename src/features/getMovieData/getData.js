@@ -58,7 +58,7 @@ export const getMoviesDetails = (movieId) => {
 };
 
 export const getMovieListForPerson = (personId) => {
-  const getMovieDetails = fetch(
+  const getMovieListForPerson = fetch(
     `https://api.themoviedb.org/3/person/100/movie_credits?api_key=9ca6b7689445c94b2e17d44de714a06b&language=en-US`
   ) //Lista filmów w których uczestniczył aktor/technik
     .then((response) => {
@@ -69,12 +69,12 @@ export const getMovieListForPerson = (personId) => {
     })
     .then((response) => response.json());
 
-  return getMovieDetails;
+  return getMovieListForPerson;
 };
 
 export const getPeopleForMovie = (movieId) => {
-  const getMovieDetails = fetch(
-    `https://api.themoviedb.org/3/movie/100/credits?api_key=9ca6b7689445c94b2e17d44de714a06b&language=en-US`
+  const getPeopleForMovie = fetch(
+    `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=9ca6b7689445c94b2e17d44de714a06b&language=en-US`
   ) //Lista obsady dla konkretnego filmu
     .then((response) => {
       if (!response.ok) {
@@ -84,6 +84,6 @@ export const getPeopleForMovie = (movieId) => {
     })
     .then((response) => response.json());
 
-  return getMovieDetails;
+  return getPeopleForMovie;
 };
 
