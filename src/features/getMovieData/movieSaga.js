@@ -1,8 +1,8 @@
 import { call, delay, put, takeLatest, takeLeading } from "redux-saga/effects";
 import { getPopularMovies, getPopularPeople, getGenres } from "./getData";
-import { fetchPopularMovies, setMovieList } from "./MovieList/movieSlice";
-import { fetchGenres, setGenreList } from "./MovieList/movieSlice";
-import { fetchPopularPeople, setPeopleList } from "./PeopleList/peopleSlice";
+import { fetchPopularMovies, setMovieList } from "./MovieSlice/movieSlice";
+import { fetchGenres, setGenreList } from "./MovieSlice/movieSlice";
+import { fetchPopularPeople, setPeopleList } from "./PeopleSlice/peopleSlice";
 
 export function* fetchPopularMoviesWorker() {
   try {

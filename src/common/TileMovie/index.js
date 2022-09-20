@@ -17,7 +17,7 @@ import {
   StyledNavLink
 } from "./styled";
 import { useSelector } from "react-redux";
-import { selectGenres } from "../../features/getMovieData/MovieList/movieSlice";
+import { selectGenres } from "../../features/getMovieData/MovieSlice/movieSlice";
 
 const TileMovie = ({ movie, genreIds, releaseDate }) => {
 
