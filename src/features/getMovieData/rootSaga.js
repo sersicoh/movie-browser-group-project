@@ -1,6 +1,5 @@
 import { all } from "redux-saga/effects";
-import { fetchMovieDetailsWorker, movieDetailsSaga } from "./movieDetailsSaga";
-import { movieSaga, fetchPopularMoviesWorker, fetchPopularPeopleWorker } from "./movieSaga";
+import { movieSaga, fetchPopularMoviesWorker, fetchPopularPeopleWorker, movieDetailsSaga } from "./movieSaga";
 import { peopleSaga } from "./movieSaga";
 
 export default function* rootSaga() {

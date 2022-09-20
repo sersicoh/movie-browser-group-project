@@ -1,19 +1,17 @@
 import Content from "../../../common/Content";
 import { useSelector } from "react-redux";
-import { selectPeople } from "../../getMovieData/PeopleList/peopleSlice";
+import { selectPerson } from "../../getMovieData/MovieSlice/movieSlice";
 import { TilesPersonSection } from "../../../common/TilesSection/styled";
 import TilePerson from "../../../common/TilePerson";
 
-const Cast = () => {
-
-    const { peopleList } = useSelector(selectPeople);
+const Cast = ({selectedCast}) => {
 
     return (
 
-        <Content title="Cast (?)"
+        <Content title= {"Cast" + " (" + selectedCast.length + ")"}
             body={
                 <TilesPersonSection>
-                    {peopleList.map((person) => (
+                    {selectedCast.map((person) => (
                         <TilePerson key={person.id} person={person} />
                     ))}
                 </TilesPersonSection>

@@ -1,8 +1,9 @@
 import { call, delay, put, takeLatest, takeLeading } from "redux-saga/effects";
-import { getPopularMovies, getPopularPeople, getGenres } from "./getData";
-import { fetchPopularMovies, setMovieList } from "./MovieList/movieSlice";
-import { fetchGenres, setGenreList } from "./MovieList/movieSlice";
-import { fetchPopularPeople, setPeopleList } from "./PeopleList/peopleSlice";
+import { getPopularMovies, getPopularPeople, getGenres, getMoviesDetails, getPeopleForMovie } from "./getData";
+import { fetchPopularMovies, setMovieList } from "./MovieSlice/movieSlice";
+import { fetchGenres, setGenreList } from "./MovieSlice/movieSlice";
+import { fetchPopularPeople, setPeopleList } from "./PeopleSlice/peopleSlice";
+import { setLoading, setMovieDetails, setCastCrew } from "./MovieSlice/movieSlice";
 
 export function* fetchPopularMoviesWorker() {
   try {
@@ -32,6 +33,27 @@ export function* fetchPopularPeopleWorker() {
     yield call(alert("coś poszło nie tak! Spróbuj później :)"));
   }
 }
+export function* fetchMovieDetailsWorker({payload: movieId}) {
+  try {
+    yield delay(1000);
+    const movieDetails = yield call(getMoviesDetails, movieId);
+    yield put(setMovieDetails(movieDetails));
+  } catch (error) {
+    yield call(alert("coś poszło nie tak! Spróbuj później :)"));
+  }
+}
+
+export function* fetchCastCrewWorker({payload: movieId}) {
+  try {
+    yield delay(1000);
+    const castCrew = yield call(getPeopleForMovie, movieId);
+    yield put(setCastCrew(castCrew));
+  } catch (error) {
+    yield call(alert("coś poszło nie tak! Spróbuj później :)"));
+  }
+}
+
+
 export function* movieSaga() {
   yield takeLatest(fetchPopularMovies.type, fetchPopularMoviesWorker);
   yield takeLatest(fetchGenres.type, fetchGenresWorker);
@@ -40,3 +62,16 @@ export function* movieSaga() {
 export function* peopleSaga() {
   yield takeLatest(fetchPopularPeople.type, fetchPopularPeopleWorker);
 }
+export function* movieDetailsSaga() {
+  yield takeLatest(setLoading.type, fetchMovieDetailsWorker);
+  yield takeLatest(setLoading.type, fetchCastCrewWorker);
+}
+
+
+
+
+
+
+
+
+

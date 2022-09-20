@@ -1,7 +1,7 @@
 import Content from "../../common/Content";
 import TilePerson from "../../common/TilePerson";
 import { useSelector } from "react-redux";
-import { selectPeople } from "../getMovieData/PeopleList/peopleSlice"
+import { selectPeople } from "../getMovieData/PeopleSlice/peopleSlice"
 import { TilesPersonSection } from "../../common/TilesSection/styled";
 
 const PersonList = () => {

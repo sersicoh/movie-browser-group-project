@@ -3,7 +3,7 @@ import TileDetails from "./Details";
 import Cast from "./MoviesCast";
 import Crew from "./MoviesCrew";
 import { useDispatch, useSelector } from "react-redux";
-import { selectMoviesDetails, setLoading } from "../getMovieData/MovieDetails/movieDetailsSlice";
+import { selectMoviesDetails, setLoading } from "../getMovieData/MovieSlice/movieSlice";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 

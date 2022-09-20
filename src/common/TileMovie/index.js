@@ -17,11 +17,9 @@ import {
   StyledNavLink
 } from "./styled";
 import { useSelector } from "react-redux";
-import { selectGenres } from "../../features/getMovieData/MovieList/movieSlice";
+import { selectGenres } from "../../features/getMovieData/MovieSlice/movieSlice";
 
 const TileMovie = ({ movie, genreIds, releaseDate }) => {
-
-  const picture = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
 
   const { genreList } = useSelector(selectGenres);
 
@@ -29,15 +27,16 @@ const TileMovie = ({ movie, genreIds, releaseDate }) => {
     <Wrapper>
       <StyledNavLink to={`/movieDetails/${movie.id}`}>
         <StyledTileMovie>
-          {picture
+          {movie.poster_path === null
             ?
-            <Poster src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} />
-            :
             <NoPoster>
               <StyledMovieIcon>
                 <MovieIcon width={"100%"} height={"100%"} />
               </StyledMovieIcon>
-            </NoPoster>}
+            </NoPoster>
+           
+            :
+            <Poster src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} />}
           <MovieTitle>{movie.title}</MovieTitle>
           <MovieYear>{releaseDate}</MovieYear>
           <Tags>

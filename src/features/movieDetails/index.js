@@ -4,7 +4,7 @@ import Cast from "./Cast";
 import Crew from "./Crew";
 import PosterBig from "./PosterBig";
 import { useDispatch, useSelector } from "react-redux";
-import { selectMoviesDetails, setLoading } from "../getMovieData/MovieDetails/movieDetailsSlice";
+import { selectCast, selectMoviesDetails, setLoading } from "../getMovieData/MovieSlice/movieSlice";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import Loading from "../../common/Loading";
@@ -37,8 +37,8 @@ const MovieDetails = () => {
             body={
               <>
                 <Details selectedMovie={selectedMovie.movieDetails} />
-                <Cast />
-                <Crew />
+                <Cast selectedCast={selectedMovie.cast}/>
+                <Crew selectedCrew={selectedMovie.crew}/>
               </>
             }
           />
