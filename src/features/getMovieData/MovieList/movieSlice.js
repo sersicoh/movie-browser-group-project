@@ -5,7 +5,8 @@ const moviesSlice = createSlice({
   initialState: {
     movieList: [],
     genreList: [],
-    ifMoviesLoading: false,
+    movieDetails: [],
+    ifMovieDetailsLoading: "",
   },
 
   reducers: {
@@ -20,12 +21,18 @@ const moviesSlice = createSlice({
       state.ifMoviesLoading = false;
       // console.log(state.movieList);
     },
-    setLoading: (state) => {
-      state.ifMoviesLoading = false;
-    },
     setGenreList: (state, { payload: genres }) => {
       state.genreList = genres.genres;
       // console.log(state.genreList);
+    },
+    setLoading: (state) => {
+      state.ifMovieDetailsLoading = "loading";
+    },
+    setMovieDetails: (state, { payload: movieDetails }) => {
+      state.movieDetails = movieDetails;
+      // poniższy console.log to wyrzucenia gdy nie bedzie potrzebny
+      console.log(movieDetails);
+      state.ifMovieDetailsLoading = "success";
     },
   },
 });
@@ -36,13 +43,16 @@ export const {
   setMovieList,
   setLoading,
   setGenreList,
+ fetchMovieDetails, 
+ setMovieDetails
 } = moviesSlice.actions;
 
 export const selectMovies = (state) => state.movieList;
 export const selectGenres = (state) => state.genreList;
-
+export const selectMoviesDetails = (state) => state.movieList;
+export const selectLoadingState = (state) => state.ifMovieDetailsLoading;
 export const getMovieById = (state, movieId) =>
-  selectMovies(state).movieList.find(({ id }) => id === movieId);
+  selectMoviesDetails(state).movieDetails.find(({ id }) => id === movieId);
 
 export const selectMoviesByQuery = (state, query) => {
   const movieList = selectMovies(state);
@@ -56,3 +66,5 @@ export const selectMoviesByQuery = (state, query) => {
 };
 
 export default moviesSlice.reducer;
+
+  

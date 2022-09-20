@@ -1,6 +1,6 @@
 import { call, delay, put, takeEvery, takeLatest } from "redux-saga/effects";
 import { getMoviesDetails } from "./getData";
-import { setLoading, setMovieDetails } from "./MovieDetails/movieDetailsSlice";
+import { setLoading, setMovieDetails } from "./MovieList/movieSlice";
 
 export function* fetchMovieDetailsWorker({payload: movieId}) {
   try {
