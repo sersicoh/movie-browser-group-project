@@ -6,6 +6,7 @@ import { TilesSection } from "../../common/TilesSection/styled";
 import moment from "moment";
 
 const MovieList = () => {
+
   const { movieList } = useSelector(selectMovies);
 
   return (

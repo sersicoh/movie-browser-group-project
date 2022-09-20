@@ -22,7 +22,7 @@ import {
   RateScale,
 } from "./styled";
 
-const TileDetails = ({ selectedMovie }) => {
+const Details = ({ selectedMovie }) => {
 
   const picture = `https://image.tmdb.org/t/p/w500/${selectedMovie.poster_path}`;
 
@@ -44,21 +44,23 @@ const TileDetails = ({ selectedMovie }) => {
           <MovieTitle>{selectedMovie.title}</MovieTitle>
           <MovieYear>{selectedMovie.release_date}</MovieYear>
           <ProductionSection>
-            {/* <GreyText>Production: </GreyText>{selectedMovie.production_countries[0].name} */}
+            <GreyText>Production: </GreyText>
+            {selectedMovie.production_countries.map((country) => (country.name))}
+            {/* To jest do rozkminienia */}
           </ProductionSection>
           <ReleaseDateSection>
-            <GreyText>Release Date:</GreyText> {selectedMovie.release_date}
+            <GreyText>Release Date: </GreyText> {selectedMovie.release_date}
           </ReleaseDateSection>
           <Tags>
-            <Tag>Thriller</Tag>
-            <Tag>Horror</Tag>
-            <Tag>Comedy</Tag>
+          {selectedMovie.genres.map((tag) => (
+            <Tag key={tag.id}>{tag.name}</Tag>
+          ))}
           </Tags>
           <RatingSection>
             <StyledStarIcon>
               <StarIcon width={"100%"} height={"100%"} />
             </StyledStarIcon>
-            <Rate>{selectedMovie.vote_average}</Rate>
+            <Rate>{selectedMovie.vote_average.toFixed(1)}</Rate>
             <RateScale> / 10</RateScale>
             <Votes>{selectedMovie.vote_count} votes</Votes>
           </RatingSection>
@@ -69,5 +71,5 @@ const TileDetails = ({ selectedMovie }) => {
   );
 };
 
-export default TileDetails;
+export default Details;
 

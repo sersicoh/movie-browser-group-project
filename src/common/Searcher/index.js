@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios"
-import { Input, StyledSearchBox } from "./styled"
+import { Input } from "./styled"
 
 
 
@@ -17,8 +17,8 @@ export const Searcher = () => {
 
     const fetchData = async (searchString) => {
         const response = await axios.
-        get(`https://api.themoviedb.org/3/search/movie?${searchString}&api_key=${API_KEY}&language=en-US&page=1&query=${searchQuery}`
-        );
+            get(`https://api.themoviedb.org/3/search/movie?${searchString}&api_key=${API_KEY}&language=en-US&page=1&query=${searchQuery}`
+            );
         console.log(response)
         updateMovieList(response.data.results)
     };
@@ -32,15 +32,11 @@ export const Searcher = () => {
     };
 
     return (
-        <>
-        <StyledSearchBox>
-            <Input
-             placeholder={`Search for ${pageType}...`}
-            value={searchQuery || ""} 
+        <Input
+            placeholder={`Search for ${pageType}...`}
+            value={searchQuery || ""}
             onChange={onTextChange} />
-        </StyledSearchBox>
-    </>
-    
+
     );
 };
 

@@ -7,24 +7,19 @@ import TilePerson from "../../../common/TilePerson";
 const Crew = () => {
 
     const { peopleList } = useSelector(selectPeople);
-  
+
     return (
 
-<Content title="Movies - Crew (?)"
-body={
-          <TilesPersonSection title="Crew">
-              {peopleList.map((person) => (
-                  <TilePerson key={person.id} person={person} />
-              ))}
-          </TilesPersonSection>
-          } />
+        <Content title="Movies - Crew (?)"
+            body={
+                <TilesPersonSection title="Crew">
+                    {peopleList.map((person) => (
+                        <TilePerson key={person.id} person={person} />
+                    ))}
+                </TilesPersonSection>
+            } />
 
-          );
-        };
-        
-        export default Crew;
+    );
+};
 
-
-
-
- 
+export default Crew;

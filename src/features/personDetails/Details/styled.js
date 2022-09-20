@@ -4,8 +4,9 @@ export const Wrapper = styled.section`
   background: ${({ theme }) => theme.colors.white};
   box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
   border-radius: 5px;
-  margin-bottom: 32px;
+  margin: auto 16px;
   min-width: 296px;
+  padding: 40px;
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     padding: 14px;
   }
@@ -21,7 +22,7 @@ export const StyledTilePerson = styled.section`
   grid-template-areas:
     "poster rest"
     "poster description";
-  padding: 40px;
+
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     grid-template-columns: 1fr 2fr;
     column-gap: 24px;
