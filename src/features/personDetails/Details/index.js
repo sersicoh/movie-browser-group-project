@@ -11,18 +11,19 @@ import {
   InfoSection,
   RateScale,
   BirthdayDateSection,
-  BirthPlaceSection
+  BirthPlaceSection,
+  P
 } from "./styled";
 
-const TileDetails = () => {
-  const picture = `https://image.tmdb.org/t/p/w500//8dCFK8FDFQbYFZvzAE9IIeaDMKo.jpg`;
+const TileDetails = ({selectedPerson}) => {
+  const picture = `https://image.tmdb.org/t/p/w500//${selectedPerson.profile_path}`;
 
   return (
     <Wrapper>
       <StyledTilePerson>
         {picture ? (
           <Poster
-            src={`https://image.tmdb.org/t/p/w500//8dCFK8FDFQbYFZvzAE9IIeaDMKo.jpg`}
+            src={`https://image.tmdb.org/t/p/w500//${selectedPerson.profile_path}`}
           />
         ) : (
           <NoPoster>
@@ -32,19 +33,16 @@ const TileDetails = () => {
           </NoPoster>
         )}
                 <InfoSection>
-                    <PersonName>Liu Yifei</PersonName>
+                    <PersonName>{selectedPerson.name}</PersonName>
                     <BirthdayDateSection>
-                        <GreyText>Date of birth:</GreyText> 24.10.2020
+                        <GreyText>Date of birth:</GreyText> {selectedPerson.birthday}
                     </BirthdayDateSection>
                     <BirthPlaceSection>
-                        <GreyText>Place of birth:</GreyText> China, USA
+                        <GreyText>Place of birth:</GreyText> {selectedPerson.place_of_birth}
                     </BirthPlaceSection>
                 </InfoSection>
                     <Description>
-                        A young Chinese maiden disguises herself as a male warrior in order
-                        to save her father. Disguises herself as a male warrior in order to
-                        save her father. A young Chinese maiden disguises herself as a male
-                        warrior in order to save her father.
+                      <P>{selectedPerson.biography}</P>
                     </Description>
         </StyledTilePerson>
     </Wrapper>

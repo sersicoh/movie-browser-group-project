@@ -58,7 +58,7 @@ export const getMoviesDetails = (movieId) => {
 };
 export const getPersonDetails = (personId) => {
   const getPersonDetails = fetch(
-    `https://api.themoviedb.org/3/person/100?api_key=9ca6b7689445c94b2e17d44de714a06b&language=en-US`
+    `https://api.themoviedb.org/3/person/${personId}?api_key=9ca6b7689445c94b2e17d44de714a06b&language=en-US`
   ) //Detale konkretnej osoby
     .then((response) => {
       if (!response.ok) {
@@ -73,7 +73,7 @@ export const getPersonDetails = (personId) => {
 
 export const getMovieListForPerson = (personId) => {
   const getMovieListForPerson = fetch(
-    `https://api.themoviedb.org/3/person/100/movie_credits?api_key=9ca6b7689445c94b2e17d44de714a06b&language=en-US`
+    `https://api.themoviedb.org/3/person/${personId}/movie_credits?api_key=9ca6b7689445c94b2e17d44de714a06b&language=en-US`
   ) //Lista filmów w których uczestniczył aktor/technik
     .then((response) => {
       if (!response.ok) {

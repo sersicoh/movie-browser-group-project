@@ -1,25 +1,31 @@
 import Content from "../../../common/Content";
-import { useSelector } from "react-redux";
-import { selectPeople } from "../../getMovieData/PeopleSlice/peopleSlice";
-import { TilesPersonSection } from "../../../common/TilesSection/styled";
-import TilePerson from "../../../common/TilePerson";
+import TileMovie from "../../../common/TileMovie/index";
+import { TilesSection } from "../../../common/TilesSection/styled";
+import moment from "moment";
 
-const Crew = () => {
+const Crew = ({selectedCrew}) => {
 
-    const { peopleList } = useSelector(selectPeople);
 
-    return (
 
-        <Content title="Movies - Crew (?)"
-            body={
-                <TilesPersonSection title="Crew">
-                    {peopleList.map((person) => (
-                        <TilePerson key={person.id} person={person} />
-                    ))}
-                </TilesPersonSection>
-            } />
-
-    );
+  return (
+    <Content
+      title= {"Movies - crew" + " (" + selectedCrew.length + ")"}
+      body={
+        <>
+          <TilesSection>
+            {selectedCrew.map((movie) => (
+              <TileMovie
+                key={movie.id}
+                movie={movie}
+                genreIds={movie.genre_ids}
+                releaseDate={moment(movie.release_date).format("YYYY")}
+              />
+            ))}
+          </TilesSection>
+        </>
+      }
+    />
+  );
 };
 
 export default Crew;

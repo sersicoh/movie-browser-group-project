@@ -1,60 +1,55 @@
-// import Content from "../../common/Content";
-// import TileDetails from "./Details";
-// import Cast from "./MoviesCast";
-// import Crew from "./MoviesCrew";
-// import { useDispatch, useSelector } from "react-redux";
-// import { selectPersonDetails, setLoading } from "../getMovieData/PeopleSlice/peopleSlice";
-// import { useParams } from "react-router-dom";
-// import { useEffect } from "react";
+import Content from "../../common/Content";
+import TileDetails from "./Details";
+import Cast from "./MoviesCast";
+import Crew from "./MoviesCrew";
+import { useDispatch, useSelector } from "react-redux";
+import { selectPersonDetails, setLoadingg } from "../getMovieData/PeopleSlice/peopleSlice";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
+import Loading from "../../common/Loading";
 
-// const PersonDetails = () => {
+const PersonDetails = () => {
 
-//   const { id } = useParams();
-//    const dispatch = useDispatch();
+  const { id } = useParams();
+   const dispatch = useDispatch();
 
-//   const selectedPerson = useSelector(selectPersonDetails);
+  const selectedPerson = useSelector(selectPersonDetails);
 
-//    useEffect(() => {
-//      dispatch(setLoading(id));
-//      //setLoading zamieniamy wszedzie na np. fetchPersonDetails
-//    }, [id, dispatch]);
+   useEffect(() => {
+     dispatch(setLoadingg(id));
+     //setLoading zamieniamy wszedzie na np. fetchPersonDetails
+   }, [id, dispatch]);
 
-//    let returned = "";
+   let returned = "";
 
-//    switch (selectedPerson.ifLoading) {
-//      case "loading":
-//        returned = (
-//          <h1>Ładowanie</h1>
-//      );
-//        break;
-//      case "success":
-//        returned = (
-//         <>
-//           <Content
-//             body={
-//               <>
-//                 <TileDetails  />
-//                 <Cast />
-//                 <Crew />
-//               </>
-//             }
-//           />
-//         </>
-//        );
-//        break;
+   switch (selectedPerson.ifLoading) {
+     case "loading":
+       returned = (
+         <Loading/>
+     );
+       break;
+     case "success":
+       returned = (
+        <>
+          <Content
+            body={
+              <>
+                <TileDetails selectedPerson={selectedPerson.personDetails} />
+                <Cast selectedCast={selectedPerson.cast}/>
+                <Crew selectedCrew={selectedPerson.crew}/>
+              </>
+            }
+          />
+        </>
+       );
+       break;
 
-//      default:
-//        returned = <h1>Coś nie pykło</h1>;
-//    }
+     default:
+       returned = <h1>Coś nie pykło</h1>;
+   }
 
-//    return returned;
+   return returned;
 
-// };
+};
 
-// export default PersonDetails;
-
-
-
-
-
-// export default PersonDetails;
+export default PersonDetails;

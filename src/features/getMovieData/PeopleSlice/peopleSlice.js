@@ -5,6 +5,8 @@ const peopleSlice = createSlice({
   initialState: {
     peopleList: [],
     personDetails: [],
+    cast: [],
+    crew: [],
     ifPeopleLoading: false,
     ifLoading: "",
   },
@@ -18,7 +20,7 @@ const peopleSlice = createSlice({
       console.log(state.peopleList);
       state.ifPeopleLoading = false;
     },
-    setLoading: (state) => {
+    setLoadingg: (state) => {
       state.ifLoading = "loading";
     },
     setPersonDetails: (state, { payload: personDetails }) => {
@@ -27,10 +29,17 @@ const peopleSlice = createSlice({
       console.log(personDetails);
       state.ifLoading = "success";
     },
+    setMovieListForPerson: (state, { payload: moviesForPerson }) => {
+      state.cast = moviesForPerson.cast;
+      state.crew = moviesForPerson.crew;
+      // poniższy console.log to wyrzucenia gdy nie bedzie potrzebny
+      console.log(state.cast);
+      state.ifLoading = "success";
+    },
   },
 });
 
-export const { fetchPopularPeople, setPeopleList, ifPeopleLoading, setLoading, setPersonDetails } =
+export const { fetchPopularPeople, setPeopleList, ifPeopleLoading, setLoadingg, setPersonDetails, setMovieListForPerson } =
   peopleSlice.actions;
 
 export const selectPeople = (state) => state.peopleList;
