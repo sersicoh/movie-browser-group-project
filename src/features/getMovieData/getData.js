@@ -13,6 +13,21 @@ export const getPopularMovies = () => {
   return getPopularMovies;
 };
 
+export const getPopularMoviesPage = (pageNumber) => {
+  const getPopularMoviesPage = fetch(
+    `https://api.themoviedb.org/3/movie/popular?api_key=9ca6b7689445c94b2e17d44de714a06b&language=en-US&page=${pageNumber}`
+  ) //adres popularnych filmów
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      }
+      return response;
+    })
+    .then((response) => response.json());
+
+  return getPopularMoviesPage;
+};
+
 export const getPopularPeople = () => {
   const getPopularPeople = fetch(
     "https://api.themoviedb.org/3/person/popular?api_key=9ca6b7689445c94b2e17d44de714a06b&language=en-US&page=1"
@@ -26,6 +41,20 @@ export const getPopularPeople = () => {
     .then((response) => response.json());
 
   return getPopularPeople;
+};
+export const getPopularPeoplePage = (pageNumber) => {
+  const getPopularPeoplePage = fetch(
+    `https://api.themoviedb.org/3/person/popular?api_key=9ca6b7689445c94b2e17d44de714a06b&language=en-US&page=${pageNumber}`
+  ) //adres popularnych ludzi
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      }
+      return response;
+    })
+    .then((response) => response.json());
+
+  return getPopularPeoplePage;
 };
 
 export const getGenres = () => {
