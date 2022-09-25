@@ -3,6 +3,7 @@ import TilePerson from "../../common/TilePerson";
 import { useSelector } from "react-redux";
 import { selectPeople } from "../getMovieData/PeopleSlice/peopleSlice"
 import { TilesPersonSection } from "../../common/TilesSection/styled";
+import Pagination from "../../common/Pagination";
 
 const PersonList = () => {
 
@@ -22,7 +23,10 @@ const PersonList = () => {
             ))}
           </TilesPersonSection>
         </>
-      }   
+      }
+      pagination={
+        <Pagination />
+      }
     />
   )
 };
