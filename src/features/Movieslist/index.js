@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { selectMovies } from "../getMovieData/MovieSlice/movieSlice";
 import { TilesSection } from "../../common/TilesSection/styled";
 import moment from "moment";
+import Pagination from "../../common/Pagination";
 
 const MovieList = () => {
 
@@ -25,6 +26,9 @@ const MovieList = () => {
             ))}
           </TilesSection>
         </>
+      }
+      pagination={
+        <Pagination />
       }
     />
   );
