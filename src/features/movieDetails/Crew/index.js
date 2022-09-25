@@ -12,7 +12,7 @@ const Crew = ({selectedCrew}) => {
             body={
                 <TilesPersonSection>
                     {selectedCrew.map((person) => (
-                        <TilePerson key={person.id} person={person} />
+                        <TilePerson key={person.id} person={person} personRole={person.job} />
                     ))}
                 </TilesPersonSection>
             } />

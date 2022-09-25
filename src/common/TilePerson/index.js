@@ -1,7 +1,7 @@
 import PersonIcon from "../../iconComponents/PersonIcon";
 import { Destription, PersonName, NoPoster, Poster, StyledTilePerson, StyledPersonIcon, Wrapper, StyledNavLink } from "./styled";
 
-const TilePerson = ({ key, person }) => {
+const TilePerson = ({ key, person, personRole }) => {
 
     return (
         <Wrapper key={key}>
@@ -19,6 +19,7 @@ const TilePerson = ({ key, person }) => {
                     }
                     <Destription>
                         <PersonName>{person.name}</PersonName>
+                        <PersonName>{personRole}</PersonName>
                     </Destription>
             </StyledTilePerson>
             </StyledNavLink>

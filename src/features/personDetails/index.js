@@ -3,54 +3,53 @@ import TileDetails from "./Details";
 import Cast from "./MoviesCast";
 import Crew from "./MoviesCrew";
 import { useDispatch, useSelector } from "react-redux";
-import { selectMoviesDetails, setLoading } from "../getMovieData/MovieSlice/movieSlice";
+import { selectPersonDetails, setLoadingg } from "../getMovieData/PeopleSlice/peopleSlice";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
+import Loading from "../../common/Loading";
 
 const PersonDetails = () => {
 
-  return (
-  // const { id } = useParams();
-  // const dispatch = useDispatch();
+  const { id } = useParams();
+   const dispatch = useDispatch();
 
-  // const selectedMovie = useSelector(selectMoviesDetails);
+  const selectedPerson = useSelector(selectPersonDetails);
 
-  // useEffect(() => {
-  //   dispatch(setLoading(id));
-  // }, [id, dispatch]);
+   useEffect(() => {
+     dispatch(setLoadingg(id));
+     //setLoading zamieniamy wszedzie na np. fetchPersonDetails
+   }, [id, dispatch]);
 
-  // let returned = "";
+   let returned = "";
 
-  // switch (selectedMovie.ifMovieDetailsLoading) {
-  //   case "loading":
-  //     returned = (
-  //       <h1>Ładowanie</h1>
-  //     );
-  //     break;
-  //   case "success":
-      // returned = (
+   switch (selectedPerson.ifLoading) {
+     case "loading":
+       returned = (
+         <Loading/>
+     );
+       break;
+     case "success":
+       returned = (
         <>
-          {/* <PosterBig selectedMovie={selectedMovie.movieDetails} /> */}
           <Content
             body={
               <>
-                <TileDetails  />
-                <Cast />
-                <Crew />
+                <TileDetails selectedPerson={selectedPerson.personDetails} />
+                <Cast selectedCast={selectedPerson.cast}/>
+                <Crew selectedCrew={selectedPerson.crew}/>
               </>
             }
           />
         </>
-      );
-  //     break;
-  //   default:
-  //     returned = <h1>Coś nie pykło</h1>;
-  // }
+       );
+       break;
 
-  // return returned;
+     default:
+       returned = <h1>Coś nie pykło</h1>;
+   }
+
+   return returned;
 
 };
 
 export default PersonDetails;
-
-//selectedMovie={selectedMovie.movieDetails}

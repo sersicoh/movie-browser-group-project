@@ -168,11 +168,14 @@ export const Votes = styled.div`
 `;
 export const Description = styled.div`
   grid-area: description;
+  display: flex;
   font-size: 20px;
   line-height: 32px;
   font-weight: ${({ theme }) => theme.fontSize.regular};
   color: ${({ theme }) => theme.colors.black};
-  margin-top: -140px;
+  text-align: justify;
+  /* text-justify: inter-word; */
+  /* margin-top: -140px; */
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     font-weight: ${({ theme }) => theme.fontSize.regular};
     font-size: 18px;
@@ -189,6 +192,11 @@ export const Description = styled.div`
   @media (max-width: 1300px) {
     margin-top: -10px;
   }
+`;
+export const P = styled.div`
+
+  align-self: flex-start;
+
 `;
 export const BirthPlaceSection = styled.div`
   display: flex;
