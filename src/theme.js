@@ -7,7 +7,9 @@ export const theme = {
         silver: "#C4C4C4",
         darkerGrey: "#7E839A",
         mystic: "#E4E6F0",
-        
+        pattensBlue: "#D6E4FF",
+        scienceBlue: "#0044CC",
+
     },
     breakpoint: {
         maxContentSize: 1368,
