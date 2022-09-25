@@ -253,3 +253,6 @@ export const RateScale = styled.div`
     display: none;
   }
 `;
+export const Comma = styled.div`
+:not(:last-child)::after { content: ', ' }
+`;

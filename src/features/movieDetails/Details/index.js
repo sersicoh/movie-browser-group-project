@@ -20,16 +20,17 @@ import {
   GreyText,
   InfoSection,
   RateScale,
+  Comma,
 } from "./styled";
+import useWindowDimensions from "../../../common/CustomHooks/useWindowDimensions.js";
+import moment from "moment";
 
 const Details = ({ selectedMovie }) => {
-
-  const picture = `https://image.tmdb.org/t/p/w500/${selectedMovie.poster_path}`;
-
+  const dimensions = useWindowDimensions();
   return (
     <Wrapper>
       <StyledTileMovie>
-        {picture ? (
+        {selectedMovie.poster_path ? (
           <Poster
             src={`https://image.tmdb.org/t/p/w500/${selectedMovie.poster_path}`}
           />
@@ -42,19 +43,22 @@ const Details = ({ selectedMovie }) => {
         )}
         <InfoSection>
           <MovieTitle>{selectedMovie.title}</MovieTitle>
-          <MovieYear>{selectedMovie.release_date}</MovieYear>
+          <MovieYear>{moment(selectedMovie.release_date).format("YYYY")}</MovieYear>
           <ProductionSection>
             <GreyText>Production: </GreyText>
-            {selectedMovie.production_countries.map((country) => (country.name))}
-            {/* To jest do rozkminienia */}
+            {selectedMovie.production_countries.map((country) => {
+              if (dimensions.width < 650) 
+              return <Comma>{country.iso_3166_1} </Comma>;
+              return <Comma>{country.name} </Comma>;
+            })}
           </ProductionSection>
           <ReleaseDateSection>
             <GreyText>Release Date: </GreyText> {selectedMovie.release_date}
           </ReleaseDateSection>
           <Tags>
-          {selectedMovie.genres.map((tag) => (
-            <Tag key={tag.id}>{tag.name}</Tag>
-          ))}
+            {selectedMovie.genres.map((tag) => (
+              <Tag key={tag.id}>{tag.name}</Tag>
+            ))}
           </Tags>
           <RatingSection>
             <StyledStarIcon>
@@ -72,4 +76,3 @@ const Details = ({ selectedMovie }) => {
 };
 
 export default Details;
-
