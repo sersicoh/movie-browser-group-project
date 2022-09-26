@@ -33,3 +33,19 @@ function App() {
 }
 
 export default App;
+
+
+{/* <HashRouter>
+<nav>
+  <NavigationBar />
+  <Routes>
+  <Route path="/" element={<Navigate to="movies"/>}/>
+    <Route path="/movies" element={<Navigate to="page=1"/>}/>
+    <Route path="/people" element={<Navigate to="page=1"/>}/>
+    <Route path="/movies/page=:page" element={<MovieList/>}/>
+    <Route path="/people/page=:page" element={<PersonList/>}/>
+    <Route path="/movieDetails/:id" element={ <MovieDetails />}/>
+    <Route path="/personDetails/:id" element={<PersonDetails />}/>
+  </Routes>
+</nav> 
+</HashRouter>*/}
