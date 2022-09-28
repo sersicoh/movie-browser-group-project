@@ -17,7 +17,6 @@ const peopleSlice = createSlice({
     },
     setPeopleList: (state, { payload: people }) => {
       state.peopleList = people.results;
-      console.log(state.peopleList);
       state.ifPeopleLoading = false;
     },
     setLoadingg: (state) => {
@@ -25,15 +24,11 @@ const peopleSlice = createSlice({
     },
     setPersonDetails: (state, { payload: personDetails }) => {
       state.personDetails = personDetails;
-      // poniższy console.log to wyrzucenia gdy nie bedzie potrzebny
-      console.log(personDetails);
       state.ifLoading = "success";
     },
     setMovieListForPerson: (state, { payload: moviesForPerson }) => {
       state.cast = moviesForPerson.cast;
       state.crew = moviesForPerson.crew;
-      // poniższy console.log to wyrzucenia gdy nie bedzie potrzebny
-      console.log(state.cast);
       state.ifLoading = "success";
     },
   },
