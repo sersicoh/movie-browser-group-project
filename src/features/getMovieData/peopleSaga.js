@@ -3,10 +3,10 @@ import { getPopularPeople, getPersonDetails, getMovieListForPerson } from "./get
 import { fetchPopularPeople, setPeopleList, setPersonDetails, setLoadingg, setMovieListForPerson } from "./PeopleSlice/peopleSlice";
 
 
-export function* fetchPopularPeopleWorker() {
+export function* fetchPopularPeopleWorker({payload: pageNumber}) {
   try {
     yield delay(1000);
-    const popularPeople = yield call(getPopularPeople);
+    const popularPeople = yield call(getPopularPeople, pageNumber);
     yield put(setPeopleList(popularPeople));
   } catch (error) {
     yield call(alert("coś poszło nie tak! Spróbuj później :)"));
