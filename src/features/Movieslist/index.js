@@ -1,14 +1,22 @@
 import Content from "../../common/Content";
 import TileMovie from "../../common/TileMovie";
-import { useSelector } from "react-redux";
-import { selectMovies } from "../getMovieData/MovieSlice/movieSlice";
+import { selectMovies, fetchPopularMovies } from "../getMovieData/MovieSlice/movieSlice";
 import { TilesSection } from "../../common/TilesSection/styled";
 import moment from "moment";
 import Pagination from "../../common/Pagination";
+import Search from "../Search/index"
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from 'react-router-dom';
+import { useEffect } from "react";
 
 const MovieList = () => {
-
+  const dispatch = useDispatch();
   const { movieList } = useSelector(selectMovies);
+  const { page } = useParams();
+  const currentPage = page;
+  useEffect(() => {
+    dispatch(fetchPopularMovies(currentPage));
+}, [currentPage, dispatch]);
 
   return (
     <Content
@@ -25,11 +33,13 @@ const MovieList = () => {
               />
             ))}
           </TilesSection>
+          <Search/>
         </>
       }
       pagination={
-        <Pagination />
+        <Pagination page={parseInt(currentPage)} />
       }
+     
     />
   );
 };
