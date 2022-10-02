@@ -4,7 +4,6 @@ import { selectMovies, fetchPopularMovies } from "../getMovieData/MovieSlice/mov
 import { TilesSection } from "../../common/TilesSection/styled";
 import moment from "moment";
 import Pagination from "../../common/Pagination";
-import Search from "../Search/index"
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
 import { useEffect } from "react";
@@ -33,7 +32,6 @@ const MovieList = () => {
               />
             ))}
           </TilesSection>
-          <Search/>
         </>
       }
       pagination={
