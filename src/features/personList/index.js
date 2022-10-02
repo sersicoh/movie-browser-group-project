@@ -1,13 +1,20 @@
 import Content from "../../common/Content";
 import TilePerson from "../../common/TilePerson";
-import { useSelector } from "react-redux";
-import { selectPeople } from "../getMovieData/PeopleSlice/peopleSlice"
+import { fetchPopularPeople, selectPeople } from "../getMovieData/PeopleSlice/peopleSlice"
 import { TilesPersonSection } from "../../common/TilesSection/styled";
 import Pagination from "../../common/Pagination";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from 'react-router-dom';
+import { useEffect } from "react";
 
 const PersonList = () => {
-
+  const dispatch = useDispatch();
   const { peopleList } = useSelector(selectPeople);
+  const { page } = useParams();
+  const currentPage = page;
+  useEffect(() => {
+    dispatch(fetchPopularPeople(currentPage));
+}, [currentPage, dispatch]);
 
   return (
     <Content
