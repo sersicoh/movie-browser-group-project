@@ -3,7 +3,7 @@ import TileMovie from "../../common/TileMovie";
 import { selectMovies, fetchPopularMovies } from "../getMovieData/MovieSlice/movieSlice";
 import { TilesSection } from "../../common/TilesSection/styled";
 import moment from "moment";
-import Pagination from "../../common/Pagination";
+import MoviePagination from "../../common/Pagination/MoviePagination";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
 import { useEffect } from "react";
@@ -35,9 +35,8 @@ const MovieList = () => {
         </>
       }
       pagination={
-        <Pagination page={parseInt(currentPage)} />
+        <MoviePagination page={parseInt(currentPage)} />
       }
-     
     />
   );
 };

@@ -2,7 +2,7 @@ import Content from "../../common/Content";
 import TilePerson from "../../common/TilePerson";
 import { fetchPopularPeople, selectPeople } from "../getMovieData/PeopleSlice/peopleSlice"
 import { TilesPersonSection } from "../../common/TilesSection/styled";
-import Pagination from "../../common/Pagination";
+import PersonPagination from "../../common/Pagination/PersonPagination";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
 import { useEffect } from "react";
@@ -32,7 +32,7 @@ const PersonList = () => {
         </>
       }
       pagination={
-        <Pagination />
+        <PersonPagination page={parseInt(currentPage)}/>
       }
     />
   )
