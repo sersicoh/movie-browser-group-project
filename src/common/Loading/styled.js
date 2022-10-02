@@ -42,7 +42,4 @@ export const StyledLoadingCricle = styled.div`
       transform: translateX(360deg);
     }
   }
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    height: 40px;
-  }
 `;

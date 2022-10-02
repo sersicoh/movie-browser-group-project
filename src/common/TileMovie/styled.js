@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 
 export const StyledNavLink = styled(NavLink)`
   text-decoration: none;
+  width: 100%;
   color: ${({ theme }) => theme.colors.black};
   a:link,
   a:visited,
@@ -43,6 +44,7 @@ export const StyledTileMovie = styled.section`
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     grid-template-columns: 1fr 1fr;
     column-gap: 16px;
+    
     grid-template-areas:
       "poster title"
       "poster year"
@@ -53,7 +55,6 @@ export const StyledTileMovie = styled.section`
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     grid-template-columns: 1fr 1fr;
     column-gap: 16px;
-    min-width: 250px;
     grid-template-areas:
       "poster title"
       "poster year"
@@ -64,45 +65,31 @@ export const StyledTileMovie = styled.section`
 `;
 export const Poster = styled.img`
   grid-area: poster;
-  width: 100%;
+  max-width: 100%;
   border-radius: 5px;
   aspect-ratio: 2/3;
 `;
 export const NoPoster = styled.div`
   grid-area: poster;
-  margin: 16px;
-  background: ${({ theme }) => theme.colors.silver};
-  width: 292px;
-  height: 434px;
-  border-radius: 5px;
-
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    width: 114px;
-    height: 169px;
-    left: calc(50% - 114px / 2 - 71px);
-    top: 0px;
-  }
-`;
-export const StyledMovieIcon = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 45px;
-  margin-right: 9px;
-  margin-bottom: 2px;
+  background: ${({ theme }) => theme.colors.silver};
+  aspect-ratio: 2/3;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 5px;
+
+`;
+export const StyledMovieIcon = styled.div`
+  width: 60px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
-    width: 40px;
-    margin-bottom: 2px;
-    margin-right: 9px;
-  }
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    width: 20px;
-    height: 48px;
+    width: 50px;
   }
 `;
 export const MovieTitle = styled.div`
   grid-area: title;
+  display: flex;
   margin: 16px 0 8px;
   font-weight: ${({ theme }) => theme.fontSize.medium};
   line-height: 130%;
@@ -111,6 +98,9 @@ export const MovieTitle = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoint.between}px) {
     font-size: 16px;
     margin: 0 0 4px;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    font-size: 22px;
   }
 `;
 export const MovieYear = styled.div`
@@ -151,6 +141,9 @@ export const Tag = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoint.between}px) {
     font-size: 10px;
     padding: 4px 8px;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    font-size: 12px;
   }
 `;
 export const RatingSection = styled.section`
