@@ -25,29 +25,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
-{/* <HashRouter>
-<nav>
-  <NavigationBar />
-  <Switch>
-    <Route path="/movies">
-      <MovieList />
-    </Route>
-    <Route path="/people">
-      <PersonList />
-    </Route>
-    <Route path="/movieDetails/:id">
-      <MovieDetails />
-    </Route>
-    <Route path="/personDetails/:id">
-      <PersonDetails />
-    </Route>
-    <Route path="/">
-      <Redirect to="/movies" />
-    </Route>
-  </Switch>
-</nav>
-</HashRouter> */}
