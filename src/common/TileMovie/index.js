@@ -50,7 +50,7 @@ const TileMovie = ({ movie, genreIds, releaseDate }) => {
             <StyledStarIcon>
               <StarIcon width={"100%"} height={"100%"} />
             </StyledStarIcon>
-            <Rate>{movie.vote_average}</Rate>
+            <Rate>{movie.vote_average.toFixed(1)}</Rate>
             <Votes>{movie.vote_count} votes</Votes>
           </RatingSection>
         </StyledTileMovie>

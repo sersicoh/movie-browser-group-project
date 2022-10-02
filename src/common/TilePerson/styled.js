@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 
 export const StyledNavLink = styled(NavLink)`
   text-decoration: none;
+  width: 100%;
   color: ${({ theme }) => theme.colors.black};
   a:link,
   a:visited,
@@ -11,7 +12,6 @@ export const StyledNavLink = styled(NavLink)`
     color: ${({ theme }) => theme.colors.black};
   }
 `;
-
 export const Wrapper = styled.section`
     display: flex;
     background: ${({ theme }) => theme.colors.white};
@@ -49,28 +49,24 @@ export const Poster = styled.img`
 `;
 export const NoPoster = styled.div`
     grid-area: poster;
+    display: flex;
+    justify-content: center;
     background: ${({ theme }) => theme.colors.silver};
+    aspect-ratio: 2/3;
+    max-width: 100%;
+    max-height: 100%;
     border-radius: 5px;
 `;
 export const StyledPersonIcon = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80px;
-    height: 80px;
+    width: 60px;
 
     @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px){
-        width: 60px;
-        height: 60px;
-    }
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
-        width: 48px;
-        height: 48px;
+        width: 50px;
+
     }
 `;
 export const Destription = styled.section`
     grid-area: description;
-
     margin: 16px 0 8px;
     line-height: 130%;
 
@@ -78,16 +74,16 @@ export const Destription = styled.section`
 export const PersonName = styled.div`
 
     font-weight: ${({ theme }) => theme.fontSize.medium};
-    font-size: 22px;
     display: flex;
-    margin: 0 auto;
     justify-content: center;
     line-height: 130%;
+`;
+export const PersonRole = styled.div`
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px){
-        font-size: 20px;
-    }
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
-        font-size: 16px;
-    }
+    font-weight: ${({ theme }) => theme.fontSize.medium};
+    color: ${({ theme }) => theme.colors.darkerGrey};
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    line-height: 130%;
 `;

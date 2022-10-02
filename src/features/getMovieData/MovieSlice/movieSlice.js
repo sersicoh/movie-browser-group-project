@@ -31,22 +31,17 @@ const moviesSlice = createSlice({
     },
     setGenreList: (state, { payload: genres }) => {
       state.genreList = genres.genres;
-      console.log(state.genreList);
     },
     setLoading: (state) => {
       state.ifMovieDetailsLoading = "loading";
     },
     setMovieDetails: (state, { payload: movieDetails }) => {
       state.movieDetails = movieDetails;
-      // poniższy console.log to wyrzucenia gdy nie bedzie potrzebny
-      console.log(movieDetails);
       state.ifMovieDetailsLoading = "success";
     },
     setCastCrew: (state, { payload: castCrew }) => {
       state.cast = castCrew.cast;
       state.crew = castCrew.crew;
-      // poniższy console.log to wyrzucenia gdy nie bedzie potrzebny
-      console.log(state.cast);
       state.ifMovieDetailsLoading = "success";
     },
   },

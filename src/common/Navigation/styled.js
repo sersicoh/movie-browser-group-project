@@ -3,15 +3,12 @@ import styled from "styled-components";
 
 export const NavigationBackground = styled.div`
   background-color: black;
-  height: 142px;
-
+  height: 94px;
   width: 100%;
   min-width: 320px;
-  @media (min-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     height: 152px;
-  }
-  @media (min-width: 969px) {
-    height: 94px;
   }
 `;
 
@@ -79,13 +76,8 @@ export const NavigationLogo = styled.div`
   color: ${({ theme }) => theme.colors.white};
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     margin-top: 8px;
-    margin-left: -1px;
-    width: 124px;
     height: 17px;
-    font-size: 13px;
-  }
-  @media (min-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
-    margin-right: 70px;
+    font-size: 20px;
   }
 `;
 
