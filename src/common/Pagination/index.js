@@ -1,35 +1,42 @@
 import { PageInfo, PageNumber, PaginationTiles, StyledPaginationSection, StyledText } from "./styled";
 import { SingleLeftArrow, SingleRightArrow } from "./Arrows";
 import { useSelector, useDispatch } from "react-redux";
-import {selectMovies, fetchPopularMoviesPage} from "../../features/getMovieData/MovieSlice/movieSlice"
+import {selectMovies, fetchPopularMovies} from "../../features/getMovieData/MovieSlice/movieSlice"
 import { NavLink, useParams } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import useReplaceQueryParameter from "../useReplaceQueryParameter";
 
-function Pagination() {
+function Pagination({page}) {
 
     // let page = 1;
 
-    let totalPages = 600;
+    let totalPages = 500;
 
-    if (totalPages > 500) { totalPages = 500 };
+    // if (totalPages > 500) { totalPages = 500 };
 
     const {ifMoviesLoading} = useSelector(selectMovies);
     const { moviePage } = useSelector(selectMovies);
     const dispatch = useDispatch();
-    const { page } = useParams();
+    // const { page } = useParams();
+    // console.log(page);
+
+     const { pathname } = useLocation();
+     const navigate = useNavigate();
+    const replaceQueryParameter = useReplaceQueryParameter();
 
     return (
 
         <StyledPaginationSection>
             <PaginationTiles
                 disabled={page <= 1 ? true : false}
-                onClick={() => page = 1}
+                to={`/movies/1`}
             >
                 <SingleLeftArrow disabled={page <= 1 ? true : false} />
                 <StyledText>First</StyledText>
             </PaginationTiles>
             <PaginationTiles
                 disabled={page <= 1 ? true : false}
-                onClick={() => page = page - 1}
+                to={`/movies/${page-1}`}
             >
                 <SingleLeftArrow disabled={page <= 1 ? true : false} />
                 <StyledText>Previous</StyledText>
@@ -38,19 +45,21 @@ function Pagination() {
             <PageNumber>{page}</PageNumber>
             <PageInfo>of</PageInfo>
             <PageNumber>{totalPages}</PageNumber>
-            <NavLink to={`/movieDetails/${moviePage}`}>
-            <PaginationTiles
+           
+            <PaginationTiles 
                 disabled={page === totalPages ? true : false}
-                onClick={() => page = page + 1}
-               // onClick={() => dispatch(fetchPopularMoviesPage(moviePage))}
-            >
+                 to={`/movies/${page+1}`}
+               // onClick={() => {navigate(pathname.replace(page, page+ 1))}}
+            >   
                 <StyledText>Next</StyledText>
                 <SingleRightArrow disabled={page === totalPages ? true : false} />
+                
             </PaginationTiles>
-            </NavLink>
+       
+       
             <PaginationTiles
                 disabled={page === totalPages ? true : false}
-                onClick={() => page = totalPages}
+                 to={`/movies/${totalPages}`}
             >
                 <StyledText>Last</StyledText>
                 <SingleRightArrow disabled={page === totalPages ? true : false} />

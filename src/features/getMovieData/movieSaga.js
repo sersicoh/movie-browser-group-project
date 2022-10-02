@@ -4,15 +4,15 @@ import { fetchPopularMovies, setMovieList } from "./MovieSlice/movieSlice";
 import { fetchGenres, setGenreList, fetchPopularMoviesPage } from "./MovieSlice/movieSlice";
 import { setLoading, setMovieDetails, setCastCrew } from "./MovieSlice/movieSlice";
 
-export function* fetchPopularMoviesWorker() {
-  try {
-    yield delay(1000);
-    const popularMovies = yield call(getPopularMovies);
-    yield put(setMovieList(popularMovies));
-  } catch (error) {
-    yield call(alert("coś poszło nie tak! Spróbuj później :)"));
-  }
-}
+// export function* fetchPopularMoviesWorker() {
+//   try {
+//     yield delay(1000);
+//     const popularMovies = yield call(getPopularMovies);
+//     yield put(setMovieList(popularMovies));
+//   } catch (error) {
+//     yield call(alert("coś poszło nie tak! Spróbuj później :)"));
+//   }
+// }
 export function* fetchPopularMoviesPageWorker({payload: pageNumber}) {
   try {
     yield delay(1000);
@@ -52,10 +52,10 @@ export function* fetchCastCrewWorker({payload: movieId}) {
   }
 }
 export function* movieSaga() {
-  yield takeLatest(fetchPopularMovies.type, fetchPopularMoviesWorker);
+  // yield takeLatest(fetchPopularMovies.type, fetchPopularMoviesWorker);
   yield takeLatest(fetchGenres.type, fetchGenresWorker);
   yield takeLeading("*", fetchGenresWorker);
-  yield takeLatest(fetchPopularMoviesPage.type, fetchPopularMoviesPageWorker);
+  yield takeLatest(fetchPopularMovies.type, fetchPopularMoviesPageWorker);
 }
 export function* movieDetailsSaga() {
   yield takeLatest(setLoading.type, fetchMovieDetailsWorker);
