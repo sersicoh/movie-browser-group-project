@@ -50,7 +50,6 @@ export const {
   fetchPopularMovies,
   fetchGenres,
   setMovieList,
-  setLoadin,
   setGenreList,
  fetchMovieDetails, 
  setMovieDetails,
