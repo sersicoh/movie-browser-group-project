@@ -4,7 +4,7 @@ import Cast from "./Cast";
 import Crew from "./Crew";
 import PosterBig from "./PosterBig";
 import { useDispatch, useSelector } from "react-redux";
-import { selectCast, selectMoviesDetails, setLoading } from "../getMovieData/MovieSlice/movieSlice";
+import { fetchMovieDetails, selectMoviesDetails } from "../getMovieData/MovieSlice/movieSlice";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import Loading from "../../common/Loading";
@@ -18,7 +18,7 @@ const MovieDetails = () => {
   const selectedMovie = useSelector(selectMoviesDetails);
 
   useEffect(() => {
-    dispatch(setLoading(id));
+    dispatch(fetchMovieDetails(id));
   }, [id, dispatch]);
 
   let returned = "";
