@@ -7,17 +7,16 @@ const peopleSlice = createSlice({
     personDetails: [],
     cast: [],
     crew: [],
-    ifPeopleLoading: false,
     ifLoading: "",
   },
 
   reducers: {
     fetchPopularPeople: (state) => {
-      state.ifPeopleLoading = true;
+      state.ifLoading = "loading";
     },
     setPeopleList: (state, { payload: people }) => {
       state.peopleList = people.results;
-      state.ifPeopleLoading = false;
+      state.ifLoading = "success";
     },
     setLoadingg: (state) => {
       state.ifLoading = "loading";

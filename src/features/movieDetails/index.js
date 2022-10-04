@@ -23,7 +23,7 @@ const MovieDetails = () => {
 
   let returned = "";
 
-  switch (selectedMovie.ifMovieDetailsLoading) {
+  switch (selectedMovie.ifLoading) {
     case "loading":
       returned = (
         <Loading />
