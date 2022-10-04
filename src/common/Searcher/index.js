@@ -1,34 +1,38 @@
-import { useState } from "react";
-import { useLocation } from "react-router-dom";
-import axios from "axios"
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useLocation, useNavigate } from "react-router-dom";
+import { selectLoadingState, selectSearchList, setSearchLoading } from "../../features/getMovieData/SearchSlice/searchSlice";
 import { Input } from "./styled"
 
-
-
-const API_KEY = '9ca6b7689445c94b2e17d44de714a06b'
-
 export const Searcher = () => {
-    const [searchQuery, updateSearchQuery] = useState("");
-    const [timeoutId, updateTimeoutId] = useState();
-    const [updateMovieList] = useState([]);
-    const pageType = useLocation().pathname.split("/")[1];
 
+    const location = useLocation();
+    const navigate = useNavigate();
+    const pageType = "movie";
+    const dispatch = useDispatch();
 
+    const searchResult = useSelector(selectSearchList);
+    // const ifSearchLoading = useSelector(selectLoadingState);
+    // console.log(ifSearchLoading);
 
-    const fetchData = async (searchString) => {
-        const response = await axios.
-            get(`https://api.themoviedb.org/3/search/movie?${searchString}&api_key=${API_KEY}&language=en-US&page=1&query=${searchQuery}`
-            );
-        console.log(response)
-        updateMovieList(response.data.results)
-    };
+    const searchQuery = new URLSearchParams(location.search).get("query");
 
+    const onTextChange = ({ target }) => {
 
-    const onTextChange = (event) => {
-        clearTimeout(timeoutId);
-        updateSearchQuery(event.target.value);
-        const timeout = setTimeout(() => fetchData(event.target.value), 500);
-        updateTimeoutId(timeout)
+        const searchParams = new URLSearchParams(location.search);
+
+        if (target.value.trim() === "") {
+            searchParams.delete("type");
+            searchParams.delete("query");
+            searchParams.delete("page");
+            navigate(`/movies/1`);
+
+        } else {
+            searchParams.set("type", pageType);
+            searchParams.set("query", target.value);
+            searchParams.set("page", "1");
+            navigate(`/search?${searchParams.toString()}`);
+        }
     };
 
     return (
@@ -39,10 +43,5 @@ export const Searcher = () => {
 
     );
 };
-
-
-
-
-
 
 export default Searcher;
