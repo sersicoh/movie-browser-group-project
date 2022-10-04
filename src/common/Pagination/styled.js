@@ -20,12 +20,14 @@ export const PaginationTiles = styled(Link)`
     border-radius: 5px;
     margin: 0 2px;
     text-decoration: none;
+   
 
     ${({ disabled }) =>
-        disabled &&
+        disabled  &&
         css`
             background-color: ${({ theme }) => theme.colors.mystic};
             cursor: no-drop;
+            pointer-events: none;
         `
     }
 `;
@@ -49,4 +51,7 @@ export const PageNumber = styled.span`
     color: ${({ theme }) => theme.colors.black};
     font-weight: ${({ theme }) => theme.fontSize.bold};
 
+`;
+export const ButtonDiv = styled.div`
+cursor: no-drop;
 `;

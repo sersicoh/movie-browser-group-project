@@ -1,6 +1,6 @@
 import { call, delay, put, takeLatest } from "redux-saga/effects";
 import { getPopularPeople, getPersonDetails, getMovieListForPerson } from "./getData";
-import { fetchPopularPeople, setPeopleList, setPersonDetails, setLoadingg, setMovieListForPerson } from "./PeopleSlice/peopleSlice";
+import { fetchPopularPeople, setPeopleList, setPersonDetails, fetchPersonDetails, setMovieListForPerson } from "./PeopleSlice/peopleSlice";
 
 
 export function* fetchPopularPeopleWorker({payload: pageNumber}) {
@@ -35,8 +35,8 @@ export function* fetchMoviesForPerson({payload: personId}) {
 
 export function* peopleSaga() {
   yield takeLatest(fetchPopularPeople.type, fetchPopularPeopleWorker);
-  yield takeLatest(setLoadingg.type, fetchPersonDetailsWorker);
-  yield takeLatest(setLoadingg.type, fetchMoviesForPerson);
+  yield takeLatest(fetchPersonDetails.type, fetchPersonDetailsWorker);
+  yield takeLatest(fetchPersonDetails.type, fetchMoviesForPerson);
 }
 
 

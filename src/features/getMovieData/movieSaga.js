@@ -2,7 +2,7 @@ import { call, delay, put, takeLatest, takeLeading } from "redux-saga/effects";
 import { getPopularMovies, getGenres, getMoviesDetails,  getPeopleForMovie, getPopularMoviesPage } from "./getData";
 import { fetchPopularMovies, setMovieList } from "./MovieSlice/movieSlice";
 import { fetchGenres, setGenreList, fetchPopularMoviesPage } from "./MovieSlice/movieSlice";
-import { setLoading, setMovieDetails, setCastCrew } from "./MovieSlice/movieSlice";
+import { fetchMovieDetails, setMovieDetails, setCastCrew } from "./MovieSlice/movieSlice";
 
 export function* fetchPopularMoviesWorker({payload: pageNumber}) {
   try {
@@ -47,8 +47,8 @@ export function* movieSaga() {
   yield takeLatest(fetchPopularMovies.type, fetchPopularMoviesWorker);
 }
 export function* movieDetailsSaga() {
-  yield takeLatest(setLoading.type, fetchMovieDetailsWorker);
-  yield takeLatest(setLoading.type, fetchCastCrewWorker);
+  yield takeLatest(fetchMovieDetails.type, fetchMovieDetailsWorker);
+  yield takeLatest(fetchMovieDetails.type, fetchCastCrewWorker);
 }
 
 
