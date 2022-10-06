@@ -27,7 +27,6 @@ const moviesSlice = createSlice({
       state.movieList = movies.results;
       state.moviePage = movies.page;
       state.ifLoading = false;
-      console.log(state.moviePage);
     },
     setGenreList: (state, { payload: genres }) => {
       state.genreList = genres.genres;

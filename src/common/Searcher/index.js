@@ -1,7 +1,4 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
-import { selectLoadingState, selectSearchList, setSearchLoading } from "../../features/getMovieData/SearchSlice/searchSlice";
 import { Input } from "./styled"
 
 export const Searcher = () => {
@@ -9,11 +6,6 @@ export const Searcher = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const pageType = "movie";
-    const dispatch = useDispatch();
-
-    const searchResult = useSelector(selectSearchList);
-    // const ifSearchLoading = useSelector(selectLoadingState);
-    // console.log(ifSearchLoading);
 
     const searchQuery = new URLSearchParams(location.search).get("query");
 
@@ -40,7 +32,6 @@ export const Searcher = () => {
             placeholder={`Search for ${pageType}...`}
             value={searchQuery || ""}
             onChange={onTextChange} />
-
     );
 };
 

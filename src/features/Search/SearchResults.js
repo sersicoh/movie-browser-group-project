@@ -24,7 +24,7 @@ const SearchResults = () => {
 
   useEffect(() => {
     dispatch(setSearchLoading(payload));
-  },[dispatch]);
+  }, [payload.query, dispatch]);
 
   let returned = "";
 
@@ -38,7 +38,7 @@ const SearchResults = () => {
       returned = (
 
         <Content
-          title="dupa"
+          title={`Search results for "${payload.query}" (${searchList.total_results})`}
           body={
             <TilesSection>
               {searchList.searchList.map((movie) => (
