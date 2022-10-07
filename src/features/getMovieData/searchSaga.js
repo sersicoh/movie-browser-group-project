@@ -6,7 +6,6 @@ export function* fetchSearchWorker({ payload: searchParams }) {
     try {
         yield delay(1000);
         const searchList = yield call(getSearch, searchParams);
-        yield delay(1000);
         yield put(setSearchList(searchList));
         console.log(searchList);
     } catch (error) {
