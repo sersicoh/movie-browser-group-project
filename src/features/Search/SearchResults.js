@@ -1,13 +1,11 @@
-import Content from "../../common/Content";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Loading from "../../common/Loading";
 import ErrorPage from "../../common/Error";
 import { selectLoadingState, selectSearchList, setSearchLoading } from "../getMovieData/SearchSlice/searchSlice";
-import { TilesSection } from "../../common/TilesSection/styled";
-import TileMovie from "../../common/TileMovie";
-import moment from "moment";
+import { searchPageNumber, searchQueryParamName, searchTypePage } from "../../common/Searcher/searchQueryParamName";
+import SearchContentSelector from "./SearchContentSelector";
 
 const SearchResults = () => {
 
@@ -17,9 +15,9 @@ const SearchResults = () => {
   const searchList = useSelector(selectSearchList);
 
   const payload = {
-    query: new URLSearchParams(location.search).get("query"),
-    type: new URLSearchParams(location.search).get("type"),
-    page: new URLSearchParams(location.search).get("page"),
+    query: new URLSearchParams(location.search).get(searchQueryParamName),
+    type: new URLSearchParams(location.search).get(searchTypePage),
+    page: new URLSearchParams(location.search).get(searchPageNumber),
   }
 
   useEffect(() => {
@@ -36,22 +34,7 @@ const SearchResults = () => {
       break;
     case "success":
       returned = (
-
-        <Content
-          title={`Search results for "${payload.query}" (${searchList.total_results})`}
-          body={
-            <TilesSection>
-              {searchList.searchList.map((movie) => (
-                <TileMovie
-                  key={movie.id}
-                  movie={movie}
-                  genreIds={movie.genre_ids}
-                  releaseDate={moment(movie.release_date).format("YYYY")}
-                />
-              ))}
-            </TilesSection>
-          }
-        />
+        <SearchContentSelector query={payload.query} searchList={searchList}/>
       );
       break;
     default:
