@@ -20,7 +20,6 @@ const PersonList = () => {
     <Content
       title="Popular People"
       body={
-        <>
           <TilesPersonSection>
             {peopleList.map((person) => (
               <TilePerson
@@ -29,7 +28,6 @@ const PersonList = () => {
               />
             ))}
           </TilesPersonSection>
-        </>
       }
       pagination={
         <PersonPagination page={parseInt(currentPage)}/>
