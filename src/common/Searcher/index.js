@@ -1,29 +1,35 @@
 import { useLocation, useNavigate } from "react-router-dom";
+import { searchPageNumber, searchQueryParamName, searchTypePage } from "./searchQueryParamName";
 import { Input } from "./styled"
+import useQueryParameter from "./useQueryParameter";
+import { useTypePage } from "./useTypePage";
 
 export const Searcher = () => {
 
     const location = useLocation();
     const navigate = useNavigate();
-    const pageType = "movie";
-
-    const searchQuery = new URLSearchParams(location.search).get("query");
+    const pageType = useTypePage();
+    const searchQuery = useQueryParameter(searchQueryParamName);
 
     const onTextChange = ({ target }) => {
 
         const searchParams = new URLSearchParams(location.search);
 
         if (target.value.trim() === "") {
-            searchParams.delete("type");
-            searchParams.delete("query");
-            searchParams.delete("page");
-            navigate(`/movies/1`);
-
+            searchParams.delete(searchTypePage);
+            searchParams.delete(searchQueryParamName);
+            searchParams.delete(searchPageNumber);
+            navigate({
+                pathname: "/movies",
+            });
         } else {
-            searchParams.set("type", pageType);
-            searchParams.set("query", target.value);
-            searchParams.set("page", "1");
-            navigate(`/search?${searchParams.toString()}`);
+            searchParams.set(searchTypePage, pageType);
+            searchParams.set(searchQueryParamName, target.value);
+            searchParams.set(searchPageNumber, "1");
+            navigate({
+                pathname: "/search",
+                search: `?${searchParams.toString()}`,
+            });
         }
     };
 
