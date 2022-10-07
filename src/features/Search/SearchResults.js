@@ -34,7 +34,7 @@ const SearchResults = () => {
       break;
     case "success":
       returned = (
-        <SearchContentSelector query={payload.query} searchList={searchList}/>
+        <SearchContentSelector query={payload.query} searchList={searchList} />
       );
       break;
     default:
