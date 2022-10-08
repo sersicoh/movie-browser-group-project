@@ -9,16 +9,15 @@ const moviesSlice = createSlice({
     movieDetails: [],
     cast: [],
     crew: [],
-    ifMovieDetailsLoading: "",
-    ifLoading: false,
+    ifLoading: "",
   },
 
   reducers: {
     fetchPopularMovies: (state) => {
-      state.ifLoading = true;
+      state.ifLoading = "loading";
     },
     fetchPopularMoviesPage: (state) => {
-      state.ifLoading = true;
+      state.ifLoading = "loading";
     },
     fetchGenres: (state) => {
       state.ifLoading = true;
@@ -26,22 +25,23 @@ const moviesSlice = createSlice({
     setMovieList: (state, { payload: movies }) => {
       state.movieList = movies.results;
       state.moviePage = movies.page;
-      state.ifLoading = false;
+      state.ifLoading = "success";
+      console.log(state.moviePage);
     },
     setGenreList: (state, { payload: genres }) => {
       state.genreList = genres.genres;
     },
-    setLoading: (state) => {
-      state.ifMovieDetailsLoading = "loading";
+    fetchMovieDetails: (state) => {
+      state.ifLoading = "loading";
     },
     setMovieDetails: (state, { payload: movieDetails }) => {
       state.movieDetails = movieDetails;
-      state.ifMovieDetailsLoading = "success";
+      state.ifLoading = "success";
     },
     setCastCrew: (state, { payload: castCrew }) => {
       state.cast = castCrew.cast;
       state.crew = castCrew.crew;
-      state.ifMovieDetailsLoading = "success";
+      state.ifLoading = "success";
     },
   },
 });
@@ -50,7 +50,6 @@ export const {
   fetchPopularMovies,
   fetchGenres,
   setMovieList,
-  setLoading,
   setGenreList,
  fetchMovieDetails, 
  setMovieDetails,
@@ -62,7 +61,7 @@ export const selectMovies = (state) => state.movieList;
 export const selectMoviesDetails = (state) => state.movieList;
 export const selectCast = (state) => state.cast;
 export const selectGenres = (state) => state.genreList;
-export const selectLoadingState = (state) => state.ifMovieDetailsLoading;
+export const selectLoadingState = (state) => state.ifLoading;
 export const getMovieById = (state, movieId) =>
   selectMoviesDetails(state).movieDetails.find(({ id }) => id === movieId);
 

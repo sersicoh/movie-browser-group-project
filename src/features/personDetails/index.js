@@ -3,7 +3,7 @@ import TileDetails from "./Details";
 import Cast from "./MoviesCast";
 import Crew from "./MoviesCrew";
 import { useDispatch, useSelector } from "react-redux";
-import { selectPersonDetails, setLoadingg } from "../getMovieData/PeopleSlice/peopleSlice";
+import { selectPersonDetails, fetchPersonDetails } from "../getMovieData/PeopleSlice/peopleSlice";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import Loading from "../../common/Loading";
@@ -16,7 +16,7 @@ const PersonDetails = () => {
   const selectedPerson = useSelector(selectPersonDetails);
 
    useEffect(() => {
-     dispatch(setLoadingg(id));
+     dispatch(fetchPersonDetails(id));
      //setLoading zamieniamy wszedzie na np. fetchPersonDetails
    }, [id, dispatch]);
 
