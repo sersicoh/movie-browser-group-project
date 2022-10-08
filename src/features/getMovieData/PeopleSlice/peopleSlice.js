@@ -4,6 +4,7 @@ const peopleSlice = createSlice({
   name: "peopleList",
   initialState: {
     peopleList: [],
+    total_pages: [],
     personDetails: [],
     cast: [],
     crew: [],
@@ -16,6 +17,7 @@ const peopleSlice = createSlice({
     },
     setPeopleList: (state, { payload: people }) => {
       state.peopleList = people.results;
+      state.total_pages = people.total_pages;
       state.ifLoading = "success";
     },
     fetchPersonDetails: (state) => {

@@ -5,6 +5,7 @@ const moviesSlice = createSlice({
   initialState: {
     movieList: [],
     moviePage: [],
+    total_pages: [],
     genreList: [],
     movieDetails: [],
     cast: [],
@@ -25,8 +26,8 @@ const moviesSlice = createSlice({
     setMovieList: (state, { payload: movies }) => {
       state.movieList = movies.results;
       state.moviePage = movies.page;
+      state.total_pages = movies.total_pages;
       state.ifLoading = "success";
-      console.log(state.moviePage);
     },
     setGenreList: (state, { payload: genres }) => {
       state.genreList = genres.genres;
@@ -58,6 +59,7 @@ export const {
 } = moviesSlice.actions;
 
 export const selectMovies = (state) => state.movieList;
+export const selectTotalPages = (state) => state.total_pages;
 export const selectMoviesDetails = (state) => state.movieList;
 export const selectCast = (state) => state.cast;
 export const selectGenres = (state) => state.genreList;
