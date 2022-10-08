@@ -32,7 +32,6 @@ let returned = "";
     <Content
       title="Popular People"
       body={
-        <>
           <TilesPersonSection>
             {peopleList.peopleList.map((person) => (
               <TilePerson
@@ -41,7 +40,6 @@ let returned = "";
               />
             ))}
           </TilesPersonSection>
-        </>
       }
       pagination={
         <MoviePagination page={parseInt(currentPage)}
