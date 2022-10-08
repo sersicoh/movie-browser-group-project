@@ -8,14 +8,15 @@ import {
 } from "./styled";
 import { SingleLeftArrow, SingleRightArrow } from "./Arrows";
 
-function MoviePagination({  param, page }) {
-  let totalPages = 500;
+function Pagination({ param, page, searchQuery, totalPages }) {
+
+  if (totalPages > 500) { totalPages = 500 };
+  if (searchQuery == undefined) { searchQuery = "" };
 
   return (
     <StyledPaginationSection>
-
       <ButtonDiv>
-        <PaginationTiles disabled={page <= 1 ? true : false} to={`/movies/1`}>
+        <PaginationTiles disabled={page <= 1 ? true : false} to={`/${param}/${searchQuery}1`}>
           <SingleLeftArrow disabled={page <= 1 ? true : false} />
           <StyledText>First</StyledText>
         </PaginationTiles>
@@ -24,7 +25,7 @@ function MoviePagination({  param, page }) {
       <ButtonDiv>
         <PaginationTiles
           disabled={page <= 1 ? true : false}
-          to={`/${param}/${page - 1}`}
+          to={`/${param}/${searchQuery}${page - 1}`}
         >
           <SingleLeftArrow disabled={page <= 1 ? true : false} />
           <StyledText>Previous</StyledText>
@@ -39,7 +40,7 @@ function MoviePagination({  param, page }) {
       <ButtonDiv>
         <PaginationTiles
           disabled={page === totalPages ? true : false}
-          to={`/${param}/${page + 1}`}
+          to={`/${param}/${searchQuery}${page + 1}`}
         >
           <StyledText>Next</StyledText>
           <SingleRightArrow disabled={page === totalPages ? true : false} />
@@ -49,7 +50,7 @@ function MoviePagination({  param, page }) {
       <ButtonDiv>
         <PaginationTiles
           disabled={page === totalPages ? true : false}
-          to={`/${param}/${totalPages}`}
+          to={`/${param}/${searchQuery}${totalPages}`}
         >
           <StyledText>Last</StyledText>
           <SingleRightArrow disabled={page === totalPages ? true : false} />
@@ -59,4 +60,4 @@ function MoviePagination({  param, page }) {
   );
 }
 
-export default MoviePagination;
+export default Pagination;
