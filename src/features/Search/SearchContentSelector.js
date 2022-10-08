@@ -1,16 +1,19 @@
 import moment from "moment/moment";
 import Content from "../../common/Content";
+import Pagination from "../../common/Pagination";
+import { searchPageNumber, searchTypePage } from "../../common/Searcher/searchQueryParamName";
+import useQueryParameter from "../../common/Searcher/useQueryParameter";
 import { useTypePage } from "../../common/Searcher/useTypePage";
 import TileMovie from "../../common/TileMovie";
 import TilePerson from "../../common/TilePerson";
 import { TilesPersonSection, TilesSection } from "../../common/TilesSection/styled";
 
-const SearchContentSelector = ({query, searchList}) => {
+const SearchContentSelector = ({ query, searchList }) => {
 
     const pageType = useTypePage();
 
-    console.log(searchList);
-
+    const page = useQueryParameter(searchPageNumber);
+    const type = useQueryParameter(searchTypePage);
     let returned = "";
 
     switch (pageType) {
@@ -30,9 +33,14 @@ const SearchContentSelector = ({query, searchList}) => {
                             ))}
                         </TilesSection>
                     }
-                // pagination={
-                //     <PersonPagination page={parseInt(currentPage)} />
-                // }
+                    pagination={
+                        <Pagination
+                            param={"search"}
+                            page={parseInt(page)}
+                            searchQuery={`?type=${type}&query=${query}&page=`}
+                            totalPages={searchList.total_pages}
+                        />
+                    }
                 />
             );
             break;
@@ -50,9 +58,14 @@ const SearchContentSelector = ({query, searchList}) => {
                             ))}
                         </TilesPersonSection>
                     }
-                // pagination={
-                //     <PersonPagination page={parseInt(currentPage)} />
-                // }
+                    pagination={
+                        <Pagination
+                            param={"search"}
+                            page={parseInt(page)}
+                            searchQuery={`?type=${type}&query=${query}&page=`}
+                            totalPages={searchList.total_pages}
+                        />
+                    }
                 />
             );
             break;
