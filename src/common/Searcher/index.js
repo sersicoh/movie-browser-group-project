@@ -27,8 +27,8 @@ export const Searcher = () => {
             searchParams.set(searchQueryParamName, target.value);
             searchParams.set(searchPageNumber, "1");
             navigate({
-                pathname: "/search",
-                search: `?${searchParams.toString()}`,
+                pathname: "/search/",
+                search: `${searchParams.toString()}`,
             });
         }
     };
