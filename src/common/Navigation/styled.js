@@ -103,3 +103,7 @@ export const NavigationSearcher = styled.div`
     grid-column-end: 4;
   }
 `;
+
+export const NavigationLogoLink = styled(NavLink)`
+  text-decoration: none;
+`;
