@@ -1,5 +1,4 @@
 import StarIcon from "../../../iconComponents/StarIcon";
-import Picture from "../../../iconComponents/PosterBig.png";
 
 import {
   MovieTitle,
