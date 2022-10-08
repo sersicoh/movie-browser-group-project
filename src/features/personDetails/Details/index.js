@@ -15,7 +15,7 @@ import {
   P
 } from "./styled";
 
-const TileDetails = ({selectedPerson}) => {
+const TileDetails = ({ selectedPerson }) => {
   const picture = `https://image.tmdb.org/t/p/w500//${selectedPerson.profile_path}`;
 
   return (
@@ -32,19 +32,19 @@ const TileDetails = ({selectedPerson}) => {
             </StyledPersonIcon>
           </NoPoster>
         )}
-                <InfoSection>
-                    <PersonName>{selectedPerson.name}</PersonName>
-                    <BirthdayDateSection>
-                        <GreyText>Date of birth:</GreyText> {selectedPerson.birthday}
-                    </BirthdayDateSection>
-                    <BirthPlaceSection>
-                        <GreyText>Place of birth:</GreyText> {selectedPerson.place_of_birth}
-                    </BirthPlaceSection>
-                </InfoSection>
-                    <Description>
-                      <P>{selectedPerson.biography}</P>
-                    </Description>
-        </StyledTilePerson>
+        <InfoSection>
+          <PersonName>{selectedPerson.name}</PersonName>
+          <BirthdayDateSection>
+            <GreyText>Date of birth:</GreyText> {selectedPerson.birthday}
+          </BirthdayDateSection>
+          <BirthPlaceSection>
+            <GreyText>Place of birth:</GreyText> {selectedPerson.place_of_birth}
+          </BirthPlaceSection>
+        </InfoSection>
+        <Description>
+          <P>{selectedPerson.biography}</P>
+        </Description>
+      </StyledTilePerson>
     </Wrapper>
   );
 };
