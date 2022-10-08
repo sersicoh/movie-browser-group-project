@@ -26,7 +26,9 @@ import useWindowDimensions from "../../../common/CustomHooks/useWindowDimensions
 import moment from "moment";
 
 const Details = ({ selectedMovie }) => {
+
   const dimensions = useWindowDimensions();
+
   return (
     <Wrapper>
       <StyledTileMovie>

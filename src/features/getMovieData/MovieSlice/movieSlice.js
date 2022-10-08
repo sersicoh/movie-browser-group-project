@@ -52,10 +52,10 @@ export const {
   fetchGenres,
   setMovieList,
   setGenreList,
- fetchMovieDetails, 
- setMovieDetails,
- setCastCrew,
- fetchPopularMoviesPage
+  fetchMovieDetails,
+  setMovieDetails,
+  setCastCrew,
+  fetchPopularMoviesPage
 } = moviesSlice.actions;
 
 export const selectMovies = (state) => state.movieList;

@@ -11,44 +11,44 @@ import Loading from "../../common/Loading";
 const PersonDetails = () => {
 
   const { id } = useParams();
-   const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const selectedPerson = useSelector(selectPersonDetails);
 
-   useEffect(() => {
-     dispatch(fetchPersonDetails(id));
-     //setLoading zamieniamy wszedzie na np. fetchPersonDetails
-   }, [id, dispatch]);
+  useEffect(() => {
+    dispatch(fetchPersonDetails(id));
+    //setLoading zamieniamy wszedzie na np. fetchPersonDetails
+  }, [id, dispatch]);
 
-   let returned = "";
+  let returned = "";
 
-   switch (selectedPerson.ifLoading) {
-     case "loading":
-       returned = (
-         <Loading/>
-     );
-       break;
-     case "success":
-       returned = (
+  switch (selectedPerson.ifLoading) {
+    case "loading":
+      returned = (
+        <Loading />
+      );
+      break;
+    case "success":
+      returned = (
         <>
           <Content
             body={
               <>
                 <TileDetails selectedPerson={selectedPerson.personDetails} />
-                <Cast selectedCast={selectedPerson.cast}/>
-                <Crew selectedCrew={selectedPerson.crew}/>
+                <Cast selectedCast={selectedPerson.cast} />
+                <Crew selectedCrew={selectedPerson.crew} />
               </>
             }
           />
         </>
-       );
-       break;
+      );
+      break;
 
-     default:
-       returned = <h1>Coś nie pykło</h1>;
-   }
+    default:
+      returned = <h1>Coś nie pykło</h1>;
+  }
 
-   return returned;
+  return returned;
 
 };
 
