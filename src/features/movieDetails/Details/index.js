@@ -47,8 +47,8 @@ const Details = ({ selectedMovie }) => {
           <ProductionSection>
             <GreyText>Production: </GreyText>
             {selectedMovie.production_countries.map((country) => {
-              if (dimensions.width < 650) 
-              return <Comma>{country.iso_3166_1} </Comma>;
+              if (dimensions.width < 650)
+                return <Comma>{country.iso_3166_1} </Comma>;
               return <Comma>{country.name} </Comma>;
             })}
           </ProductionSection>
@@ -64,7 +64,7 @@ const Details = ({ selectedMovie }) => {
             <StyledStarIcon>
               <StarIcon width={"100%"} height={"100%"} />
             </StyledStarIcon>
-            <Rate>{selectedMovie.vote_average.toFixed(1)}</Rate>
+            <Rate>{selectedMovie.vote_average}</Rate>
             <RateScale> / 10</RateScale>
             <Votes>{selectedMovie.vote_count} votes</Votes>
           </RatingSection>
