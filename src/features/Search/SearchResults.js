@@ -22,7 +22,7 @@ const SearchResults = () => {
 
   useEffect(() => {
     dispatch(setSearchLoading(payload));
-  }, [payload.query, dispatch]);
+  }, [payload.query, payload.page, dispatch]);
 
   let returned = "";
 
@@ -35,6 +35,7 @@ const SearchResults = () => {
     case "success":
       returned = (
         <SearchContentSelector query={payload.query} searchList={searchList} />
+        
       );
       break;
     default:
