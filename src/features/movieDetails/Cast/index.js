@@ -12,7 +12,7 @@ const Cast = ({selectedCast}) => {
             body={
                 <TilesPersonSection>
                     {selectedCast.map((person) => (
-                        <TilePerson key={person.id} person={person} personRole={person.character} />
+                        <TilePerson key={person.id}  person={person} personRole={person.character} />
                     ))}
                 </TilesPersonSection>
             } />

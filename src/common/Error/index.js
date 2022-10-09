@@ -6,7 +6,7 @@ function ErrorPage() {
                 <StyledDangerIcon/>
             <Title>Ooops! Something went wrong...</Title>
             <Text>Please check your network connection<br /> and try again</Text>
-            <Button big to="/movies">Back to home page</Button>
+            <Button to="/movies">Back to home page</Button>
         </ErrorContainer>
     )
 };

@@ -1,10 +1,10 @@
 import PersonIcon from "../../iconComponents/PersonIcon";
 import { Destription, PersonName, NoPoster, Poster, StyledTilePerson, StyledPersonIcon, Wrapper, StyledNavLink, PersonRole } from "./styled";
 
-const TilePerson = ({ key, person, personRole }) => {
+const TilePerson = ({person, personRole }) => {
 
     return (
-        <Wrapper key={key}>
+        <Wrapper>
             <StyledNavLink to={`/personDetails/${person.id}`}>
                 <StyledTilePerson>
                     {person.profile_path === null
