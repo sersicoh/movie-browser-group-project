@@ -1,12 +1,9 @@
-import DangerIcon from "../../iconComponents/DangerIcon";
 import { ErrorContainer, Title, Text, Button, StyledDangerIcon } from "./styled";
 
 function ErrorPage() {
     return (
         <ErrorContainer>
-            <StyledDangerIcon>
-                <DangerIcon />
-            </StyledDangerIcon>
+                <StyledDangerIcon/>
             <Title>Ooops! Something went wrong...</Title>
             <Text>Please check your network connection<br /> and try again</Text>
             <Button big to="/movies">Back to home page</Button>
