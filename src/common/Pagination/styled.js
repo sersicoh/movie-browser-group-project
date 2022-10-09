@@ -8,6 +8,9 @@ display: flex;
 justify-content: center;
 align-items: center;
 gap: 8px;
+@media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    gap: 6px;
+  }
 
 `;
 export const PaginationTiles = styled(Link)`
@@ -30,6 +33,10 @@ export const PaginationTiles = styled(Link)`
             pointer-events: none;
         `
     }
+        @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+            gap: 8px;
+    padding: 6px 13px;
+  }
 `;
 export const StyledText = styled.span`
 
@@ -44,12 +51,19 @@ export const StyledText = styled.span`
 export const PageInfo = styled.span`
 
     color: ${({ theme }) => theme.colors.darkerGrey};
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+        font-size: 12px;
+  }
 
 `;
 export const PageNumber = styled.span`
 
     color: ${({ theme }) => theme.colors.black};
     font-weight: ${({ theme }) => theme.fontSize.bold};
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+        font-size: 12px;
+  }
+
 
 `;
 export const ButtonDiv = styled.div`

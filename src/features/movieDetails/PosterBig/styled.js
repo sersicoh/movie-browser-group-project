@@ -6,18 +6,12 @@ export const BackgroundColor = styled.section`
   width: 100%;
   background-color: black;
   overflow: auto;
-  min-width: 319px;
 `;
 export const BackgroundImage = styled.img`
   width: 100%;
   position: relative;
   z-index: -1;
-  @media (min-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    /* height: 320px; */
-  }
-  @media (min-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
-    /* height: 770px; */
-  }
+
 `;
 export const InfoSection = styled.div`
   margin-left: 16px;
