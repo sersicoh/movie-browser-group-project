@@ -5,6 +5,7 @@ import PersonList from "./features/PersonList";
 import MovieDetails from "./features/movieDetails";
 import PersonDetails from "./features/personDetails";
 import SearchResults from "./features/Search/SearchResults";
+import NoResult from "./common/NoResult";
 
 function App() {
   return (
@@ -12,6 +13,10 @@ function App() {
       <nav>
         <NavigationBar />
         <Routes>
+          <Route path="*" element={ <NoResult
+                error404={<h1>404  </h1>}
+                title={`Oops! This page doesn't exist! Please go back to Main Page :)`}
+              />} />
           <Route path="/" element={<Navigate to="movies" />} />
           <Route path="/movies" element={<Navigate to="1" />} />
           <Route path="/people" element={<Navigate to="1" />} />
