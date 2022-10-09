@@ -7,35 +7,6 @@ export const BackgroundColor = styled.section`
   background-color: black;
   overflow: auto;
 `;
-export const BackgroundImage = styled.img`
-  width: 100%;
-  position: relative;
-  z-index: -1;
-
-`;
-export const InfoSection = styled.div`
-  margin-left: 16px;
-  position: absolute;
-  bottom: 1px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; 
-   justify-content: flex-end;
-
-  @media (min-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    margin-bottom: 26px;
-  }
-  @media (min-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
-     margin-bottom: 56px;
-  }
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 5px;
-    grid-row-gap: 0px;
-  }
-`;
 export const Wrapper = styled.div`
   margin: 0 auto;
   position: relative;
@@ -75,47 +46,85 @@ export const Wrapper = styled.div`
        #000000 92.87%
     );
 `;
+export const BackgroundImage = styled.img`
+  width: 100%;
+  position: relative;
+  z-index: -1;
+
+`;
+export const InfoSection = styled.div`
+  margin-left: 16px;
+  position: absolute;
+  bottom: 1px;
+  display: grid;
+  grid-template-rows: 1fr;
+  margin-bottom: 26px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    margin-bottom: 10px;
+  }
+`;
 export const MovieTitle = styled.div`
   font-weight: ${({ theme }) => theme.fontSize.bold};
   line-height: 130%;
   font-size: 64px;
   color: ${({ theme }) => theme.colors.white};
+
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     font-size: 42px;
     margin: 0 0 4px;
   }
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     font-size: 24px;
-    grid-area: 1 / 1 / 2 / 3; 
-    display:flex;
   }
 `;
 export const RatingSection = styled.section`
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
   margin-top: 25px;
+  grid-gap: 10px;
+  justify-content: flex-start;
+  align-items: flex-end;
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-  grid-area: 2 / 1 / 3 / 2; 
-   margin-top: 8px;
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+   
   }
 
+`;
+export const RateWrapper = styled.section`
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 5px;
 `;
 export const StyledStarIcon = styled.div`
   width: 50px;
   height: 40px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.between}px) {
-    width: 16px;
-    height: 15px;
+    width: 25px;
+    height: 25px;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    width: 18px;
+    height: 18px;
   }
 `;
 export const Rate = styled.div`
   font-size: 30px;
   font-weight: ${({ theme }) => theme.fontSize.medium};
+  line-height: 90%;
   color: ${({ theme }) => theme.colors.white};
-  margin-top: 3px;
-  margin-left: 8px;
+
   @media (max-width: ${({ theme }) => theme.breakpoint.between}px) {
+    font-size: 20px;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     font-size: 13px;
   }
 `;
@@ -123,31 +132,27 @@ export const RateScale = styled.div`
   font-size: 16px;
   font-weight: ${({ theme }) => theme.fontSize.regular};
   color: ${({ theme }) => theme.colors.white};
-  margin-top: 15px;
-  margin-left: 7px;
   @media (max-width: ${({ theme }) => theme.breakpoint.between}px) {
     font-size: 13px;
-    margin-top: 4px;
   }
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     font-size: 10px;
-    margin-top: 4px;
   }
 `;
 export const Votes = styled.div`
   font-size: 16px;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 8px;
   font-weight: ${({ theme }) => theme.fontSize.regular};
   color: ${({ theme }) => theme.colors.white};
-  margin-left: 5px;
-  /* margin-top: 16px; */
 
   @media (max-width: ${({ theme }) => theme.breakpoint.between}px) {
     font-size: 13px;
+    margin-left: 0;
   }
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    grid-area: 2 / 2 / 3 / 3;
-    margin-top: 12px;
     font-size: 10px;
-    margin-left: -10px;
+    margin-left: 0;
   }
 `;
