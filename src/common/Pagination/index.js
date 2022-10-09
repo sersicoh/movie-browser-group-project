@@ -6,7 +6,7 @@ import {
   StyledText,
   ButtonDiv,
 } from "./styled";
-import { SingleLeftArrow, SingleRightArrow } from "./Arrows";
+import { DoubleLeftArrow, DoubleRightArrow, SingleLeftArrow, SingleRightArrow } from "./Arrows";
 
 function Pagination({ param, page, searchQuery, totalPages }) {
 
@@ -17,7 +17,8 @@ function Pagination({ param, page, searchQuery, totalPages }) {
     <StyledPaginationSection>
       <ButtonDiv>
         <PaginationTiles disabled={page <= 1 ? true : false} to={`/${param}/${searchQuery}1`}>
-          <SingleLeftArrow disabled={page <= 1 ? true : false} />
+          <DoubleLeftArrow disabled={page <= 1 ? true : false} />
+          {/* <SingleLeftArrow disabled={page <= 1 ? true : false} /> */}
           <StyledText>First</StyledText>
         </PaginationTiles>
       </ButtonDiv>
@@ -53,7 +54,7 @@ function Pagination({ param, page, searchQuery, totalPages }) {
           to={`/${param}/${searchQuery}${totalPages}`}
         >
           <StyledText>Last</StyledText>
-          <SingleRightArrow disabled={page === totalPages ? true : false} />
+          <DoubleRightArrow disabled={page === totalPages ? true : false} />
         </PaginationTiles>
       </ButtonDiv>
     </StyledPaginationSection>

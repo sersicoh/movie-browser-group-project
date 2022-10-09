@@ -47,34 +47,19 @@ export const Poster = styled.img`
 `;
 export const NoPoster = styled.div`
   grid-area: poster;
-  margin: 16px;
-  background: ${({ theme }) => theme.colors.silver};
-  width: 292px;
-  height: 434px;
-  border-radius: 5px;
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    width: 114px;
-    height: 169px;
-    left: calc(50% - 114px / 2 - 71px);
-    top: 0px;
-  }
-`;
-export const StyledMovieIcon = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 45px;
-  margin-right: 9px;
-  margin-bottom: 2px;
+  background: ${({ theme }) => theme.colors.silver};
+  max-width: 100%;
+  max-height: 100%;
+  aspect-ratio: 2/3;
+  border-radius: 5px;
+`;
+export const StyledMovieIcon = styled.div`
+  width: 80px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
-    width: 40px;
-    margin-bottom: 2px;
-    margin-right: 9px;
-  }
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    width: 20px;
-    height: 48px;
+    width: 60px;
   }
 `;
 export const MovieTitle = styled.div`
@@ -167,7 +152,6 @@ export const Description = styled.div`
   line-height: 32px;
   font-weight: ${({ theme }) => theme.fontSize.regular};
   color: ${({ theme }) => theme.colors.black};
-  margin-top: -30px;
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     font-size: 18px;
     line-height: 160%;
@@ -179,9 +163,6 @@ export const Description = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     font-size: 14px;
     line-height: 160%;
-  }
-  @media (max-width: 1300px) {
-    margin-top: -10px;
   }
 `;
 export const ProductionSection = styled.div`

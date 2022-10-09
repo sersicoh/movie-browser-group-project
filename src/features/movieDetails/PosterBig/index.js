@@ -20,7 +20,7 @@ const PosterBig = ({ selectedMovie }) => {
   return (
     <BackgroundColor>
       <Wrapper>
-        <BackgroundImage src={picture} />
+        {selectedMovie.backdrop_path !== null ? <BackgroundImage src={picture} /> : ""}
         <InfoSection>
           <MovieTitle>{selectedMovie.title}</MovieTitle>
           <RatingSection>
