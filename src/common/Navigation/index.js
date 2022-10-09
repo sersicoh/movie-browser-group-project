@@ -1,6 +1,6 @@
 
 import { Searcher } from "../Searcher"
-import { NavigationBackground, NavigationLink, NavigationList, NavigationLogo, NavigationLogoLink, NavigationSearcher, StyledMovieIcon  } from "./styled";
+import { NavigationBackground, NavigationLink, NavigationList, NavigationLogo, NavigationLogoLink, NavigationSearcher, StyledMovieIcon } from "./styled";
 
 
 function NavigationBar() {
@@ -9,9 +9,7 @@ function NavigationBar() {
             <NavigationList>
                 <NavigationLogoLink to="/movies">
                     <NavigationLogo>
-                        
-                            <StyledMovieIcon strokeWidth={3} opacity={1} />
-                       
+                        <StyledMovieIcon strokeWidth={3} opacity={1} />
                         Movie Browser
                     </NavigationLogo>
                 </NavigationLogoLink>
