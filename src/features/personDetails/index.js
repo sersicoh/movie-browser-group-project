@@ -17,7 +17,6 @@ const PersonDetails = () => {
 
   useEffect(() => {
     dispatch(fetchPersonDetails(id));
-    //setLoading zamieniamy wszedzie na np. fetchPersonDetails
   }, [id, dispatch]);
 
   let returned = "";

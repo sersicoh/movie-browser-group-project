@@ -20,7 +20,6 @@ const TilePerson = ({person, personRole }) => {
                     <Destription>
                         <PersonName>{person.name}</PersonName>
                         <PersonRole>{personRole}</PersonRole>
-
                     </Destription>
                 </StyledTilePerson>
             </StyledNavLink>

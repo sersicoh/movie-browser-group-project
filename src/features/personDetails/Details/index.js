@@ -16,12 +16,11 @@ import {
 } from "./styled";
 
 const TileDetails = ({ selectedPerson }) => {
-  const picture = `https://image.tmdb.org/t/p/w500//${selectedPerson.profile_path}`;
 
   return (
     <Wrapper>
       <StyledTilePerson>
-        {picture ? (
+        {selectedPerson.profile_path ? (
           <Poster
             src={`https://image.tmdb.org/t/p/w500//${selectedPerson.profile_path}`}
           />
