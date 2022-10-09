@@ -31,15 +31,15 @@ export const PaginationTiles = styled(Link)`
         `
     }
 `;
-export const StyledArrow = styled.span`
-    fill: black;
-`;
 export const StyledText = styled.span`
 
     color: ${({ theme }) => theme.colors.black};
     font-size: 14px;
     font-weight: ${({ theme }) => theme.fontSize.regular};
-    
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    display: none;
+  }
 `;
 export const PageInfo = styled.span`
 
@@ -53,5 +53,5 @@ export const PageNumber = styled.span`
 
 `;
 export const ButtonDiv = styled.div`
-cursor: no-drop;
+    cursor: no-drop;
 `;
