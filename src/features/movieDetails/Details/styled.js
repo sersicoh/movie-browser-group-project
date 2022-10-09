@@ -167,7 +167,6 @@ export const Description = styled.div`
   line-height: 32px;
   font-weight: ${({ theme }) => theme.fontSize.regular};
   color: ${({ theme }) => theme.colors.black};
-  margin-top: -30px;
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     font-size: 18px;
     line-height: 160%;
@@ -179,9 +178,6 @@ export const Description = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     font-size: 14px;
     line-height: 160%;
-  }
-  @media (max-width: 1300px) {
-    margin-top: -10px;
   }
 `;
 export const ProductionSection = styled.div`
