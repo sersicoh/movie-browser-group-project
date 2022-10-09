@@ -5,7 +5,6 @@ export const Wrapper = styled.section`
   box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
   border-radius: 5px;
   margin: auto 16px;
-  min-width: 293px;
   padding: 40px;
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     padding: 14px;

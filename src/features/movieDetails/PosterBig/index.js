@@ -27,10 +27,10 @@ const PosterBig = ({ selectedMovie }) => {
             <StyledStarIcon>
               <StarIcon width={"100%"} height={"100%"} />
             </StyledStarIcon>
-            <Rate>{selectedMovie.vote_average}</Rate>
+            <Rate>{selectedMovie.vote_average.toFixed(1)}</Rate>
             <RateScale> / 10</RateScale>
+            <Votes>{selectedMovie.vote_count} votes</Votes>
           </RatingSection>
-          <Votes>{selectedMovie.vote_count} votes</Votes>
         </InfoSection>
       </Wrapper>
     </BackgroundColor>

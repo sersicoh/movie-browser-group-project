@@ -79,11 +79,16 @@ export const PersonName = styled.div`
     line-height: 130%;
 `;
 export const PersonRole = styled.div`
-
     font-weight: ${({ theme }) => theme.fontSize.medium};
     color: ${({ theme }) => theme.colors.darkerGrey};
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-self: center;
     line-height: 130%;
+    font-size: 15px;
+    @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px){
+        font-size: 12px;
+    }
+
 `;

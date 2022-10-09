@@ -6,18 +6,12 @@ export const BackgroundColor = styled.section`
   width: 100%;
   background-color: black;
   overflow: auto;
-  min-width: 319px;
 `;
 export const BackgroundImage = styled.img`
   width: 100%;
   position: relative;
   z-index: -1;
-  @media (min-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    /* height: 320px; */
-  }
-  @media (min-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
-    /* height: 770px; */
-  }
+
 `;
 export const InfoSection = styled.div`
   margin-left: 16px;
@@ -25,8 +19,8 @@ export const InfoSection = styled.div`
   bottom: 1px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
+  align-items: flex-start; 
+   justify-content: flex-end;
 
   @media (min-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     margin-bottom: 26px;
@@ -36,7 +30,7 @@ export const InfoSection = styled.div`
   }
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 5px;
     grid-row-gap: 0px;
@@ -101,7 +95,7 @@ export const RatingSection = styled.section`
   flex-direction: row;
   margin-top: 25px;
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    grid-area: 2 / 1 / 3 / 2; 
+  grid-area: 2 / 1 / 3 / 2; 
    margin-top: 8px;
   }
 
@@ -145,7 +139,7 @@ export const Votes = styled.div`
   font-weight: ${({ theme }) => theme.fontSize.regular};
   color: ${({ theme }) => theme.colors.white};
   margin-left: 5px;
-  margin-top: 16px;
+  /* margin-top: 16px; */
 
   @media (max-width: ${({ theme }) => theme.breakpoint.between}px) {
     font-size: 13px;

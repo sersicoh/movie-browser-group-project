@@ -1,12 +1,12 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import MovieIcon from "../../iconComponents/MovieIcon";
 
 export const NavigationBackground = styled.div`
   background-color: black;
   height: 94px;
   width: 100%;
   min-width: 320px;
-
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     height: 152px;
   }
@@ -15,12 +15,13 @@ export const NavigationBackground = styled.div`
 export const NavigationList = styled.ul`
   display: grid;
   margin: 0 auto;
-  padding: 22px 12px;
-  grid-template-columns: auto auto auto 1fr;
-  grid-gap: 32px;
+  padding: 21px 11px;
+  grid-template-columns: auto auto auto 1fr; 
   list-style-type: none;
   max-width: ${({ theme }) => theme.breakpoint.maxContentSize}px;
-
+  @media (min-width: 1040px) {
+    grid-gap: 30px;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     grid-template-columns: 1fr auto auto;
     row-gap: 20px;
@@ -32,6 +33,8 @@ export const NavigationList = styled.ul`
     grid-gap: 6px;
     padding: 32px 12px;
   }
+
+
 `;
 
 export const NavigationLink = styled(NavLink)`
@@ -69,7 +72,7 @@ export const NavigationLink = styled(NavLink)`
 
 export const NavigationLogo = styled.div`
   font-weight: ${({ theme }) => theme.fontSize.medium};
-  font-size: 24px;
+  font-size: 23px;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -77,7 +80,7 @@ export const NavigationLogo = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     margin-top: 8px;
     height: 17px;
-    font-size: 20px;
+    font-size: 13px;
   }
 `;
 
@@ -106,4 +109,18 @@ export const NavigationSearcher = styled.div`
 
 export const NavigationLogoLink = styled(NavLink)`
   text-decoration: none;
+  @media (min-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    margin-right: 50px;
+  }
+ 
+`;
+
+export const StyledMovieIcon = styled(MovieIcon)`
+  width: 35px;
+  margin-right:16px;
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    width: 20px;
+    margin-right:6px;
+    margin-bottom: 4px;
+  }
 `;
