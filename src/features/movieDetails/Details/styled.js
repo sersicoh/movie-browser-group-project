@@ -111,6 +111,7 @@ export const RatingSection = styled.section`
   align-items: flex-end;
   align-content: flex-end;
   gap: 12px;
+
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     align-content: flex-start;
     gap: 6px;
@@ -151,6 +152,7 @@ export const Description = styled.div`
   line-height: 32px;
   font-weight: ${({ theme }) => theme.fontSize.regular};
   color: ${({ theme }) => theme.colors.black};
+
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     font-size: 18px;
     line-height: 160%;
@@ -168,6 +170,7 @@ export const ProductionSection = styled.div`
   display: flex;
   font-size: 18px;
   font-weight: ${({ theme }) => theme.fontSize.regular};
+
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     font-size: 16px;
   }
@@ -183,6 +186,7 @@ export const ReleaseDateSection = styled.div`
   margin-top: -18px;
   font-size: 18px;
   font-weight: ${({ theme }) => theme.fontSize.regular};
+
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     font-size: 16px;
   }
@@ -197,6 +201,7 @@ export const ReleaseDateSection = styled.div`
 export const GreyText = styled.p`
   color: ${({ theme }) => theme.colors.darkerGrey};
   margin-right: 8px;
+
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     display: none;
   }
@@ -212,7 +217,6 @@ export const InfoSection = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoint.between}px) {
     gap: 10px;
   }
-
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     gap: 3px;
     margin-top: 0px;

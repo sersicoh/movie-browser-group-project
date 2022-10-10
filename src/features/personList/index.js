@@ -10,53 +10,51 @@ import ErrorPage from "../../common/Error";
 import Pagination from "../../common/Pagination";
 
 const PersonList = () => {
-  const dispatch = useDispatch();
-  const peopleList = useSelector(selectPeople);
-  const { page } = useParams();
-  const currentPage = page;
-  useEffect(() => {
-    dispatch(fetchPopularPeople(currentPage));
-  }, [currentPage, dispatch]);
 
-  let returned = "";
+   const dispatch = useDispatch();
+   const peopleList = useSelector(selectPeople);
+   const { page } = useParams();
+   const currentPage = page;
 
-  switch (peopleList.ifLoading) {
-    case "loading":
-      returned = (
-        <Loading />
-      );
-      break;
-    case "success":
-      returned =
-        (
-          <Content
-            title="Popular People"
-            body={
-              <TilesPersonSection>
-                {peopleList.peopleList.map((person) => (
-                  <TilePerson
-                    key={person.id}
-                    person={person}
+   useEffect(() => {
+      dispatch(fetchPopularPeople(currentPage));
+   }, [currentPage, dispatch]);
+
+   let returned = "";
+
+   switch (peopleList.ifLoading) {
+      case "loading":
+         returned = <Loading />;
+         break;
+      case "success":
+         returned = (
+            <Content
+               title="Popular People"
+               body={
+                  <TilesPersonSection>
+                     {peopleList.peopleList.map((person) => (
+                        <TilePerson
+                           key={person.id}
+                           person={person}
+                        />
+                     ))}
+                  </TilesPersonSection>
+               }
+               pagination={
+                  <Pagination
+                     param={"people"}
+                     page={parseInt(currentPage)}
+                     totalPages={peopleList.total_pages}
                   />
-                ))}
-              </TilesPersonSection>
-            }
-            pagination={
-              <Pagination
-                param={"people"}
-                page={parseInt(currentPage)}
-                totalPages={peopleList.total_pages}
-              />
-            }
-          />
-        );
-      break;
-    default:
-      returned
-        = <ErrorPage />;
-  }
+               }
+            />
+         );
+         break;
+      default:
+         returned = <ErrorPage />;
+   }
 
-  return returned;
+   return returned;
 
 };
 
