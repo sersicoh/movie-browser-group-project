@@ -60,9 +60,6 @@ export const InfoSection = styled.div`
   grid-template-rows: 1fr;
   margin-bottom: 26px;
 
-  @media (min-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    
-  }
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     margin-bottom: 10px;
   }
@@ -96,8 +93,8 @@ export const RatingSection = styled.section`
   }
 
 `;
-export const RateWrapper = styled.section`
-  display: flex;
+export const StyledRow = styled.section`
+  display: flex; 
   justify-content: flex-start;
   align-items: flex-end;
   gap: 5px;
@@ -132,6 +129,7 @@ export const RateScale = styled.div`
   font-size: 16px;
   font-weight: ${({ theme }) => theme.fontSize.regular};
   color: ${({ theme }) => theme.colors.white};
+
   @media (max-width: ${({ theme }) => theme.breakpoint.between}px) {
     font-size: 13px;
   }
@@ -153,6 +151,5 @@ export const Votes = styled.div`
   }
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     font-size: 10px;
-    margin-left: 0;
   }
 `;
