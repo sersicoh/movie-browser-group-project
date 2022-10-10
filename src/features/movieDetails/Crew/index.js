@@ -1,6 +1,4 @@
 import Content from "../../../common/Content";
-import { useSelector } from "react-redux";
-import { selectPerson } from "../../getMovieData/MovieSlice/movieSlice";
 import { TilesPersonSection } from "../../../common/TilesSection/styled";
 import TilePerson from "../../../common/TilePerson";
 
@@ -12,7 +10,7 @@ const Crew = ({selectedCrew}) => {
             body={
                 <TilesPersonSection>
                     {selectedCrew.map((person) => (
-                        <TilePerson key={person.id} person={person} personRole={person.job} />
+                        <TilePerson key={person.id + "_" + person.job} person={person} personRole={person.job} />
                     ))}
                 </TilesPersonSection>
             } />
