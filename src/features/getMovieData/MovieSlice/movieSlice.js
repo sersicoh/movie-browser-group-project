@@ -21,7 +21,7 @@ const moviesSlice = createSlice({
       state.ifLoading = "loading";
     },
     fetchGenres: (state) => {
-      state.ifLoading = true;
+      state.ifLoading = "loading";
     },
     setMovieList: (state, { payload: movies }) => {
       state.movieList = movies.results;
@@ -33,16 +33,16 @@ const moviesSlice = createSlice({
       state.genreList = genres.genres;
     },
     fetchMovieDetails: (state) => {
-      state.ifLoading = "loading";
+      state.ifLoading = "loading2";
     },
     setMovieDetails: (state, { payload: movieDetails }) => {
       state.movieDetails = movieDetails;
-      state.ifLoading = "success";
+      state.ifLoading = "success2";
     },
     setCastCrew: (state, { payload: castCrew }) => {
       state.cast = castCrew.cast;
       state.crew = castCrew.crew;
-      state.ifLoading = "success";
+      state.ifLoading = "success2";
     },
   },
 });

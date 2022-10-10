@@ -24,12 +24,12 @@ const MovieDetails = () => {
   let returned = "";
 
   switch (selectedMovie.ifLoading) {
-    case "loading":
+    case "loading2":
       returned = (
         <Loading />
       );
       break;
-    case "success":
+    case "success2":
       returned = (
         <>
           <PosterBig selectedMovie={selectedMovie.movieDetails} />
@@ -37,8 +37,8 @@ const MovieDetails = () => {
             body={
               <>
                 <Details selectedMovie={selectedMovie.movieDetails} />
-                <Cast selectedCast={selectedMovie.cast}/>
-                <Crew selectedCrew={selectedMovie.crew}/>
+                <Cast selectedCast={selectedMovie.cast} />
+                <Crew selectedCrew={selectedMovie.crew} />
               </>
             }
           />
