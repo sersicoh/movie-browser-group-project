@@ -25,8 +25,6 @@ const searchSlice = createSlice({
 export const { setSearchList, setSearchLoading } = searchSlice.actions;
 
 export const selectSearchList = (state) => state.searchList;
-export const selectTotalResults = (state) => state.total_results;
-export const selectTotalPages = (state) => state.total_pages;
 export const selectLoadingState = (state) => state.ifSearchLoading;
 
 export default searchSlice.reducer;

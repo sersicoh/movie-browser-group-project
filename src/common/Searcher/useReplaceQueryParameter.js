@@ -2,7 +2,6 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 const useReplaceQueryParameter = () => {
   const location = useLocation();
-  // const history = useNavigate();
 
   return ({ key, value }) => {
     const searchParams = new URLSearchParams(location.search);
@@ -12,7 +11,6 @@ const useReplaceQueryParameter = () => {
     else {
       searchParams.set(key, value);
     }
-    // return history.push(`${location.pathname}?${searchParams.toString()}`);
   }
 }
 

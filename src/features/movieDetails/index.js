@@ -6,7 +6,7 @@ import PosterBig from "./PosterBig";
 import Loading from "../../common/Loading";
 import ErrorPage from "../../common/Error";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchMovieDetails, selectMoviesDetails } from "../getMovieData/MovieSlice/movieSlice";
+import { fetchMovieDetails, selectMovies } from "../getMovieData/MovieSlice/movieSlice";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 
@@ -15,7 +15,7 @@ const MovieDetails = () => {
    const { id } = useParams();
    const dispatch = useDispatch();
 
-   const selectedMovie = useSelector(selectMoviesDetails);
+   const selectedMovie = useSelector(selectMovies);
 
    useEffect(() => {
       dispatch(fetchMovieDetails(id));

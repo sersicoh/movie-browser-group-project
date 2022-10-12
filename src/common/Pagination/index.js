@@ -6,19 +6,29 @@ import {
   StyledText,
   ButtonDiv,
 } from "./styled";
-import { DoubleLeftArrow, DoubleRightArrow, SingleLeftArrow, SingleRightArrow } from "./Arrows";
+import {
+  DoubleLeftArrow,
+  DoubleRightArrow,
+  SingleLeftArrow,
+  SingleRightArrow,
+} from "./Arrows";
 
 function Pagination({ param, page, searchQuery, totalPages }) {
-
-  if (totalPages > 500) { totalPages = 500 };
-  if (searchQuery == undefined) { searchQuery = "" };
+  if (totalPages > 500) {
+    totalPages = 500;
+  }
+  if (searchQuery == undefined) {
+    searchQuery = "";
+  }
 
   return (
     <StyledPaginationSection>
       <ButtonDiv>
-        <PaginationTiles disabled={page <= 1 ? true : false} to={`/${param}/${searchQuery}1`}>
+        <PaginationTiles
+          disabled={page <= 1 ? true : false}
+          to={`/${param}/${searchQuery}1`}
+        >
           <DoubleLeftArrow disabled={page <= 1 ? true : false} />
-          {/* <SingleLeftArrow disabled={page <= 1 ? true : false} /> */}
           <StyledText>First</StyledText>
         </PaginationTiles>
       </ButtonDiv>
