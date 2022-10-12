@@ -11,8 +11,6 @@ export const NoResultContainer = styled.div`
   justify-content: center;
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     margin: 0 auto;
-    /* margin-top: 120px;
-        margin-left: 200px; */
   }
 `;
 export const StyledPaperPlane = styled(PaperPlane)`

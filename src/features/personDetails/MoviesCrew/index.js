@@ -12,7 +12,7 @@ const Crew = ({ selectedCrew }) => {
             <TilesSection>
                {selectedCrew.map((movie) => (
                   <TileMovie
-                     key={movie.id}
+                     key={movie.id + "crew"}
                      movie={movie}
                      genreIds={movie.genre_ids}
                      releaseDate={moment(movie.release_date).format("YYYY")}

@@ -38,7 +38,6 @@ const peopleSlice = createSlice({
 export const {
    fetchPopularPeople,
    setPeopleList,
-   ifPeopleLoading,
    fetchPersonDetails,
    setPersonDetails,
    setMovieListForPerson

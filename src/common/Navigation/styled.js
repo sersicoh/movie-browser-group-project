@@ -16,7 +16,7 @@ export const NavigationList = styled.ul`
   display: grid;
   margin: 0 auto;
   padding: 21px 11px;
-  grid-template-columns: auto auto auto 1fr; 
+  grid-template-columns: auto auto auto 1fr;
   list-style-type: none;
   max-width: ${({ theme }) => theme.breakpoint.maxContentSize}px;
   @media (min-width: 1040px) {
@@ -33,8 +33,6 @@ export const NavigationList = styled.ul`
     grid-gap: 6px;
     padding: 32px 12px;
   }
-
-
 `;
 
 export const NavigationLink = styled(NavLink)`
@@ -112,15 +110,14 @@ export const NavigationLogoLink = styled(NavLink)`
   @media (min-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     margin-right: 50px;
   }
- 
 `;
 
 export const StyledMovieIcon = styled(MovieIcon)`
   width: 35px;
-  margin-right:16px;
+  margin-right: 16px;
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     width: 20px;
-    margin-right:6px;
-    margin-bottom: 4px;
+    margin-right: 6px;
+    margin-bottom: 2px;
   }
 `;
