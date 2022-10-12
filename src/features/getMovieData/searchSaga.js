@@ -4,7 +4,7 @@ import { setSearchLoading, setSearchList, setError } from "./SearchSlice/searchS
 
 export function* fetchSearchWorker({ payload: searchParams }) {
    try {
-      yield delay(1000);
+      yield delay(700);
       const searchList = yield call(getSearch, searchParams);
       yield put(setSearchList(searchList));
    } catch (error) {

@@ -4,7 +4,7 @@ import { fetchPopularPeople, setPeopleList, setPersonDetails, fetchPersonDetails
 
 export function* fetchPopularPeopleWorker({ payload: pageNumber }) {
    try {
-      yield delay(1000);
+      yield delay(700);
       const popularPeople = yield call(getPopularPeople, pageNumber);
       yield put(setPeopleList(popularPeople));
    } catch (error) {
@@ -14,7 +14,7 @@ export function* fetchPopularPeopleWorker({ payload: pageNumber }) {
 
 export function* fetchPersonDetailsWorker({ payload: personId }) {
    try {
-      yield delay(1000);
+      yield delay(700);
       const personDetails = yield call(getPersonDetails, personId);
       yield put(setPersonDetails(personDetails));
    } catch (error) {
@@ -24,7 +24,7 @@ export function* fetchPersonDetailsWorker({ payload: personId }) {
 
 export function* fetchMoviesForPerson({ payload: personId }) {
    try {
-      yield delay(1000);
+      yield delay(700);
       const moviesForPerson = yield call(getMovieListForPerson, personId);
       yield put(setMovieListForPerson(moviesForPerson));
    } catch (error) {

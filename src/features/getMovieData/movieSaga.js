@@ -6,7 +6,7 @@ import { fetchMovieDetails, setMovieDetails, setCastCrew } from "./MovieSlice/mo
 
 export function* fetchPopularMoviesWorker({ payload: pageNumber }) {
    try {
-      yield delay(1000);
+      yield delay(700);
       const popularMovies = yield call(getPopularMovies, pageNumber);
       yield put(setMovieList(popularMovies));
    } catch (error) {
@@ -25,7 +25,7 @@ export function* fetchGenresWorker() {
 
 export function* fetchMovieDetailsWorker({ payload: movieId }) {
    try {
-      yield delay(1000);
+      yield delay(700);
       const movieDetails = yield call(getMoviesDetails, movieId);
       yield put(setMovieDetails(movieDetails));
    } catch (error) {
@@ -35,7 +35,7 @@ export function* fetchMovieDetailsWorker({ payload: movieId }) {
 
 export function* fetchCastCrewWorker({ payload: movieId }) {
    try {
-      yield delay(1000);
+      yield delay(700);
       const castCrew = yield call(getPeopleForMovie, movieId);
       yield put(setCastCrew(castCrew));
    } catch (error) {
