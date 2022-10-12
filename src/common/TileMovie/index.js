@@ -27,20 +27,19 @@ const TileMovie = ({ movie, genreIds, releaseDate }) => {
     <Wrapper>
       <StyledNavLink to={`/movieDetails/${movie.id}`}>
         <StyledTileMovie>
-          {movie.poster_path === null
+          {(!movie || !movie.poster_path)
             ?
             <NoPoster>
               <StyledMovieIcon>
                 <MovieIcon width={"100%"} height={"100%"} />
               </StyledMovieIcon>
             </NoPoster>
-           
             :
             <Poster src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} />}
           <MovieTitle>{movie.title}</MovieTitle>
           <MovieYear>{releaseDate}</MovieYear>
           <Tags>
-            {genreList.map(
+            {genreIds && genreList.map(
               (genre) =>
                 genreIds.includes(genre.id) && (
                   <Tag key={genre.id}> {genre.name}</Tag>
@@ -50,7 +49,7 @@ const TileMovie = ({ movie, genreIds, releaseDate }) => {
             <StyledStarIcon>
               <StarIcon width={"100%"} height={"100%"} />
             </StyledStarIcon>
-            <Rate>{movie.vote_average.toFixed(1)}</Rate>
+            <Rate>{movie.vote_average && movie.vote_average.toFixed(1)}</Rate>
             <Votes>{movie.vote_count} votes</Votes>
           </RatingSection>
         </StyledTileMovie>
