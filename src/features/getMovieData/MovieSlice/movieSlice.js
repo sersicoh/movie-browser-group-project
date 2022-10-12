@@ -29,6 +29,9 @@ const moviesSlice = createSlice({
       setGenreList: (state, { payload: genres }) => {
          state.genreList = genres.genres;
       },
+      setError: (state) => {
+         state.ifLoading = "error";
+      },
       fetchMovieDetails: (state) => {
          state.ifLoading = "loading2";
       },
@@ -51,7 +54,8 @@ export const {
    fetchMovieDetails,
    setMovieDetails,
    setCastCrew,
-   fetchPopularMoviesPage
+   fetchPopularMoviesPage,
+   setError,
 } = moviesSlice.actions;
 
 export const selectMovies = (state) => state.movieList;

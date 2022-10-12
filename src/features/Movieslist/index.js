@@ -54,6 +54,12 @@ const MovieList = () => {
                />
             );
          break;
+         case "error":
+            returned =
+               (
+                  <ErrorPage />
+               );
+            break;
       default:
          returned = <ErrorPage />;
    }

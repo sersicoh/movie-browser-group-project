@@ -43,6 +43,12 @@ const MovieDetails = () => {
             </>
          );
          break;
+         case "error":
+            returned =
+               (
+                  <ErrorPage />
+               );
+            break;
       default:
          returned = <ErrorPage />;
    }

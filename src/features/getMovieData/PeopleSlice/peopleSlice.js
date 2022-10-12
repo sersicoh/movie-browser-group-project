@@ -20,6 +20,9 @@ const peopleSlice = createSlice({
          state.total_pages = people.total_pages;
          state.ifLoading = "success";
       },
+      setError: (state) => {
+         state.ifLoading = "error";
+      },
       fetchPersonDetails: (state) => {
          state.ifLoading = "loading";
       },
@@ -38,6 +41,7 @@ const peopleSlice = createSlice({
 export const {
    fetchPopularPeople,
    setPeopleList,
+   setError,
    fetchPersonDetails,
    setPersonDetails,
    setMovieListForPerson

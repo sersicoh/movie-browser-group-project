@@ -1,6 +1,6 @@
 import { call, delay, put, takeLatest, takeLeading } from "redux-saga/effects";
 import { getPopularMovies, getGenres, getMoviesDetails, getPeopleForMovie} from "./getData";
-import { fetchPopularMovies, setMovieList } from "./MovieSlice/movieSlice";
+import { fetchPopularMovies, setMovieList, setError } from "./MovieSlice/movieSlice";
 import { setGenreList} from "./MovieSlice/movieSlice";
 import { fetchMovieDetails, setMovieDetails, setCastCrew } from "./MovieSlice/movieSlice";
 
@@ -10,7 +10,7 @@ export function* fetchPopularMoviesWorker({ payload: pageNumber }) {
       const popularMovies = yield call(getPopularMovies, pageNumber);
       yield put(setMovieList(popularMovies));
    } catch (error) {
-      yield call(alert("coś poszło nie tak! Spróbuj później :)"));
+      yield put(setError());
    }
 };
 
@@ -19,7 +19,7 @@ export function* fetchGenresWorker() {
       const genres = yield call(getGenres);
       yield put(setGenreList(genres));
    } catch (error) {
-      yield call(alert("coś poszło nie tak! Spróbuj później :)"));
+      yield put(setError());
    }
 };
 
@@ -29,7 +29,7 @@ export function* fetchMovieDetailsWorker({ payload: movieId }) {
       const movieDetails = yield call(getMoviesDetails, movieId);
       yield put(setMovieDetails(movieDetails));
    } catch (error) {
-      yield call(alert("coś poszło nie tak! Spróbuj później :)"));
+      yield put(setError());
    }
 };
 
@@ -39,7 +39,7 @@ export function* fetchCastCrewWorker({ payload: movieId }) {
       const castCrew = yield call(getPeopleForMovie, movieId);
       yield put(setCastCrew(castCrew));
    } catch (error) {
-      yield call(alert("coś poszło nie tak! Spróbuj później :)"));
+      yield put(setError());
    }
 };
 

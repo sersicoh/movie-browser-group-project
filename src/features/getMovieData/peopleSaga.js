@@ -1,6 +1,6 @@
 import { call, delay, put, takeLatest } from "redux-saga/effects";
 import { getPopularPeople, getPersonDetails, getMovieListForPerson } from "./getData";
-import { fetchPopularPeople, setPeopleList, setPersonDetails, fetchPersonDetails, setMovieListForPerson } from "./PeopleSlice/peopleSlice";
+import { fetchPopularPeople, setPeopleList, setPersonDetails, fetchPersonDetails, setMovieListForPerson, setError } from "./PeopleSlice/peopleSlice";
 
 export function* fetchPopularPeopleWorker({ payload: pageNumber }) {
    try {
@@ -8,7 +8,7 @@ export function* fetchPopularPeopleWorker({ payload: pageNumber }) {
       const popularPeople = yield call(getPopularPeople, pageNumber);
       yield put(setPeopleList(popularPeople));
    } catch (error) {
-      yield call(alert("coś poszło nie tak! Spróbuj później :)"));
+      yield put(setError());
    }
 };
 
@@ -18,7 +18,7 @@ export function* fetchPersonDetailsWorker({ payload: personId }) {
       const personDetails = yield call(getPersonDetails, personId);
       yield put(setPersonDetails(personDetails));
    } catch (error) {
-      yield call(alert("coś poszło nie tak! Spróbuj później :)"));
+      yield put(setError());
    }
 };
 
@@ -28,7 +28,7 @@ export function* fetchMoviesForPerson({ payload: personId }) {
       const moviesForPerson = yield call(getMovieListForPerson, personId);
       yield put(setMovieListForPerson(moviesForPerson));
    } catch (error) {
-      yield call(alert("coś poszło nie tak! Spróbuj później :)"));
+      yield put(setError());
    }
 };
 

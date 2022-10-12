@@ -19,10 +19,13 @@ const searchSlice = createSlice({
       setSearchLoading: (state) => {
          state.ifSearchLoading = "loading";
       },
+      setError: (state) => {
+         state.ifSearchLoading = "error";
+      },
    },
 });
 
-export const { setSearchList, setSearchLoading } = searchSlice.actions;
+export const { setSearchList, setSearchLoading, setError } = searchSlice.actions;
 
 export const selectSearchList = (state) => state.searchList;
 export const selectLoadingState = (state) => state.ifSearchLoading;
