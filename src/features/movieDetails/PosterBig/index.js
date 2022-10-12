@@ -20,7 +20,7 @@ const PosterBig = ({ selectedMovie }) => {
    return (
       <BackgroundColor>
          <Wrapper>
-            {selectedMovie.backdrop_path !== null ? <BackgroundImage src={picture} /> : ""}
+            {!selectedMovie || selectedMovie.backdrop_path !== null ? <BackgroundImage src={picture} /> : ""}
             <InfoSection>
                <StyledRow>
                   <MovieTitle>{selectedMovie.title}</MovieTitle>
@@ -30,7 +30,7 @@ const PosterBig = ({ selectedMovie }) => {
                      <StyledStarIcon>
                         <StarIcon width={"100%"} height={"100%"} />
                      </StyledStarIcon>
-                     <Rate>{selectedMovie.vote_average.toFixed(1)}</Rate>
+                     <Rate>{selectedMovie.vote_average && selectedMovie.vote_average.toFixed(1)}</Rate>
                      <RateScale>/ 10</RateScale>
                   </StyledRow>
                   <Votes>{selectedMovie.vote_count} votes</Votes>

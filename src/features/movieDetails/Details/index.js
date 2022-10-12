@@ -47,7 +47,7 @@ const Details = ({ selectedMovie }) => {
                <MovieYear>{moment(selectedMovie.release_date).format("YYYY")}</MovieYear>
                <ProductionSection>
                   <GreyText>Production: </GreyText>
-                  {selectedMovie.production_countries.map((country) => {
+                  {selectedMovie.production_countries && selectedMovie.production_countries.map((country) => {
                      if (dimensions.width < 650)
                         return <Comma key={country.iso_3166_1}>{country.iso_3166_1} </Comma>;
                      return <Comma key={country.name}>{country.name} </Comma>;
@@ -57,7 +57,7 @@ const Details = ({ selectedMovie }) => {
                   <GreyText>Release Date: </GreyText> {selectedMovie.release_date}
                </ReleaseDateSection>
                <Tags>
-                  {selectedMovie.genres.map((tag) => (
+                  {selectedMovie.genres && selectedMovie.genres.map((tag) => (
                      <Tag key={tag.id}>{tag.name}</Tag>
                   ))}
                </Tags>
@@ -65,7 +65,7 @@ const Details = ({ selectedMovie }) => {
                   <StyledStarIcon>
                      <StarIcon width={"100%"} height={"100%"} />
                   </StyledStarIcon>
-                  <Rate>{selectedMovie.vote_average.toFixed(1)}</Rate>
+                  <Rate>{selectedMovie.vote_average && selectedMovie.vote_average.toFixed(1)}</Rate>
                   <RateScale>/ 10</RateScale>
                   <Votes>{selectedMovie.vote_count} votes</Votes>
                </RatingSection>
