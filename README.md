@@ -1,8 +1,54 @@
-# This is...
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Movies Browser 🎬
+
+## About Project
+"Movies Browser" is an encyclopedia of the movies, actors, and crew. It allows You to navigate through the different titles, search your favorite movies, and learn some info about it, for example you can check movies rating etc.
+
+Project is a part of YouCode Front-end Developer course.
 
 ## [Demo](https://sersicoh.github.io/movie-browser-group-project/)
-## Available Scripts
+
+## Presentation
+
+* Movie browser
+
+    ![](https://github.com/sersicoh/movie-browser-group-project/blob/main/public/assets/movies.gif)
+
+* People browser
+
+    ![](https://github.com/sersicoh/movie-browser-group-project/blob/main/public/assets/people.gif)
+
+* Searcher
+
+    ![](https://github.com/sersicoh/movie-browser-group-project/blob/main/public/assets/search.gif)
+
+## Technical info
+
+To search, just click on input and type your query,
+you can search for movies, and for people.
+To get person details, or movie details, just click into choosen element.
+
+Project is created using:
+- HTML
+- JavaScript
+- React
+- React Router 
+- React Redux 
+- Redux Saga 
+- Styled Components 
+
+## API
+This project uses API provided by:    <a href="https://www.themoviedb.org/"><img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_1-5bdc75aaebeb75dc7ae79426ddd9be3b2be1e342510f8202baf6bffa71d7f5c4.svg" width="68"></a>
+
+## Authors 
+
+* [Jakub Nowakowski](https://github.com/Jacob-Isaac)
+* [Wojciech Szymczak](https://github.com/sersicoh)
+
+  with the help of:
+* [Szymon Leśko](https://github.com/SzymonFrontDev)
+
+## This is...
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 In the project directory, you can run:
 
@@ -14,11 +60,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
@@ -29,15 +70,9 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### `npm run deploy`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Building the app and deploy ! All in one.
 
 ## Learn More
 
@@ -65,6 +100,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
