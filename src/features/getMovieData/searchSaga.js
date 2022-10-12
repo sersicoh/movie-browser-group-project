@@ -1,6 +1,6 @@
 import { call, delay, put, takeLatest } from "redux-saga/effects";
 import { getSearch } from "./getData";
-import { setSearchLoading, setSearchList } from "./SearchSlice/searchSlice";
+import { setSearchLoading, setSearchList, setError } from "./SearchSlice/searchSlice";
 
 export function* fetchSearchWorker({ payload: searchParams }) {
    try {
@@ -8,7 +8,7 @@ export function* fetchSearchWorker({ payload: searchParams }) {
       const searchList = yield call(getSearch, searchParams);
       yield put(setSearchList(searchList));
    } catch (error) {
-      yield call(alert("coś poszło nie tak! Spróbuj później :)"));
+      yield put(setError());
    }
 };
 

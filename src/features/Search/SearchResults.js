@@ -38,6 +38,12 @@ const SearchResults = () => {
             />
          );
          break;
+         case "error":
+            returned =
+               (
+                  <ErrorPage />
+               );
+            break;
       default:
          returned = <ErrorPage />;
    }

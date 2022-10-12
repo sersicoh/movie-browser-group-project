@@ -40,6 +40,12 @@ const PersonDetails = () => {
             />
          );
          break;
+         case "error":
+            returned =
+               (
+                  <ErrorPage />
+               );
+            break;
       default:
          returned = <ErrorPage />;
    };
